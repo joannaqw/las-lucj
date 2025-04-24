@@ -1,38 +1,23 @@
 import numpy as np
-import logging
 import time
-from argparse import ArgumentParser
-from typing import Tuple, List
-import itertools
+
 # PySCF imports
 from pyscf import gto, scf, lib, mcscf, ao2mo
-from pyscf.tools import fcidump
+
 # mrh imports
 from mrh.my_pyscf.mcscf.lasscf_o0 import LASSCF
-from mrh.my_pyscf.mcscf.lasci import h1e_for_las
-from mrh.exploratory.unitary_cc import uccsd_sym1, lasuccsd
+
 # Qiskit imports
-import qiskit
-import qiskit_nature
-from qiskit.providers.aer import StatevectorSimulator, QasmSimulator
-from qiskit import Aer, transpile
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
-from qiskit.quantum_info import DensityMatrix, partial_trace, Statevector
-from qiskit.utils import QuantumInstance
-from qiskit.algorithms import NumPyEigensolver, VQE 
-from qiskit.algorithms.optimizers import L_BFGS_B, COBYLA, BOBYQA
-from qiskit.opflow import PauliTrotterEvolution,SummedOp,PauliOp,MatrixOp,PauliSumOp,StateFn
+from qiskit import QuantumCircuit, QuantumRegister
 from qiskit_nature.second_q.formats.molecule_info import MoleculeInfo
-from qiskit_nature.second_q.drivers import PySCFDriver
 from qiskit_nature.second_q.mappers import JordanWignerMapper
-from qiskit_nature.second_q.circuit.library import UCCSD, HartreeFock
 qiskit_nature.settings.use_pauli_sum_op = False
 from qiskit.primitives import Estimator
-from qiskit.circuit.library import RealAmplitudes
 from qiskit_nature.second_q.hamiltonians import ElectronicEnergy
 from qiskit.quantum_info import SparsePauliOp
 from scipy.optimize import minimize
 from qiskit.circuit.library import TwoLocal
+
 def get_hamiltonian(frag, nelecas_sub, ncas_sub, h1, h2):
     if frag is None:
         num_alpha = nelecas_sub[0]
@@ -49,8 +34,6 @@ def get_hamiltonian(frag, nelecas_sub, ncas_sub, h1, h2):
     second_q_op = electronic_energy.second_q_op()
     mapper = JordanWignerMapper()
     hamiltonian = mapper.map(second_q_op)
-    #qubit_converter = QubitConverter(mapper = JordanWignerMapper(), two_qubit_reduction=False)
-    #hamiltonian = qubit_converter.convert(second_q_op)    
     return hamiltonian
 
 def get_so_ci_vec(ci_vec, nsporbs,nelec):
