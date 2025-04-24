@@ -1,6 +1,9 @@
 import numpy as np
 import time
 
+from get_hamiltonian import get_hamiltonian
+from operators import JHJ_operator, JJ_operator
+
 # PySCF imports
 from pyscf import gto, scf, lib, mcscf, ao2mo
 
@@ -10,31 +13,10 @@ from mrh.my_pyscf.mcscf.lasscf_o0 import LASSCF
 # Qiskit imports
 from qiskit import QuantumCircuit, QuantumRegister
 from qiskit_nature.second_q.formats.molecule_info import MoleculeInfo
-from qiskit_nature.second_q.mappers import JordanWignerMapper
 qiskit_nature.settings.use_pauli_sum_op = False
 from qiskit.primitives import Estimator
-from qiskit_nature.second_q.hamiltonians import ElectronicEnergy
-from qiskit.quantum_info import SparsePauliOp
 from scipy.optimize import minimize
 from qiskit.circuit.library import TwoLocal
-
-def get_hamiltonian(frag, nelecas_sub, ncas_sub, h1, h2):
-    if frag is None:
-        num_alpha = nelecas_sub[0]
-        num_beta = nelecas_sub[1]
-        n_so = ncas_sub*2
-    else:
-        # Get alpha and beta electrons from LAS
-        num_alpha = nelecas_sub[frag][0]
-        num_beta = nelecas_sub[frag][1]
-        n_so = ncas_sub[frag]*2
-        h1 = h1[frag]
-        h2 = h2[frag]
-    electronic_energy = ElectronicEnergy.from_raw_integrals(h1, h2)
-    second_q_op = electronic_energy.second_q_op()
-    mapper = JordanWignerMapper()
-    hamiltonian = mapper.map(second_q_op)
-    return hamiltonian
 
 def get_so_ci_vec(ci_vec, nsporbs,nelec):
     lookup = {}
@@ -59,46 +41,6 @@ def qiskit_operator_energy(params,qubitOp,psi):
     job_result = job.result() 
     return job_result
 
-def Jastrow_operator(params,n_qubits,num_vqe_params):
-        # Calculate the Pauli matrix strings that compose the Jastrow operator J
-        string_paulis='I'*n_qubits
-        list_paulis=[{'label': string_paulis,'coeff': 1.0}]
-        for ind_string in range(n_qubits):
-            string_paulis=''
-            for ind_position in range(n_qubits):
-                if ind_position==ind_string:
-                    string_paulis+='Z'
-                else:
-                    string_paulis+='I'
-            list_paulis.append({'label': string_paulis,'coeff': -params[num_vqe_params+ind_string]})                                                            
-        counter=0
-        for ind_string_1 in range(n_qubits):
-            for ind_string_2 in range(ind_string_1+1,n_qubits):
-                string_paulis=''
-                for ind_position in range(n_qubits):
-                    if ind_position==ind_string_1 or ind_position==ind_string_2:
-                        string_paulis+='Z'
-                    else:
-                        string_paulis+='I'
-                list_paulis.append({'label': string_paulis,'coeff': -params[num_vqe_params+n_qubits+counter]})
-                counter+=1
-        p_list = []
-        coeff = []
-        for i in range(len(list_paulis)-1):        
-            p_list.append(list_paulis[i+1]['label'])
-            coeff.append(list_paulis[i+1]['coeff'])  
-        JOp=SparsePauliOp(p_list,coeff)                                                                                    
-        return JOp 
- 
-def JHJ_operator(params,n_qubits,num_vqe_params,hamiltonian):
-        JOp=Jastrow_operator(params,n_qubits,num_vqe_params)
-        JHJOp=JOp.dot(hamiltonian).dot(JOp.conjugate())
-        return JHJOp.simplify()
- 
-def JJ_operator(params,n_qubits,num_vqe_params):
-        JOp=Jastrow_operator(params,n_qubits,num_vqe_params)
-        JJOp=JOp.dot(JOp)
-        return JJOp.simplify()
 
 #----------------Here we perform the calculation with user-defined molecule
 xyz = '''H 0.0 0.0 0.0
