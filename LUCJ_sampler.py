@@ -46,14 +46,13 @@ class QASM_simulator:
     return r
 
 
-def LUCJ_circuit(norb, nelec_a, nelec_b, spin_sub, hcore, eri):
+def LUCJ_circuit(norb, nelec_a, nelec_b, hcore, eri,layout='default'):
     '''LUCJ circuit for each fragment and sampler'''
     
     '''convert las h1, h2 to mo basis'''
-    mol = gto.M()                                                                                           
+    mol = gto.M()                                                                           
     mol.nelectron = nelec_a + nelec_b
-    mol.spin = spin_sub
-    #2*np.abs(nelec_a-nelec_b)
+    mol.spin = np.abs(nelec_a-nelec_b)
     mol.nao = norb
     mf_as = mol.ROHF()
     mf_as.get_hcore = lambda *args: hcore
@@ -84,20 +83,25 @@ def LUCJ_circuit(norb, nelec_a, nelec_b, spin_sub, hcore, eri):
  
     #------- UCJ operator for each fragment 
     H = ffsim.MolecularHamiltonian(h1e_MO,h2e_MO,h0e_MO)
-    #linop = ffsim.linear_operator(H,norb=norb,nelec=(nelec_a,nelec_b))
     n_reps = 1
     operator = ffsim.UCJOpSpinUnbalanced.from_t_amplitudes(t2, n_reps=n_reps, t1=t1)
     nelec = (nelec_a,nelec_b)
     reference_state = ffsim.hartree_fock_state(norb, nelec)
-    #ansatz_state = ffsim.apply_unitary(reference_state, operator, norb=norb, nelec=nelec)
     hamiltonian = ffsim.linear_operator(H, norb=norb, nelec=nelec)
-    #energy = np.real(np.vdot(ansatz_state, hamiltonian @ ansatz_state))
     
     #------- LUCJ and optimization
-    alpha_alpha_indices = [(p, p + 1) for p in range(norb - 1)]
-    alpha_beta_indices = [(p, p) for p in range(0, norb, 4)]
-    beta_beta_indices = [(p, p + 1) for p in range(norb - 1)]
-    interaction_pairs=(alpha_alpha_indices, alpha_beta_indices,beta_beta_indices)
+    if layout=='default':
+        alpha_alpha_indices = [(p, p + 1) for p in range(norb - 1)]
+        alpha_beta_indices = [(p, p) for p in range(0, norb, 4)]
+        beta_beta_indices = [(p, p + 1) for p in range(norb - 1)]
+        interaction_pairs=(alpha_alpha_indices, alpha_beta_indices,beta_beta_indices)
+    elif layout=='square':
+        pairs_aa = [(p, p + 1) for p in range(norb - 1)]
+        pairs_ab = [(p, p) for p in range(norb)]
+        pairs_bb = [(p, p + 1) for p in range(norb - 1)]
+        interaction_pairs = (pairs_aa,pairs_ab,pairs_bb)
+    elif layout=='mixmatch':
+
     def params_to_vec(x: np.ndarray) -> np.ndarray:
         operator = ffsim.UCJOpSpinUnbalanced.from_parameters(x, norb=norb, n_reps=n_reps,interaction_pairs=interaction_pairs,with_final_orbital_rotation=True)
         return ffsim.apply_unitary(reference_state, operator, norb=norb, nelec=nelec)
