@@ -1,4 +1,5 @@
 from qiskit import QuantumCircuit, QuantumRegister
+import numpy as np
 
 def get_init_di_las(las):
     ncas = np.sum(las.ncas_sub)

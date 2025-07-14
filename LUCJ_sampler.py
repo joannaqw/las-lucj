@@ -66,10 +66,9 @@ def LUCJ_circuit(norb, nelec_a, nelec_b, hcore, eri,layout='default'):
 
     mol_MO = gto.M()
     mol_MO.nelectron = nelec_a + nelec_b
-    mol_MO.spin = spin_sub 
-    #2*np.abs(nelec_a-nelec_b)
+    mol_MO.spin = np.abs(nelec_a-nelec_b)
     mol_MO.nao = norb
-    mf_as_MO= mol_MO.ROHF()
+    mf_as_MO= mol_MO.UHF()
     mf_as_MO.get_hcore = lambda *args: h1e_MO
     mf_as_MO.get_ovlp = lambda *args: np.eye(norb)
     mf_as_MO._eri = h2e_MO
@@ -79,12 +78,14 @@ def LUCJ_circuit(norb, nelec_a, nelec_b, hcore, eri,layout='default'):
     mc.kernel()
     t1 = mc.t1
     t2 = mc.t2
+    print('t1',t1)
+    print('t2',t2)
    
  
     #------- UCJ operator for each fragment 
     H = ffsim.MolecularHamiltonian(h1e_MO,h2e_MO,h0e_MO)
-    n_reps = 1
-    operator = ffsim.UCJOpSpinUnbalanced.from_t_amplitudes(t2, n_reps=n_reps, t1=t1)
+    n_reps = 2
+    operator = ffsim.UCJOpSpinBalanced.from_t_amplitudes(t2=t2, t1=mc.t1, n_reps=n_reps)
     nelec = (nelec_a,nelec_b)
     reference_state = ffsim.hartree_fock_state(norb, nelec)
     hamiltonian = ffsim.linear_operator(H, norb=norb, nelec=nelec)
@@ -94,16 +95,20 @@ def LUCJ_circuit(norb, nelec_a, nelec_b, hcore, eri,layout='default'):
         alpha_alpha_indices = [(p, p + 1) for p in range(norb - 1)]
         alpha_beta_indices = [(p, p) for p in range(0, norb, 4)]
         beta_beta_indices = [(p, p + 1) for p in range(norb - 1)]
-        interaction_pairs=(alpha_alpha_indices, alpha_beta_indices,beta_beta_indices)
+        interaction_pairs=(alpha_alpha_indices, alpha_beta_indices)
+        #,beta_beta_indices)
     elif layout=='square':
         pairs_aa = [(p, p + 1) for p in range(norb - 1)]
         pairs_ab = [(p, p) for p in range(norb)]
         pairs_bb = [(p, p + 1) for p in range(norb - 1)]
-        interaction_pairs = (pairs_aa,pairs_ab,pairs_bb)
+        interaction_pairs = (pairs_aa,pairs_ab)
+        #,pairs_bb)
     elif layout=='mixmatch':
+        #to be implemented
+        None
 
     def params_to_vec(x: np.ndarray) -> np.ndarray:
-        operator = ffsim.UCJOpSpinUnbalanced.from_parameters(x, norb=norb, n_reps=n_reps,interaction_pairs=interaction_pairs,with_final_orbital_rotation=True)
+        operator = ffsim.UCJOpSpinBalanced.from_parameters(x, norb=norb, n_reps=n_reps,interaction_pairs=interaction_pairs,with_final_orbital_rotation=True)
         return ffsim.apply_unitary(reference_state, operator, norb=norb, nelec=nelec)
     result = minimize_linear_method(params_to_vec,hamiltonian,x0=operator.to_parameters(interaction_pairs=interaction_pairs))
 

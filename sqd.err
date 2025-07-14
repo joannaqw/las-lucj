@@ -1,0 +1,13 @@
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.rohf.ROHF'>
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.uhf.UHF'>
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/las_lucj.py", line 73, in <module>
+    laslucj_circuit = LUCJ_circuit(mc.ncas,mc.nelecas[0],mc.nelecas[1],cas_h1e,eri,layout='default')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/las-lucj/LUCJ_sampler.py", line 88, in LUCJ_circuit
+    operator = ffsim.UCJOpSpinBalanced.from_t_amplitudes(t2=t2, t1=mc.t1, n_reps=n_reps)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/laslucj/lib/python3.11/site-packages/ffsim/variational/ucj_spin_balanced.py", line 433, in from_t_amplitudes
+    nocc, _, nvrt, _ = t2.shape
+                       ^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'shape'
