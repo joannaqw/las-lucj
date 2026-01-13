@@ -1,0 +1,9 @@
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.rohf.ROHF'>
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.hf.RHF'>
+/project/lgagliardi/qjwang/las-lucj/cr_6_10/run2/las_lucj.py:196: DeprecationWarning: The function ``qiskit_addon_sqd.subsampling.postselect_and_subsample()`` is deprecated as of qiskit-addon-sqd 0.12.0. It will be removed no earlier than v0.13.0. Instead, use the ``postselect_by_hamming_right_and_left`` and ``subsample`` functions.
+  batches = postselect_and_subsample(
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/cr_6_10/run2/las_lucj.py", line 239, in <module>
+    print('total energy is', np.min(energy_hsit)+nuclear_repulsion_energy)
+                                    ^^^^^^^^^^^
+NameError: name 'energy_hsit' is not defined. Did you mean: 'energy_hist'?
