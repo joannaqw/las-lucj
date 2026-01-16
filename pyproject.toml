@@ -1,0 +1,13 @@
+[project]
+name = "las-lucj"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "ffsim>=0.0.64",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.1.0",
+    "ruff>=0.14.13",
+]
