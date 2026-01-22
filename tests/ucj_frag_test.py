@@ -1,6 +1,34 @@
 import ffsim
 from ffsim.variational.util import interaction_pairs_spin_balanced
-from las_lucj.ucj_frag import ucj_frag_circuit_naive, ucj_frag_circuit_opt
+from las_lucj.ucj_frag import ucj_frag_circuit
+from qiskit.circuit import QuantumCircuit, QuantumRegister
+
+GATE_MAP = {
+    ffsim.UCJOpSpinBalanced: ffsim.qiskit.UCJOpSpinBalancedJW,
+    ffsim.UCJOpSpinUnbalanced: ffsim.qiskit.UCJOpSpinUnbalancedJW,
+}
+
+
+def ucj_frag_circuit_naive(
+    small_ucj_ops: list[ffsim.UCJOpSpinBalanced | ffsim.UCJOpSpinUnbalanced],
+    nelecs: list[tuple[int, int]],
+    big_ucj_op: ffsim.UCJOpSpinBalanced | ffsim.UCJOpSpinUnbalanced,
+) -> QuantumCircuit:
+    norb = sum(op.norb for op in small_ucj_ops)
+    assert norb == big_ucj_op.norb
+    qubits = QuantumRegister(2 * norb, name="q")
+    circuit = QuantumCircuit(qubits)
+    current_orb = 0
+    for op, nelec in zip(small_ucj_ops, nelecs):
+        active_qubits = (
+            qubits[current_orb : current_orb + op.norb]
+            + qubits[norb + current_orb : norb + current_orb + op.norb]
+        )
+        circuit.append(ffsim.qiskit.PrepareHartreeFockJW(op.norb, nelec), active_qubits)
+        circuit.append(GATE_MAP[type(op)](op), active_qubits)
+        current_orb += op.norb
+    circuit.append(GATE_MAP[type(big_ucj_op)](big_ucj_op), qubits)
+    return circuit
 
 
 def test_ucj_frag():
@@ -39,7 +67,7 @@ def test_ucj_frag():
         [ucj_op_small_1, ucj_op_small_2], [nelec_small_1, nelec_small_2], ucj_op_big
     )
 
-    circuit_opt = ucj_frag_circuit_opt(
+    circuit_opt = ucj_frag_circuit(
         [ucj_op_small_1, ucj_op_small_2], [nelec_small_1, nelec_small_2], ucj_op_big
     )
 
