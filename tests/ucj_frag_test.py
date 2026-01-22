@@ -1,0 +1,49 @@
+import ffsim
+from ffsim.variational.util import interaction_pairs_spin_balanced
+from las_lucj.ucj_frag import ucj_frag_circuit_naive, ucj_frag_circuit_opt
+
+
+def test_ucj_frag():
+    norb = 8
+    nelec = (3, 3)
+    n_alpha, n_beta = nelec
+    norb_small_1 = 5
+    nelec_small_1 = (1, 2)
+    n_alpha_small_1, n_beta_small_1 = nelec_small_1
+    norb_small_2 = 3
+    nelec_small_2 = (2, 1)
+    n_alpha_small_2, n_beta_small_2 = nelec_small_2
+    assert norb_small_1 + norb_small_2 == norb
+    assert n_alpha_small_1 + n_alpha_small_2 == n_alpha
+    assert n_beta_small_1 + n_beta_small_2 == n_beta
+
+    pairs_aa, pairs_ab = interaction_pairs_spin_balanced("heavy-hex", norb_small_1)
+    ucj_op_small_1 = ffsim.random.random_ucj_op_spin_unbalanced(
+        norb=norb_small_1,
+        n_reps=1,
+        interaction_pairs=(pairs_aa, pairs_ab, pairs_aa),
+    )
+    pairs_aa, pairs_ab = interaction_pairs_spin_balanced("heavy-hex", norb_small_2)
+    ucj_op_small_2 = ffsim.random.random_ucj_op_spin_unbalanced(
+        norb=norb_small_2,
+        n_reps=1,
+        interaction_pairs=(pairs_aa, pairs_ab, pairs_aa),
+    )
+    ucj_op_big = ffsim.random.random_ucj_op_spin_balanced(
+        norb=norb,
+        n_reps=1,
+        interaction_pairs=interaction_pairs_spin_balanced("heavy-hex", norb),
+    )
+
+    circuit_naive = ucj_frag_circuit_naive(
+        [ucj_op_small_1, ucj_op_small_2], [nelec_small_1, nelec_small_2], ucj_op_big
+    )
+
+    circuit_opt = ucj_frag_circuit_opt(
+        [ucj_op_small_1, ucj_op_small_2], [nelec_small_1, nelec_small_2], ucj_op_big
+    )
+
+    result_naive = ffsim.qiskit.final_state_vector(circuit_naive.decompose(reps=2))
+    result_opt = ffsim.qiskit.final_state_vector(circuit_opt.decompose(reps=1))
+
+    ffsim.testing.assert_allclose_up_to_global_phase(result_opt.vec, result_naive.vec)

@@ -29,7 +29,6 @@ def ucj_frag_circuit_naive(
         circuit.append(gate_map[type(op)](op), active_qubits)
         current_orb += op.norb
     circuit.append(gate_map[type(big_ucj_op)](big_ucj_op), qubits)
-    # TODO perhaps decompose
     return circuit
 
 
