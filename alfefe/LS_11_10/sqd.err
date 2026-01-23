@@ -1,0 +1,10 @@
+WARN: Even tempered Gaussians are generated as DF auxbasis for  Fe
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.rohf.ROHF'>
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/alfefe/LS_11_10/las_lucj.py", line 176, in <module>
+    result = diagonalize_fermionic_hamiltonian(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit_addon_sqd/fermion.py", line 259, in diagonalize_fermionic_hamiltonian
+    raise ValueError(
+ValueError: Spin symmetrization is only possible if the numbers of alpha and beta electrons are equal. Instead, got 5 and 6.

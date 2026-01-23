@@ -1,0 +1,28 @@
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.rohf.ROHF'>
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.hf.RHF'>
+Simulation failed and returned the following error message:
+ERROR:  [Experiment 0] a circuit requires more memory than max_memory_mb.
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/cr_30_22/2rep_noisy_qasm/las_lucj.py", line 122, in <module>
+    result = job.result()[0]          # PubResult for the first circuit
+             ^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit/primitives/primitive_job.py", line 51, in result
+    return self._future.result()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit_aer/primitives/sampler_v2.py", line 150, in _run
+    pub_results = self._run_pubs([pubs[i] for i in lst], shots)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit_aer/primitives/sampler_v2.py", line 189, in _run_pubs
+    self._postprocess_pub(
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit_aer/primitives/sampler_v2.py", line 223, in _postprocess_pub
+    arrays[item.creg_name][index] = ary
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+ValueError: could not broadcast input array from shape (0,6) into shape (300000,6)

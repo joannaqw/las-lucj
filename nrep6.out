@@ -1,0 +1,8 @@
+overwrite output file: KD_ls.log
+HF energy:  -2649.1455509803945
+LASSCF energy:  -2649.144939539041
+CASCI AS FCI energy -12.52295102818789
+converged SCF energy = -11.4418712584704
+converged SCF energy = -11.4418712584704
+CCSD not converged
+E(CCSD) = -11.96456273618285  E_corr = -0.5226914777124199

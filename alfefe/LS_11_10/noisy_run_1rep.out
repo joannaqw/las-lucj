@@ -1,0 +1,264 @@
+overwrite output file: alfefe.log
+HF energy:  -3943.0493670901246
+LASSCF energy:  -3971.7909092448367
+CASCI with LAS orbital -3971.7921704337077
+current fragment 0
+frag norb 5
+converged SCF energy = -542.770322927233
+converged SCF energy = -542.770322927233
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -542.7703229272335  E_corr = -2.349794108689319e-22
+nelec (5, 1)
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 0.9999999999999998
+current fid 1.0000000000000004
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 0.9999999999999996
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+norb 5
+qubits QuantumRegister(10, 'q')
+Optimization level  3 OrderedDict([('x', 6)]) 1
+two qubit gate depth 0
+current fragment 1
+frag norb 5
+converged SCF energy = -12.9842450087629
+converged SCF energy = -12.9842450087629
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -12.98424500876293  E_corr = 0
+nelec (0, 5)
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+norb 5
+qubits QuantumRegister(10, 'q')
+Optimization level  3 OrderedDict([('x', 5)]) 1
+two qubit gate depth 0
+SCF not converged.
+SCF energy = -548.164402560799
+SCF not converged.
+SCF energy = -548.164402581507
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -548.160138553573  E_corr = 0.004264027933813451
+Optimization level  3 OrderedDict([('rz', 1094), ('sx', 997), ('cx', 360), ('x', 37), ('measure', 20), ('barrier', 2)]) 203
+two qubit gate depth 40
+num_alpha 5
+num_beta 6

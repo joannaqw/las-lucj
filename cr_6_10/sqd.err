@@ -1,0 +1,5 @@
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.rohf.ROHF'>
+/project/lgagliardi/qjwang/las-lucj/cr_6_10/input.py:194: DeprecationWarning: The function ``qiskit_addon_sqd.subsampling.postselect_and_subsample()`` is deprecated as of qiskit-addon-sqd 0.12.0. It will be removed no earlier than v0.13.0. Instead, use the ``postselect_by_hamming_right_and_left`` and ``subsample`` functions.
+  batches = postselect_and_subsample(
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/fci/selected_ci.py:100: RuntimeWarning: divide by zero encountered in divide
+  eri1[k,k,:,:] += h_ps/nelec[1]

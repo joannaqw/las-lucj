@@ -1,0 +1,207 @@
+overwrite output file: KD_ls.log
+HF energy:  -2649.1455509803945
+LASSCF energy:  -2649.144939539042
+current fragment 0
+converged SCF energy = -5.36138023585772
+converged SCF energy = -5.36138023585772
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -5.361380235857723  E_corr = 0
+nelec (3, 0)
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+norb 3
+qubits QuantumRegister(6, 'q')
+Optimization level  3 OrderedDict([('x', 3)]) 1
+two qubit gate depth 0
+current fragment 1
+converged SCF energy = -5.36194373985244
+converged SCF energy = -5.36194373985244
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -5.361943739852435  E_corr = 0
+nelec (0, 3)
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+norb 3
+qubits QuantumRegister(6, 'q')
+Optimization level  3 OrderedDict([('x', 3)]) 1
+two qubit gate depth 0
+converged SCF energy = -11.4418712584705
+converged SCF energy = -11.4418712584705
+E(CCSD) = -12.70458222797108  E_corr = -1.262710969500628
+Optimization level  3 OrderedDict([('rz', 528), ('sx', 344), ('cx', 252), ('x', 14), ('measure', 12), ('barrier', 2)]) 180
+two qubit gate depth 56
+
+Starting configuration recovery iteration 0
+Batch 0 subspace dimension: 400
+Batch 1 subspace dimension: 400
+Batch 2 subspace dimension: 400
+Batch 3 subspace dimension: 400
+Batch 4 subspace dimension: 400
+Batch 5 subspace dimension: 400
+Batch 6 subspace dimension: 400
+Batch 7 subspace dimension: 400
+Batch 8 subspace dimension: 400
+Batch 9 subspace dimension: 400
+Batch 10 subspace dimension: 400
+Batch 11 subspace dimension: 400
+Batch 12 subspace dimension: 400
+Batch 13 subspace dimension: 400
+Batch 14 subspace dimension: 400
+
+
+Starting configuration recovery iteration 1
+Batch 0 subspace dimension: 400
+Batch 1 subspace dimension: 400
+Batch 2 subspace dimension: 400
+Batch 3 subspace dimension: 400
+Batch 4 subspace dimension: 400
+Batch 5 subspace dimension: 400
+Batch 6 subspace dimension: 400
+Batch 7 subspace dimension: 400
+Batch 8 subspace dimension: 400
+Batch 9 subspace dimension: 400
+Batch 10 subspace dimension: 400
+Batch 11 subspace dimension: 400
+Batch 12 subspace dimension: 400
+Batch 13 subspace dimension: 400
+Batch 14 subspace dimension: 400
+
+
+Starting configuration recovery iteration 2
+Batch 0 subspace dimension: 400
+Batch 1 subspace dimension: 400
+Batch 2 subspace dimension: 400
+Batch 3 subspace dimension: 400
+Batch 4 subspace dimension: 400
+Batch 5 subspace dimension: 400
+Batch 6 subspace dimension: 400
+Batch 7 subspace dimension: 400
+Batch 8 subspace dimension: 400
+Batch 9 subspace dimension: 400
+Batch 10 subspace dimension: 400
+Batch 11 subspace dimension: 400
+Batch 12 subspace dimension: 400
+Batch 13 subspace dimension: 400
+Batch 14 subspace dimension: 400
+
+
+Starting configuration recovery iteration 3
+Batch 0 subspace dimension: 400
+Batch 1 subspace dimension: 400
+Batch 2 subspace dimension: 400
+Batch 3 subspace dimension: 400
+Batch 4 subspace dimension: 400
+Batch 5 subspace dimension: 400
+Batch 6 subspace dimension: 400
+Batch 7 subspace dimension: 400
+Batch 8 subspace dimension: 400
+Batch 9 subspace dimension: 400
+Batch 10 subspace dimension: 400
+Batch 11 subspace dimension: 400
+Batch 12 subspace dimension: 400
+Batch 13 subspace dimension: 400
+Batch 14 subspace dimension: 400
+
+
+Starting configuration recovery iteration 4
+Batch 0 subspace dimension: 400
+Batch 1 subspace dimension: 400
+Batch 2 subspace dimension: 400
+Batch 3 subspace dimension: 400
+Batch 4 subspace dimension: 400
+Batch 5 subspace dimension: 400
+Batch 6 subspace dimension: 400
+Batch 7 subspace dimension: 400
+Batch 8 subspace dimension: 400
+Batch 9 subspace dimension: 400
+Batch 10 subspace dimension: 400
+Batch 11 subspace dimension: 400
+Batch 12 subspace dimension: 400
+Batch 13 subspace dimension: 400
+Batch 14 subspace dimension: 400
+
+las-lucj-sqd energy is -12.52295102779882

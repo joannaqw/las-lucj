@@ -1,0 +1,128 @@
+overwrite output file: KD_ls.log
+HF energy:  -2649.145550980392
+LASSCF energy:  -2649.144939539032
+CASCI with LAS orbital -2649.1461836347444
+current fragment 0
+converged SCF energy = -5.36138023585719
+converged SCF energy = -5.36138023585719
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -5.361380235857193  E_corr = 0
+nelec (3, 0)
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+norb 3
+qubits QuantumRegister(6, 'q')
+Optimization level  3 OrderedDict([('x', 3)]) 1
+two qubit gate depth 0
+current fragment 1
+converged SCF energy = -5.36194373985253
+converged SCF energy = -5.36194373985253
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -5.361943739852526  E_corr = 0
+nelec (0, 3)
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+norb 3
+qubits QuantumRegister(6, 'q')
+Optimization level  3 OrderedDict([('x', 3)]) 1
+two qubit gate depth 0
+converged SCF energy = -11.4418712584699
+converged SCF energy = -11.4418712584699
+CCSD not converged
+E(CCSD) = -12.70030722846261  E_corr = -1.258435969992761
+starting transpilation 
+transpiling circuit  0
+circuit transpiled  
+Optimization level  3 OrderedDict([('sx', 1110), ('rz', 760), ('cz', 438), ('x', 16), ('measure', 12), ('barrier', 2)]) 486
+two qubit gate depth 149
+SamplerOptions(_VERSION=2, max_execution_time=10800, environment=EnvironmentOptions(log_level='WARNING', callback=None, job_tags=None, private=False), simulator=SimulatorOptions(noise_model=Unset, seed_simulator=Unset, coupling_map=Unset, basis_gates=Unset), default_shots=100000, dynamical_decoupling=DynamicalDecouplingOptions(enable=True, sequence_type='XpXm', extra_slack_distribution=Unset, scheduling_method=Unset, skip_reset_qubits=Unset), execution=SamplerExecutionOptionsV2(init_qubits=Unset, rep_delay=Unset, meas_type=Unset), twirling=TwirlingOptions(enable_gates=True, enable_measure=True, num_randomizations=Unset, shots_per_randomization=Unset, strategy=Unset), experimental=Unset)
+submitted job d5nu2a1h2mqc739cfmag 
+job_id d5nu2a1h2mqc739cfmag

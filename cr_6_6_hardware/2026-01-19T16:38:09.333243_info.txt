@@ -1,0 +1,8 @@
+optimization_level 3 
+dynamical_decoupling True 
+twirling True 
+shots 100000 
+initial_layout [30, 31, 32, 33, 34, 35, 40, 41, 42, 43, 44, 45] 
+device_name ibm_miami 
+logfile 2026-01-19T16:38:09.333243_logfile.txt 
+circuits_per_job 100 

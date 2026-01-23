@@ -1,0 +1,7 @@
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.rohf.ROHF'>
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.hf.RHF'>
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/cr_6_6_hardware/las_lucj.py", line 136, in <module>
+    rs.append(counts)
+    ^^
+NameError: name 'rs' is not defined

@@ -1,0 +1,112 @@
+overwrite output file: KD_ls.log
+HF energy:  -2649.1455509803927
+LASSCF energy:  -2649.144939539042
+CASCI AS FCI energy -12.52295102818789
+current fragment 0
+converged SCF energy = -5.36138023585772
+converged SCF energy = -5.36138023585772
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -5.361380235857723  E_corr = 0
+nelec (3, 0)
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+norb 3
+qubits QuantumRegister(6, 'q')
+Optimization level  3 OrderedDict([('x', 3)]) 1
+two qubit gate depth 0
+current fragment 1
+converged SCF energy = -5.36194373985255
+converged SCF energy = -5.36194373985255
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -5.361943739852554  E_corr = 0
+nelec (0, 3)
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+norb 3
+qubits QuantumRegister(6, 'q')
+Optimization level  3 OrderedDict([('x', 3)]) 1
+two qubit gate depth 0
