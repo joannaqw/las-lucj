@@ -48,18 +48,18 @@ def test_ucj_frag():
     pairs_aa, pairs_ab = interaction_pairs_spin_balanced("heavy-hex", norb_small_1)
     ucj_op_small_1 = ffsim.random.random_ucj_op_spin_unbalanced(
         norb=norb_small_1,
-        n_reps=1,
+        n_reps=2,
         interaction_pairs=(pairs_aa, pairs_ab, pairs_aa),
     )
     pairs_aa, pairs_ab = interaction_pairs_spin_balanced("heavy-hex", norb_small_2)
     ucj_op_small_2 = ffsim.random.random_ucj_op_spin_unbalanced(
         norb=norb_small_2,
-        n_reps=1,
+        n_reps=2,
         interaction_pairs=(pairs_aa, pairs_ab, pairs_aa),
     )
     ucj_op_big = ffsim.random.random_ucj_op_spin_balanced(
         norb=norb,
-        n_reps=1,
+        n_reps=2,
         interaction_pairs=interaction_pairs_spin_balanced("heavy-hex", norb),
     )
 
