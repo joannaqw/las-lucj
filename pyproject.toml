@@ -10,6 +10,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "ffsim>=0.0.64",
+    "qiskit-ibm-runtime>=0.45.1",
     "qiskit[visualization]>=2.3.0",
 ]
 
