@@ -1,0 +1,98 @@
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.rohf.ROHF'>
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.hf.RHF'>
+Traceback (most recent call last):
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x14f524bc2250>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='iam.cloud.ibm.com', port=443): Max retries exceeded with url: /identity/token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x14f524bc2250>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit_ibm_runtime/accounts/account.py", line 325, in list_instances
+    result = client.search(
+             ^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/ibm_platform_services/global_search_v2.py", line 236, in search
+    request = self.prepare_request(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/ibm_cloud_sdk_core/base_service.py", line 441, in prepare_request
+    self.authenticator.authenticate(request)
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/ibm_cloud_sdk_core/authenticators/iam_request_based_authenticator.py", line 64, in authenticate
+    bearer_token = self.token_manager.get_token()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/ibm_cloud_sdk_core/token_managers/token_manager.py", line 82, in get_token
+    self.paced_request_token()
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/ibm_cloud_sdk_core/token_managers/token_manager.py", line 141, in paced_request_token
+    token_response = self.request_token()
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/ibm_cloud_sdk_core/token_managers/iam_request_based_token_manager.py", line 127, in request_token
+    response = self._request(
+               ^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/ibm_cloud_sdk_core/token_managers/jwt_token_manager.py", line 85, in _request
+    response = requests.request(
+               ^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='iam.cloud.ibm.com', port=443): Max retries exceeded with url: /identity/token (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x14f524bc2250>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/6_10/vanilla/autolayout_run1_rep1/las_lucj.py", line 95, in <module>
+    service = QiskitRuntimeService()
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit_ibm_runtime/qiskit_runtime_service.py", line 241, in __init__
+    if self._account.instance not in [inst["crn"] for inst in self.instances()]:
+                                                              ^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit_ibm_runtime/qiskit_runtime_service.py", line 1337, in instances
+    self._all_instances = self._account.list_instances()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit_ibm_runtime/accounts/account.py", line 338, in list_instances
+    raise InvalidAccountError(
+qiskit_ibm_runtime.accounts.exceptions.InvalidAccountError: 'Unable to retrieve instances. Please check that you are using a valid API token.'

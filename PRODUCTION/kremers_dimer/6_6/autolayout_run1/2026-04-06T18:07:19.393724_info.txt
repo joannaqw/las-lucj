@@ -1,0 +1,8 @@
+optimization_level 3 
+dynamical_decoupling True 
+twirling True 
+shots 100000 
+initial_layout [153, 152, 151, 138, 131, 130, 155, 139, 135, 134, 133, 119] 
+backend <IBMBackend('ibm_fez')> 
+logfile 2026-04-06T18:07:19.393724_logfile.txt 
+circuits_per_job 100 

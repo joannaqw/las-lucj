@@ -1,0 +1,22 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.rohf.ROHF'>
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.hf.RHF'>
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/30_22/optimized/1rep_hw/input.py", line 141, in <module>
+    H.submit_jobs(circuits,H.get_service())
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/30_22/optimized/1rep_hw/hardware_simulator.py", line 65, in submit_jobs
+    circuits = self.transpile_circuits(circuits,service)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/30_22/optimized/1rep_hw/hardware_simulator.py", line 38, in transpile_circuits
+    pm = generate_preset_pass_manager(backend=backend, optimization_level=self.args['optimization_level'], initial_layout=self.args['initial_layout'])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit/transpiler/preset_passmanagers/generate_preset_pass_manager.py", line 217, in generate_preset_pass_manager
+    dt = _parse_dt(dt, backend)
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/qiskit/transpiler/preset_passmanagers/generate_preset_pass_manager.py", line 376, in _parse_dt
+    dt = backend.target.dt
+         ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'target'

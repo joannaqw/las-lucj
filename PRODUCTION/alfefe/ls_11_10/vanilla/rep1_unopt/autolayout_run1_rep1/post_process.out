@@ -1,0 +1,15 @@
+overwrite output file: alfefe.log
+HF energy:  -3943.0499051411402
+LASSCF energy:  -3971.791594349915
+CASCI with LAS orbital -3971.7928667414503
+current fragment 0
+converged SCF energy = -550.042374809961
+converged SCF energy = -550.042374809961
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -550.042374809961  E_corr = -1.32738920745711e-22
+t2ab shape: (5, 1, 0, 4)
+contains NaNs: False
+contains Infs: False
+ ** On entry to DGESDD parameter number  5 had an illegal value

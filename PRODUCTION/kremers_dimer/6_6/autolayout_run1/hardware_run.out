@@ -1,0 +1,1572 @@
+overwrite output file: KD_ls.log
+HF energy:  -2649.1455509803955
+LASSCF energy:  -2649.1449395390355
+CASCI with LAS orbital -2649.146183634744
+current fragment 0
+converged SCF energy = -5.36138023585696
+converged SCF energy = -5.36138023585696
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -5.361380235856958  E_corr = 0
+nelec (3, 0)
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+norb 3
+qubits QuantumRegister(6, 'q')
+Optimization level  3 OrderedDict([('x', 3)]) 1
+two qubit gate depth 0
+current fragment 1
+converged SCF energy = -5.36194373985115
+converged SCF energy = -5.36194373985115
+
+WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
+
+E(UCCSD) = -5.361943739851153  E_corr = 0
+nelec (0, 3)
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+current fid 1.0
+norb 3
+qubits QuantumRegister(6, 'q')
+Optimization level  3 OrderedDict([('x', 3)]) 1
+two qubit gate depth 0
+converged SCF energy = -11.4418712584693
+converged SCF energy = -11.4418712584693
+E(CCSD) = -12.70458192286649  E_corr = -1.262710664397194
+backend <IBMBackend('ibm_fez')>
+starting transpilation 
+transpiling circuit  0
+circuit transpiled  
+Optimization level  3 OrderedDict([('sx', 1240), ('rz', 769), ('cz', 498), ('x', 16), ('measure', 12), ('barrier', 2)]) 570
+two qubit gate depth 184
+SamplerOptions(_VERSION=2, max_execution_time=10800, environment=EnvironmentOptions(log_level='WARNING', job_tags=None, private=False), simulator=SimulatorOptions(noise_model=Unset, seed_simulator=Unset, coupling_map=Unset, basis_gates=Unset), default_shots=100000, dynamical_decoupling=DynamicalDecouplingOptions(enable=True, sequence_type='XpXm', extra_slack_distribution=Unset, scheduling_method=Unset, skip_reset_qubits=Unset), execution=SamplerExecutionOptionsV2(init_qubits=Unset, rep_delay=Unset, meas_type=Unset), twirling=TwirlingOptions(enable_gates=True, enable_measure=True, num_randomizations=Unset, shots_per_randomization=Unset, strategy=Unset), experimental=Unset)
+submitted job d7aje9oeecps73d9l2d0 
+job_id d7aje9oeecps73d9l2d0
+num_alpha 3
+num_beta 3
+
+Starting configuration recovery iteration 0
+batches [array([[False, False,  True, ...,  True,  True, False],
+       [ True, False, False, ...,  True,  True, False],
+       [False, False,  True, ...,  True, False, False],
+       ...,
+       [False, False, False, ...,  True, False, False],
+       [ True,  True, False, ..., False, False,  True],
+       [ True, False,  True, ..., False,  True,  True]]), array([[False,  True,  True, ...,  True, False,  True],
+       [False, False,  True, ...,  True,  True, False],
+       [ True, False, False, ..., False,  True,  True],
+       ...,
+       [False, False, False, ..., False,  True, False],
+       [ True, False, False, ..., False,  True, False],
+       [False,  True,  True, ..., False,  True, False]]), array([[False, False,  True, ..., False,  True,  True],
+       [ True,  True,  True, ...,  True, False, False],
+       [False, False,  True, ..., False,  True, False],
+       ...,
+       [ True, False,  True, ...,  True, False,  True],
+       [False,  True,  True, ...,  True, False, False],
+       [ True, False,  True, ...,  True,  True,  True]]), array([[ True, False,  True, ...,  True,  True, False],
+       [False, False, False, ...,  True, False,  True],
+       [ True,  True, False, ..., False,  True,  True],
+       ...,
+       [False,  True, False, ...,  True,  True, False],
+       [False,  True, False, ...,  True, False,  True],
+       [ True, False,  True, ..., False, False,  True]]), array([[False, False,  True, ...,  True,  True,  True],
+       [ True, False,  True, ...,  True,  True,  True],
+       [False,  True, False, ...,  True, False, False],
+       ...,
+       [False, False,  True, ..., False, False, False],
+       [False, False,  True, ...,  True,  True,  True],
+       [ True, False,  True, ...,  True, False,  True]]), array([[ True, False,  True, ..., False,  True,  True],
+       [ True, False,  True, ...,  True, False, False],
+       [ True, False,  True, ..., False,  True,  True],
+       ...,
+       [ True,  True, False, ..., False,  True, False],
+       [False,  True, False, ...,  True,  True, False],
+       [False,  True,  True, ...,  True, False,  True]]), array([[False, False,  True, ..., False,  True, False],
+       [ True, False, False, ...,  True,  True,  True],
+       [ True, False, False, ...,  True, False,  True],
+       ...,
+       [ True,  True, False, ..., False,  True,  True],
+       [ True, False, False, ..., False,  True,  True],
+       [False,  True, False, ..., False,  True, False]]), array([[False,  True, False, ..., False, False,  True],
+       [ True, False,  True, ...,  True, False, False],
+       [ True, False,  True, ..., False, False,  True],
+       ...,
+       [ True, False, False, ...,  True, False,  True],
+       [ True,  True, False, ...,  True, False,  True],
+       [False,  True, False, ..., False,  True,  True]]), array([[False, False, False, ...,  True, False,  True],
+       [False,  True, False, ...,  True, False, False],
+       [ True, False,  True, ...,  True,  True, False],
+       ...,
+       [False, False, False, ..., False,  True,  True],
+       [False,  True, False, ..., False, False,  True],
+       [False, False,  True, ...,  True, False,  True]]), array([[False, False,  True, ...,  True, False, False],
+       [False,  True,  True, ...,  True, False,  True],
+       [ True, False, False, ...,  True, False,  True],
+       ...,
+       [ True,  True, False, ..., False, False,  True],
+       [False,  True, False, ..., False,  True, False],
+       [False,  True,  True, ...,  True, False,  True]])]
+current batch [[False False  True ...  True  True False]
+ [ True False False ...  True  True False]
+ [False False  True ...  True False False]
+ ...
+ [False False False ...  True False False]
+ [ True  True False ... False False  True]
+ [ True False  True ... False  True  True]]
+Batch 0 subspace dimension: 400
+current batch [[False  True  True ...  True False  True]
+ [False False  True ...  True  True False]
+ [ True False False ... False  True  True]
+ ...
+ [False False False ... False  True False]
+ [ True False False ... False  True False]
+ [False  True  True ... False  True False]]
+Batch 1 subspace dimension: 400
+current batch [[False False  True ... False  True  True]
+ [ True  True  True ...  True False False]
+ [False False  True ... False  True False]
+ ...
+ [ True False  True ...  True False  True]
+ [False  True  True ...  True False False]
+ [ True False  True ...  True  True  True]]
+Batch 2 subspace dimension: 400
+current batch [[ True False  True ...  True  True False]
+ [False False False ...  True False  True]
+ [ True  True False ... False  True  True]
+ ...
+ [False  True False ...  True  True False]
+ [False  True False ...  True False  True]
+ [ True False  True ... False False  True]]
+Batch 3 subspace dimension: 400
+current batch [[False False  True ...  True  True  True]
+ [ True False  True ...  True  True  True]
+ [False  True False ...  True False False]
+ ...
+ [False False  True ... False False False]
+ [False False  True ...  True  True  True]
+ [ True False  True ...  True False  True]]
+Batch 4 subspace dimension: 400
+current batch [[ True False  True ... False  True  True]
+ [ True False  True ...  True False False]
+ [ True False  True ... False  True  True]
+ ...
+ [ True  True False ... False  True False]
+ [False  True False ...  True  True False]
+ [False  True  True ...  True False  True]]
+Batch 5 subspace dimension: 400
+current batch [[False False  True ... False  True False]
+ [ True False False ...  True  True  True]
+ [ True False False ...  True False  True]
+ ...
+ [ True  True False ... False  True  True]
+ [ True False False ... False  True  True]
+ [False  True False ... False  True False]]
+Batch 6 subspace dimension: 400
+current batch [[False  True False ... False False  True]
+ [ True False  True ...  True False False]
+ [ True False  True ... False False  True]
+ ...
+ [ True False False ...  True False  True]
+ [ True  True False ...  True False  True]
+ [False  True False ... False  True  True]]
+Batch 7 subspace dimension: 400
+current batch [[False False False ...  True False  True]
+ [False  True False ...  True False False]
+ [ True False  True ...  True  True False]
+ ...
+ [False False False ... False  True  True]
+ [False  True False ... False False  True]
+ [False False  True ...  True False  True]]
+Batch 8 subspace dimension: 400
+current batch [[False False  True ...  True False False]
+ [False  True  True ...  True False  True]
+ [ True False False ...  True False  True]
+ ...
+ [ True  True False ... False False  True]
+ [False  True False ... False  True False]
+ [False  True  True ...  True False  True]]
+Batch 9 subspace dimension: 400
+
+
+Starting configuration recovery iteration 1
+batches [array([[False, False,  True, ...,  True, False,  True],
+       [ True,  True, False, ...,  True, False,  True],
+       [False,  True, False, ...,  True, False, False],
+       ...,
+       [ True,  True,  True, ..., False, False, False],
+       [ True, False,  True, ..., False, False, False],
+       [ True, False, False, ...,  True,  True, False]]), array([[False, False, False, ..., False, False, False],
+       [ True, False, False, ..., False, False,  True],
+       [ True,  True, False, ...,  True,  True,  True],
+       ...,
+       [ True,  True, False, ...,  True, False, False],
+       [ True,  True,  True, ..., False,  True, False],
+       [ True,  True, False, ...,  True, False,  True]]), array([[ True,  True, False, ..., False,  True, False],
+       [ True,  True, False, ..., False, False,  True],
+       [False,  True,  True, ..., False, False,  True],
+       ...,
+       [False, False,  True, ..., False,  True, False],
+       [ True, False,  True, ..., False,  True,  True],
+       [False,  True, False, ...,  True, False,  True]]), array([[ True, False,  True, ..., False, False,  True],
+       [False,  True, False, ...,  True, False,  True],
+       [False, False,  True, ...,  True,  True, False],
+       ...,
+       [ True, False, False, ...,  True, False, False],
+       [False,  True,  True, ...,  True, False, False],
+       [ True,  True, False, ...,  True,  True,  True]]), array([[ True,  True, False, ...,  True, False, False],
+       [ True,  True, False, ...,  True, False,  True],
+       [False,  True,  True, ...,  True,  True, False],
+       ...,
+       [False, False,  True, ...,  True,  True,  True],
+       [False,  True, False, ..., False,  True, False],
+       [False,  True, False, ...,  True, False,  True]]), array([[False,  True, False, ...,  True, False, False],
+       [False,  True,  True, ...,  True, False, False],
+       [ True,  True, False, ..., False,  True, False],
+       ...,
+       [ True,  True, False, ...,  True, False, False],
+       [False, False,  True, ..., False,  True, False],
+       [False, False,  True, ...,  True, False,  True]]), array([[ True,  True, False, ...,  True, False,  True],
+       [ True,  True, False, ..., False,  True,  True],
+       [False,  True,  True, ..., False,  True, False],
+       ...,
+       [ True, False,  True, ..., False,  True, False],
+       [False,  True, False, ..., False, False,  True],
+       [ True, False,  True, ..., False,  True, False]]), array([[False,  True, False, ..., False, False, False],
+       [False, False, False, ..., False,  True,  True],
+       [False,  True,  True, ..., False, False,  True],
+       ...,
+       [False, False,  True, ..., False, False, False],
+       [ True,  True, False, ..., False,  True, False],
+       [False,  True, False, ..., False,  True, False]]), array([[ True,  True, False, ..., False, False,  True],
+       [False,  True,  True, ..., False,  True, False],
+       [ True,  True, False, ..., False,  True, False],
+       ...,
+       [ True, False, False, ...,  True, False, False],
+       [False,  True, False, ...,  True,  True, False],
+       [False, False, False, ..., False, False,  True]]), array([[ True, False, False, ..., False,  True,  True],
+       [False, False, False, ...,  True,  True, False],
+       [ True,  True, False, ...,  True, False, False],
+       ...,
+       [ True,  True, False, ...,  True,  True, False],
+       [False,  True, False, ..., False,  True,  True],
+       [False,  True,  True, ..., False,  True, False]])]
+current batch [[False False  True ...  True False  True]
+ [ True  True False ...  True False  True]
+ [False  True False ...  True False False]
+ ...
+ [ True  True  True ... False False False]
+ [ True False  True ... False False False]
+ [ True False False ...  True  True False]]
+Batch 0 subspace dimension: 400
+current batch [[False False False ... False False False]
+ [ True False False ... False False  True]
+ [ True  True False ...  True  True  True]
+ ...
+ [ True  True False ...  True False False]
+ [ True  True  True ... False  True False]
+ [ True  True False ...  True False  True]]
+Batch 1 subspace dimension: 400
+current batch [[ True  True False ... False  True False]
+ [ True  True False ... False False  True]
+ [False  True  True ... False False  True]
+ ...
+ [False False  True ... False  True False]
+ [ True False  True ... False  True  True]
+ [False  True False ...  True False  True]]
+Batch 2 subspace dimension: 400
+current batch [[ True False  True ... False False  True]
+ [False  True False ...  True False  True]
+ [False False  True ...  True  True False]
+ ...
+ [ True False False ...  True False False]
+ [False  True  True ...  True False False]
+ [ True  True False ...  True  True  True]]
+Batch 3 subspace dimension: 400
+current batch [[ True  True False ...  True False False]
+ [ True  True False ...  True False  True]
+ [False  True  True ...  True  True False]
+ ...
+ [False False  True ...  True  True  True]
+ [False  True False ... False  True False]
+ [False  True False ...  True False  True]]
+Batch 4 subspace dimension: 400
+current batch [[False  True False ...  True False False]
+ [False  True  True ...  True False False]
+ [ True  True False ... False  True False]
+ ...
+ [ True  True False ...  True False False]
+ [False False  True ... False  True False]
+ [False False  True ...  True False  True]]
+Batch 5 subspace dimension: 400
+current batch [[ True  True False ...  True False  True]
+ [ True  True False ... False  True  True]
+ [False  True  True ... False  True False]
+ ...
+ [ True False  True ... False  True False]
+ [False  True False ... False False  True]
+ [ True False  True ... False  True False]]
+Batch 6 subspace dimension: 400
+current batch [[False  True False ... False False False]
+ [False False False ... False  True  True]
+ [False  True  True ... False False  True]
+ ...
+ [False False  True ... False False False]
+ [ True  True False ... False  True False]
+ [False  True False ... False  True False]]
+Batch 7 subspace dimension: 400
+current batch [[ True  True False ... False False  True]
+ [False  True  True ... False  True False]
+ [ True  True False ... False  True False]
+ ...
+ [ True False False ...  True False False]
+ [False  True False ...  True  True False]
+ [False False False ... False False  True]]
+Batch 8 subspace dimension: 400
+current batch [[ True False False ... False  True  True]
+ [False False False ...  True  True False]
+ [ True  True False ...  True False False]
+ ...
+ [ True  True False ...  True  True False]
+ [False  True False ... False  True  True]
+ [False  True  True ... False  True False]]
+Batch 9 subspace dimension: 400
+
+
+Starting configuration recovery iteration 2
+batches [array([[ True, False, False, ...,  True, False,  True],
+       [False,  True, False, ...,  True, False,  True],
+       [ True, False,  True, ..., False, False, False],
+       ...,
+       [False,  True, False, ...,  True, False, False],
+       [False, False,  True, ..., False,  True,  True],
+       [False, False, False, ..., False,  True, False]]), array([[ True,  True,  True, ..., False, False,  True],
+       [ True, False, False, ..., False, False,  True],
+       [False,  True, False, ...,  True, False, False],
+       ...,
+       [False, False, False, ...,  True, False, False],
+       [False,  True,  True, ...,  True,  True, False],
+       [False,  True, False, ...,  True, False,  True]]), array([[ True,  True, False, ..., False, False,  True],
+       [ True, False, False, ..., False,  True,  True],
+       [ True,  True, False, ..., False, False,  True],
+       ...,
+       [ True, False,  True, ..., False,  True, False],
+       [False,  True, False, ...,  True,  True,  True],
+       [False, False, False, ...,  True,  True, False]]), array([[False, False,  True, ..., False,  True,  True],
+       [ True,  True,  True, ..., False,  True, False],
+       [ True, False, False, ..., False, False,  True],
+       ...,
+       [False,  True,  True, ..., False,  True,  True],
+       [ True,  True,  True, ..., False, False,  True],
+       [ True, False, False, ..., False, False,  True]]), array([[False,  True, False, ..., False,  True, False],
+       [False,  True, False, ...,  True,  True, False],
+       [ True, False, False, ...,  True,  True,  True],
+       ...,
+       [False,  True,  True, ...,  True,  True,  True],
+       [False, False,  True, ...,  True, False,  True],
+       [ True, False,  True, ..., False,  True,  True]]), array([[False,  True,  True, ..., False, False, False],
+       [ True, False,  True, ...,  True, False,  True],
+       [ True, False,  True, ...,  True,  True,  True],
+       ...,
+       [False,  True,  True, ..., False,  True,  True],
+       [False,  True,  True, ...,  True, False, False],
+       [False,  True,  True, ..., False,  True, False]]), array([[False, False, False, ...,  True, False,  True],
+       [False,  True,  True, ..., False, False,  True],
+       [False, False,  True, ...,  True,  True,  True],
+       ...,
+       [ True,  True, False, ..., False,  True, False],
+       [ True, False,  True, ...,  True,  True, False],
+       [False,  True, False, ..., False,  True,  True]]), array([[False, False, False, ..., False,  True,  True],
+       [False,  True,  True, ...,  True,  True, False],
+       [False,  True, False, ...,  True, False, False],
+       ...,
+       [False,  True, False, ...,  True,  True, False],
+       [ True,  True, False, ...,  True,  True,  True],
+       [ True, False,  True, ...,  True,  True, False]]), array([[False,  True,  True, ..., False, False,  True],
+       [ True,  True, False, ..., False, False, False],
+       [False,  True,  True, ...,  True, False, False],
+       ...,
+       [ True, False,  True, ..., False, False, False],
+       [ True, False, False, ...,  True, False,  True],
+       [ True, False,  True, ..., False, False,  True]]), array([[False,  True,  True, ...,  True,  True, False],
+       [False,  True, False, ..., False, False,  True],
+       [ True,  True, False, ...,  True, False, False],
+       ...,
+       [ True,  True, False, ..., False, False,  True],
+       [ True, False, False, ...,  True, False,  True],
+       [ True, False, False, ...,  True, False,  True]])]
+current batch [[ True False False ...  True False  True]
+ [False  True False ...  True False  True]
+ [ True False  True ... False False False]
+ ...
+ [False  True False ...  True False False]
+ [False False  True ... False  True  True]
+ [False False False ... False  True False]]
+Batch 0 subspace dimension: 400
+current batch [[ True  True  True ... False False  True]
+ [ True False False ... False False  True]
+ [False  True False ...  True False False]
+ ...
+ [False False False ...  True False False]
+ [False  True  True ...  True  True False]
+ [False  True False ...  True False  True]]
+Batch 1 subspace dimension: 400
+current batch [[ True  True False ... False False  True]
+ [ True False False ... False  True  True]
+ [ True  True False ... False False  True]
+ ...
+ [ True False  True ... False  True False]
+ [False  True False ...  True  True  True]
+ [False False False ...  True  True False]]
+Batch 2 subspace dimension: 400
+current batch [[False False  True ... False  True  True]
+ [ True  True  True ... False  True False]
+ [ True False False ... False False  True]
+ ...
+ [False  True  True ... False  True  True]
+ [ True  True  True ... False False  True]
+ [ True False False ... False False  True]]
+Batch 3 subspace dimension: 400
+current batch [[False  True False ... False  True False]
+ [False  True False ...  True  True False]
+ [ True False False ...  True  True  True]
+ ...
+ [False  True  True ...  True  True  True]
+ [False False  True ...  True False  True]
+ [ True False  True ... False  True  True]]
+Batch 4 subspace dimension: 400
+current batch [[False  True  True ... False False False]
+ [ True False  True ...  True False  True]
+ [ True False  True ...  True  True  True]
+ ...
+ [False  True  True ... False  True  True]
+ [False  True  True ...  True False False]
+ [False  True  True ... False  True False]]
+Batch 5 subspace dimension: 400
+current batch [[False False False ...  True False  True]
+ [False  True  True ... False False  True]
+ [False False  True ...  True  True  True]
+ ...
+ [ True  True False ... False  True False]
+ [ True False  True ...  True  True False]
+ [False  True False ... False  True  True]]
+Batch 6 subspace dimension: 400
+current batch [[False False False ... False  True  True]
+ [False  True  True ...  True  True False]
+ [False  True False ...  True False False]
+ ...
+ [False  True False ...  True  True False]
+ [ True  True False ...  True  True  True]
+ [ True False  True ...  True  True False]]
+Batch 7 subspace dimension: 400
+current batch [[False  True  True ... False False  True]
+ [ True  True False ... False False False]
+ [False  True  True ...  True False False]
+ ...
+ [ True False  True ... False False False]
+ [ True False False ...  True False  True]
+ [ True False  True ... False False  True]]
+Batch 8 subspace dimension: 400
+current batch [[False  True  True ...  True  True False]
+ [False  True False ... False False  True]
+ [ True  True False ...  True False False]
+ ...
+ [ True  True False ... False False  True]
+ [ True False False ...  True False  True]
+ [ True False False ...  True False  True]]
+Batch 9 subspace dimension: 400
+
+
+Starting configuration recovery iteration 3
+batches [array([[False,  True,  True, ..., False, False,  True],
+       [False,  True,  True, ...,  True, False,  True],
+       [ True, False, False, ..., False,  True,  True],
+       ...,
+       [False,  True,  True, ..., False,  True,  True],
+       [False, False,  True, ..., False,  True, False],
+       [ True, False,  True, ..., False,  True, False]]), array([[ True,  True, False, ...,  True, False, False],
+       [ True, False, False, ..., False,  True, False],
+       [False, False,  True, ...,  True,  True, False],
+       ...,
+       [ True, False,  True, ..., False,  True, False],
+       [ True, False, False, ..., False,  True,  True],
+       [False, False,  True, ...,  True,  True, False]]), array([[False, False, False, ..., False, False,  True],
+       [False, False,  True, ...,  True, False, False],
+       [False,  True,  True, ..., False, False,  True],
+       ...,
+       [False, False,  True, ..., False,  True,  True],
+       [False, False,  True, ..., False, False, False],
+       [False,  True,  True, ...,  True,  True,  True]]), array([[False,  True,  True, ...,  True, False, False],
+       [False,  True,  True, ..., False,  True,  True],
+       [ True, False, False, ...,  True,  True, False],
+       ...,
+       [False,  True, False, ...,  True,  True, False],
+       [False, False,  True, ..., False, False,  True],
+       [ True, False,  True, ..., False, False,  True]]), array([[False,  True,  True, ...,  True, False,  True],
+       [False, False, False, ...,  True,  True, False],
+       [False, False,  True, ..., False,  True,  True],
+       ...,
+       [ True, False, False, ..., False,  True,  True],
+       [ True,  True, False, ..., False, False,  True],
+       [ True, False,  True, ...,  True, False, False]]), array([[False, False,  True, ...,  True,  True,  True],
+       [False,  True, False, ..., False, False,  True],
+       [ True, False,  True, ...,  True, False,  True],
+       ...,
+       [ True, False, False, ...,  True,  True,  True],
+       [ True,  True, False, ...,  True, False,  True],
+       [False,  True, False, ..., False,  True,  True]]), array([[ True, False,  True, ...,  True, False,  True],
+       [ True,  True,  True, ...,  True, False, False],
+       [False, False,  True, ...,  True, False, False],
+       ...,
+       [ True, False, False, ..., False, False, False],
+       [ True, False,  True, ..., False,  True, False],
+       [ True,  True, False, ..., False, False,  True]]), array([[False,  True,  True, ...,  True,  True, False],
+       [False, False, False, ...,  True,  True,  True],
+       [False,  True,  True, ..., False,  True,  True],
+       ...,
+       [False, False,  True, ..., False,  True, False],
+       [ True, False, False, ...,  True,  True,  True],
+       [False,  True, False, ..., False, False, False]]), array([[ True, False, False, ...,  True,  True, False],
+       [False, False, False, ..., False, False,  True],
+       [ True,  True, False, ...,  True, False,  True],
+       ...,
+       [False,  True, False, ...,  True, False, False],
+       [ True, False, False, ...,  True, False,  True],
+       [ True,  True, False, ..., False, False,  True]]), array([[False,  True,  True, ..., False, False, False],
+       [ True,  True, False, ..., False, False, False],
+       [False,  True, False, ...,  True, False,  True],
+       ...,
+       [False, False,  True, ...,  True, False,  True],
+       [ True, False, False, ...,  True, False, False],
+       [False, False,  True, ...,  True, False, False]])]
+current batch [[False  True  True ... False False  True]
+ [False  True  True ...  True False  True]
+ [ True False False ... False  True  True]
+ ...
+ [False  True  True ... False  True  True]
+ [False False  True ... False  True False]
+ [ True False  True ... False  True False]]
+Batch 0 subspace dimension: 400
+current batch [[ True  True False ...  True False False]
+ [ True False False ... False  True False]
+ [False False  True ...  True  True False]
+ ...
+ [ True False  True ... False  True False]
+ [ True False False ... False  True  True]
+ [False False  True ...  True  True False]]
+Batch 1 subspace dimension: 400
+current batch [[False False False ... False False  True]
+ [False False  True ...  True False False]
+ [False  True  True ... False False  True]
+ ...
+ [False False  True ... False  True  True]
+ [False False  True ... False False False]
+ [False  True  True ...  True  True  True]]
+Batch 2 subspace dimension: 400
+current batch [[False  True  True ...  True False False]
+ [False  True  True ... False  True  True]
+ [ True False False ...  True  True False]
+ ...
+ [False  True False ...  True  True False]
+ [False False  True ... False False  True]
+ [ True False  True ... False False  True]]
+Batch 3 subspace dimension: 400
+current batch [[False  True  True ...  True False  True]
+ [False False False ...  True  True False]
+ [False False  True ... False  True  True]
+ ...
+ [ True False False ... False  True  True]
+ [ True  True False ... False False  True]
+ [ True False  True ...  True False False]]
+Batch 4 subspace dimension: 400
+current batch [[False False  True ...  True  True  True]
+ [False  True False ... False False  True]
+ [ True False  True ...  True False  True]
+ ...
+ [ True False False ...  True  True  True]
+ [ True  True False ...  True False  True]
+ [False  True False ... False  True  True]]
+Batch 5 subspace dimension: 400
+current batch [[ True False  True ...  True False  True]
+ [ True  True  True ...  True False False]
+ [False False  True ...  True False False]
+ ...
+ [ True False False ... False False False]
+ [ True False  True ... False  True False]
+ [ True  True False ... False False  True]]
+Batch 6 subspace dimension: 400
+current batch [[False  True  True ...  True  True False]
+ [False False False ...  True  True  True]
+ [False  True  True ... False  True  True]
+ ...
+ [False False  True ... False  True False]
+ [ True False False ...  True  True  True]
+ [False  True False ... False False False]]
+Batch 7 subspace dimension: 400
+current batch [[ True False False ...  True  True False]
+ [False False False ... False False  True]
+ [ True  True False ...  True False  True]
+ ...
+ [False  True False ...  True False False]
+ [ True False False ...  True False  True]
+ [ True  True False ... False False  True]]
+Batch 8 subspace dimension: 400
+current batch [[False  True  True ... False False False]
+ [ True  True False ... False False False]
+ [False  True False ...  True False  True]
+ ...
+ [False False  True ...  True False  True]
+ [ True False False ...  True False False]
+ [False False  True ...  True False False]]
+Batch 9 subspace dimension: 400
+
+
+Starting configuration recovery iteration 4
+batches [array([[False,  True, False, ...,  True, False, False],
+       [False,  True, False, ...,  True,  True, False],
+       [ True,  True,  True, ..., False,  True,  True],
+       ...,
+       [False,  True, False, ..., False,  True,  True],
+       [False,  True,  True, ...,  True, False,  True],
+       [ True,  True,  True, ..., False,  True, False]]), array([[False,  True, False, ...,  True,  True, False],
+       [False, False,  True, ..., False,  True,  True],
+       [False,  True, False, ...,  True,  True, False],
+       ...,
+       [ True, False,  True, ..., False,  True,  True],
+       [ True, False, False, ..., False, False,  True],
+       [False,  True, False, ..., False, False, False]]), array([[ True,  True, False, ...,  True,  True,  True],
+       [ True,  True, False, ...,  True, False,  True],
+       [False,  True, False, ...,  True,  True,  True],
+       ...,
+       [False, False,  True, ..., False,  True,  True],
+       [ True, False, False, ...,  True,  True, False],
+       [False,  True,  True, ...,  True, False, False]]), array([[ True,  True, False, ...,  True, False, False],
+       [ True,  True, False, ..., False,  True, False],
+       [False, False,  True, ..., False, False,  True],
+       ...,
+       [False, False,  True, ..., False,  True,  True],
+       [ True,  True, False, ..., False,  True,  True],
+       [ True, False,  True, ..., False,  True, False]]), array([[False, False,  True, ..., False, False,  True],
+       [False,  True,  True, ...,  True, False, False],
+       [False,  True,  True, ...,  True, False,  True],
+       ...,
+       [ True,  True, False, ...,  True,  True, False],
+       [ True,  True, False, ..., False,  True,  True],
+       [False,  True, False, ...,  True, False,  True]]), array([[ True,  True, False, ...,  True, False,  True],
+       [False,  True,  True, ...,  True, False, False],
+       [ True,  True, False, ...,  True, False, False],
+       ...,
+       [False,  True,  True, ...,  True,  True, False],
+       [ True,  True, False, ..., False,  True, False],
+       [ True,  True, False, ...,  True, False,  True]]), array([[False, False,  True, ..., False,  True, False],
+       [ True,  True, False, ...,  True, False, False],
+       [ True, False, False, ..., False,  True,  True],
+       ...,
+       [ True, False,  True, ...,  True, False, False],
+       [False,  True,  True, ..., False,  True,  True],
+       [ True,  True, False, ..., False,  True, False]]), array([[False,  True, False, ...,  True, False, False],
+       [False,  True, False, ...,  True, False,  True],
+       [ True, False,  True, ..., False,  True, False],
+       ...,
+       [ True, False, False, ..., False, False, False],
+       [ True,  True,  True, ..., False, False,  True],
+       [False,  True,  True, ..., False,  True,  True]]), array([[False, False,  True, ..., False,  True, False],
+       [False,  True,  True, ...,  True,  True, False],
+       [False, False, False, ...,  True, False, False],
+       ...,
+       [False, False,  True, ...,  True,  True, False],
+       [ True, False,  True, ...,  True, False, False],
+       [False,  True,  True, ...,  True, False,  True]]), array([[ True,  True,  True, ..., False,  True, False],
+       [ True, False, False, ...,  True, False,  True],
+       [False, False,  True, ..., False,  True,  True],
+       ...,
+       [False,  True,  True, ..., False,  True,  True],
+       [False,  True, False, ...,  True, False,  True],
+       [False,  True, False, ..., False,  True,  True]])]
+current batch [[False  True False ...  True False False]
+ [False  True False ...  True  True False]
+ [ True  True  True ... False  True  True]
+ ...
+ [False  True False ... False  True  True]
+ [False  True  True ...  True False  True]
+ [ True  True  True ... False  True False]]
+Batch 0 subspace dimension: 400
+current batch [[False  True False ...  True  True False]
+ [False False  True ... False  True  True]
+ [False  True False ...  True  True False]
+ ...
+ [ True False  True ... False  True  True]
+ [ True False False ... False False  True]
+ [False  True False ... False False False]]
+Batch 1 subspace dimension: 400
+current batch [[ True  True False ...  True  True  True]
+ [ True  True False ...  True False  True]
+ [False  True False ...  True  True  True]
+ ...
+ [False False  True ... False  True  True]
+ [ True False False ...  True  True False]
+ [False  True  True ...  True False False]]
+Batch 2 subspace dimension: 400
+current batch [[ True  True False ...  True False False]
+ [ True  True False ... False  True False]
+ [False False  True ... False False  True]
+ ...
+ [False False  True ... False  True  True]
+ [ True  True False ... False  True  True]
+ [ True False  True ... False  True False]]
+Batch 3 subspace dimension: 400
+current batch [[False False  True ... False False  True]
+ [False  True  True ...  True False False]
+ [False  True  True ...  True False  True]
+ ...
+ [ True  True False ...  True  True False]
+ [ True  True False ... False  True  True]
+ [False  True False ...  True False  True]]
+Batch 4 subspace dimension: 400
+current batch [[ True  True False ...  True False  True]
+ [False  True  True ...  True False False]
+ [ True  True False ...  True False False]
+ ...
+ [False  True  True ...  True  True False]
+ [ True  True False ... False  True False]
+ [ True  True False ...  True False  True]]
+Batch 5 subspace dimension: 400
+current batch [[False False  True ... False  True False]
+ [ True  True False ...  True False False]
+ [ True False False ... False  True  True]
+ ...
+ [ True False  True ...  True False False]
+ [False  True  True ... False  True  True]
+ [ True  True False ... False  True False]]
+Batch 6 subspace dimension: 400
+current batch [[False  True False ...  True False False]
+ [False  True False ...  True False  True]
+ [ True False  True ... False  True False]
+ ...
+ [ True False False ... False False False]
+ [ True  True  True ... False False  True]
+ [False  True  True ... False  True  True]]
+Batch 7 subspace dimension: 400
+current batch [[False False  True ... False  True False]
+ [False  True  True ...  True  True False]
+ [False False False ...  True False False]
+ ...
+ [False False  True ...  True  True False]
+ [ True False  True ...  True False False]
+ [False  True  True ...  True False  True]]
+Batch 8 subspace dimension: 400
+current batch [[ True  True  True ... False  True False]
+ [ True False False ...  True False  True]
+ [False False  True ... False  True  True]
+ ...
+ [False  True  True ... False  True  True]
+ [False  True False ...  True False  True]
+ [False  True False ... False  True  True]]
+Batch 9 subspace dimension: 400
+
+
+Starting configuration recovery iteration 5
+batches [array([[ True,  True,  True, ...,  True, False, False],
+       [False,  True, False, ...,  True, False,  True],
+       [False,  True,  True, ...,  True,  True, False],
+       ...,
+       [ True, False,  True, ..., False,  True, False],
+       [False,  True, False, ..., False, False,  True],
+       [False,  True,  True, ...,  True,  True,  True]]), array([[False,  True,  True, ...,  True,  True, False],
+       [False,  True, False, ..., False,  True, False],
+       [ True,  True,  True, ..., False,  True,  True],
+       ...,
+       [ True, False,  True, ..., False, False,  True],
+       [False,  True,  True, ...,  True, False, False],
+       [False, False,  True, ..., False,  True, False]]), array([[False,  True, False, ...,  True,  True, False],
+       [False, False,  True, ...,  True,  True, False],
+       [ True,  True, False, ..., False, False,  True],
+       ...,
+       [False,  True,  True, ...,  True, False,  True],
+       [False,  True, False, ..., False, False, False],
+       [False,  True, False, ...,  True, False,  True]]), array([[False,  True, False, ..., False,  True,  True],
+       [ True, False, False, ...,  True,  True, False],
+       [False,  True, False, ..., False, False,  True],
+       ...,
+       [False, False,  True, ..., False, False, False],
+       [False, False,  True, ...,  True,  True, False],
+       [False,  True,  True, ...,  True, False,  True]]), array([[False,  True, False, ..., False,  True,  True],
+       [False,  True, False, ...,  True,  True, False],
+       [ True, False,  True, ..., False, False,  True],
+       ...,
+       [False, False, False, ...,  True, False,  True],
+       [ True, False, False, ...,  True, False,  True],
+       [False, False,  True, ...,  True,  True, False]]), array([[ True, False, False, ...,  True, False, False],
+       [ True, False, False, ..., False, False,  True],
+       [False,  True,  True, ..., False, False,  True],
+       ...,
+       [False,  True,  True, ..., False,  True, False],
+       [False, False, False, ..., False, False,  True],
+       [False, False,  True, ...,  True,  True,  True]]), array([[ True, False, False, ...,  True, False, False],
+       [ True,  True, False, ..., False,  True,  True],
+       [False, False,  True, ..., False,  True, False],
+       ...,
+       [ True, False, False, ...,  True, False, False],
+       [False,  True,  True, ..., False,  True,  True],
+       [False, False,  True, ..., False, False, False]]), array([[False, False, False, ..., False,  True,  True],
+       [False,  True, False, ...,  True, False,  True],
+       [False, False,  True, ..., False, False,  True],
+       ...,
+       [False, False,  True, ..., False,  True, False],
+       [ True,  True, False, ...,  True, False,  True],
+       [False, False,  True, ...,  True, False, False]]), array([[ True, False, False, ...,  True, False, False],
+       [ True, False, False, ...,  True,  True, False],
+       [False,  True, False, ...,  True, False, False],
+       ...,
+       [ True,  True, False, ...,  True, False,  True],
+       [ True, False, False, ..., False, False,  True],
+       [False,  True,  True, ...,  True,  True,  True]]), array([[False,  True, False, ...,  True, False, False],
+       [False,  True,  True, ...,  True, False, False],
+       [False,  True, False, ...,  True,  True, False],
+       ...,
+       [ True, False, False, ...,  True,  True, False],
+       [False, False,  True, ...,  True,  True,  True],
+       [False,  True,  True, ...,  True,  True,  True]])]
+current batch [[ True  True  True ...  True False False]
+ [False  True False ...  True False  True]
+ [False  True  True ...  True  True False]
+ ...
+ [ True False  True ... False  True False]
+ [False  True False ... False False  True]
+ [False  True  True ...  True  True  True]]
+Batch 0 subspace dimension: 400
+current batch [[False  True  True ...  True  True False]
+ [False  True False ... False  True False]
+ [ True  True  True ... False  True  True]
+ ...
+ [ True False  True ... False False  True]
+ [False  True  True ...  True False False]
+ [False False  True ... False  True False]]
+Batch 1 subspace dimension: 400
+current batch [[False  True False ...  True  True False]
+ [False False  True ...  True  True False]
+ [ True  True False ... False False  True]
+ ...
+ [False  True  True ...  True False  True]
+ [False  True False ... False False False]
+ [False  True False ...  True False  True]]
+Batch 2 subspace dimension: 400
+current batch [[False  True False ... False  True  True]
+ [ True False False ...  True  True False]
+ [False  True False ... False False  True]
+ ...
+ [False False  True ... False False False]
+ [False False  True ...  True  True False]
+ [False  True  True ...  True False  True]]
+Batch 3 subspace dimension: 400
+current batch [[False  True False ... False  True  True]
+ [False  True False ...  True  True False]
+ [ True False  True ... False False  True]
+ ...
+ [False False False ...  True False  True]
+ [ True False False ...  True False  True]
+ [False False  True ...  True  True False]]
+Batch 4 subspace dimension: 400
+current batch [[ True False False ...  True False False]
+ [ True False False ... False False  True]
+ [False  True  True ... False False  True]
+ ...
+ [False  True  True ... False  True False]
+ [False False False ... False False  True]
+ [False False  True ...  True  True  True]]
+Batch 5 subspace dimension: 400
+current batch [[ True False False ...  True False False]
+ [ True  True False ... False  True  True]
+ [False False  True ... False  True False]
+ ...
+ [ True False False ...  True False False]
+ [False  True  True ... False  True  True]
+ [False False  True ... False False False]]
+Batch 6 subspace dimension: 400
+current batch [[False False False ... False  True  True]
+ [False  True False ...  True False  True]
+ [False False  True ... False False  True]
+ ...
+ [False False  True ... False  True False]
+ [ True  True False ...  True False  True]
+ [False False  True ...  True False False]]
+Batch 7 subspace dimension: 400
+current batch [[ True False False ...  True False False]
+ [ True False False ...  True  True False]
+ [False  True False ...  True False False]
+ ...
+ [ True  True False ...  True False  True]
+ [ True False False ... False False  True]
+ [False  True  True ...  True  True  True]]
+Batch 8 subspace dimension: 400
+current batch [[False  True False ...  True False False]
+ [False  True  True ...  True False False]
+ [False  True False ...  True  True False]
+ ...
+ [ True False False ...  True  True False]
+ [False False  True ...  True  True  True]
+ [False  True  True ...  True  True  True]]
+Batch 9 subspace dimension: 400
+
+
+Starting configuration recovery iteration 6
+batches [array([[ True,  True,  True, ...,  True, False,  True],
+       [False,  True,  True, ...,  True, False,  True],
+       [False,  True, False, ...,  True,  True,  True],
+       ...,
+       [ True, False,  True, ..., False, False, False],
+       [False,  True,  True, ..., False,  True, False],
+       [False,  True,  True, ..., False, False,  True]]), array([[ True,  True,  True, ...,  True, False, False],
+       [ True, False, False, ...,  True,  True,  True],
+       [ True,  True,  True, ...,  True,  True, False],
+       ...,
+       [ True, False,  True, ..., False,  True,  True],
+       [False,  True,  True, ..., False,  True,  True],
+       [ True, False,  True, ..., False,  True,  True]]), array([[False,  True, False, ..., False, False,  True],
+       [False, False,  True, ..., False,  True, False],
+       [False,  True,  True, ..., False,  True,  True],
+       ...,
+       [False, False, False, ...,  True, False,  True],
+       [False,  True, False, ..., False,  True,  True],
+       [ True, False,  True, ...,  True,  True,  True]]), array([[False,  True,  True, ...,  True, False,  True],
+       [ True,  True, False, ..., False, False,  True],
+       [ True, False,  True, ...,  True, False,  True],
+       ...,
+       [ True,  True, False, ..., False, False,  True],
+       [False, False, False, ..., False,  True, False],
+       [False,  True,  True, ..., False,  True,  True]]), array([[ True, False,  True, ..., False,  True, False],
+       [False, False,  True, ..., False,  True, False],
+       [False, False,  True, ..., False,  True, False],
+       ...,
+       [ True, False, False, ..., False,  True,  True],
+       [ True, False,  True, ..., False, False, False],
+       [False,  True,  True, ..., False,  True, False]]), array([[False, False,  True, ...,  True,  True, False],
+       [False,  True,  True, ...,  True,  True, False],
+       [ True,  True, False, ...,  True,  True, False],
+       ...,
+       [ True, False, False, ...,  True, False,  True],
+       [ True,  True, False, ..., False,  True, False],
+       [ True, False,  True, ..., False, False,  True]]), array([[False, False,  True, ...,  True, False,  True],
+       [False, False,  True, ..., False,  True,  True],
+       [False,  True,  True, ...,  True, False, False],
+       ...,
+       [False,  True,  True, ...,  True,  True, False],
+       [ True, False, False, ...,  True,  True,  True],
+       [ True,  True, False, ..., False, False,  True]]), array([[False,  True,  True, ..., False, False,  True],
+       [False,  True,  True, ..., False,  True,  True],
+       [False, False,  True, ..., False, False,  True],
+       ...,
+       [ True,  True, False, ..., False,  True, False],
+       [ True, False, False, ...,  True, False,  True],
+       [ True, False, False, ..., False,  True,  True]]), array([[ True,  True,  True, ...,  True, False, False],
+       [False,  True,  True, ...,  True, False, False],
+       [False, False,  True, ...,  True, False,  True],
+       ...,
+       [False,  True, False, ...,  True, False, False],
+       [False, False, False, ...,  True,  True, False],
+       [False,  True, False, ..., False,  True,  True]]), array([[ True, False, False, ..., False, False,  True],
+       [False,  True,  True, ...,  True,  True,  True],
+       [ True,  True, False, ..., False, False, False],
+       ...,
+       [ True, False,  True, ...,  True,  True, False],
+       [False,  True,  True, ...,  True,  True, False],
+       [ True,  True, False, ...,  True,  True, False]])]
+current batch [[ True  True  True ...  True False  True]
+ [False  True  True ...  True False  True]
+ [False  True False ...  True  True  True]
+ ...
+ [ True False  True ... False False False]
+ [False  True  True ... False  True False]
+ [False  True  True ... False False  True]]
+Batch 0 subspace dimension: 400
+current batch [[ True  True  True ...  True False False]
+ [ True False False ...  True  True  True]
+ [ True  True  True ...  True  True False]
+ ...
+ [ True False  True ... False  True  True]
+ [False  True  True ... False  True  True]
+ [ True False  True ... False  True  True]]
+Batch 1 subspace dimension: 400
+current batch [[False  True False ... False False  True]
+ [False False  True ... False  True False]
+ [False  True  True ... False  True  True]
+ ...
+ [False False False ...  True False  True]
+ [False  True False ... False  True  True]
+ [ True False  True ...  True  True  True]]
+Batch 2 subspace dimension: 400
+current batch [[False  True  True ...  True False  True]
+ [ True  True False ... False False  True]
+ [ True False  True ...  True False  True]
+ ...
+ [ True  True False ... False False  True]
+ [False False False ... False  True False]
+ [False  True  True ... False  True  True]]
+Batch 3 subspace dimension: 400
+current batch [[ True False  True ... False  True False]
+ [False False  True ... False  True False]
+ [False False  True ... False  True False]
+ ...
+ [ True False False ... False  True  True]
+ [ True False  True ... False False False]
+ [False  True  True ... False  True False]]
+Batch 4 subspace dimension: 400
+current batch [[False False  True ...  True  True False]
+ [False  True  True ...  True  True False]
+ [ True  True False ...  True  True False]
+ ...
+ [ True False False ...  True False  True]
+ [ True  True False ... False  True False]
+ [ True False  True ... False False  True]]
+Batch 5 subspace dimension: 400
+current batch [[False False  True ...  True False  True]
+ [False False  True ... False  True  True]
+ [False  True  True ...  True False False]
+ ...
+ [False  True  True ...  True  True False]
+ [ True False False ...  True  True  True]
+ [ True  True False ... False False  True]]
+Batch 6 subspace dimension: 400
+current batch [[False  True  True ... False False  True]
+ [False  True  True ... False  True  True]
+ [False False  True ... False False  True]
+ ...
+ [ True  True False ... False  True False]
+ [ True False False ...  True False  True]
+ [ True False False ... False  True  True]]
+Batch 7 subspace dimension: 400
+current batch [[ True  True  True ...  True False False]
+ [False  True  True ...  True False False]
+ [False False  True ...  True False  True]
+ ...
+ [False  True False ...  True False False]
+ [False False False ...  True  True False]
+ [False  True False ... False  True  True]]
+Batch 8 subspace dimension: 400
+current batch [[ True False False ... False False  True]
+ [False  True  True ...  True  True  True]
+ [ True  True False ... False False False]
+ ...
+ [ True False  True ...  True  True False]
+ [False  True  True ...  True  True False]
+ [ True  True False ...  True  True False]]
+Batch 9 subspace dimension: 400
+
+
+Starting configuration recovery iteration 7
+batches [array([[False,  True, False, ...,  True, False,  True],
+       [ True,  True, False, ...,  True,  True, False],
+       [ True, False, False, ..., False, False,  True],
+       ...,
+       [False,  True,  True, ...,  True, False,  True],
+       [ True, False,  True, ..., False, False,  True],
+       [ True, False,  True, ..., False, False, False]]), array([[ True,  True, False, ..., False,  True,  True],
+       [ True, False,  True, ..., False,  True,  True],
+       [ True,  True, False, ..., False,  True, False],
+       ...,
+       [ True, False, False, ..., False,  True,  True],
+       [ True,  True,  True, ...,  True, False,  True],
+       [False,  True, False, ...,  True, False, False]]), array([[ True, False, False, ...,  True, False, False],
+       [ True, False,  True, ...,  True, False,  True],
+       [ True, False,  True, ..., False, False,  True],
+       ...,
+       [False,  True,  True, ...,  True,  True, False],
+       [False,  True, False, ..., False, False,  True],
+       [ True,  True, False, ...,  True, False,  True]]), array([[ True, False, False, ..., False,  True, False],
+       [ True, False, False, ..., False,  True,  True],
+       [False, False,  True, ..., False,  True, False],
+       ...,
+       [False,  True, False, ...,  True, False,  True],
+       [False,  True,  True, ..., False,  True,  True],
+       [ True, False,  True, ..., False, False, False]]), array([[ True, False, False, ...,  True, False, False],
+       [ True, False,  True, ..., False, False,  True],
+       [False, False,  True, ...,  True,  True, False],
+       ...,
+       [ True, False,  True, ..., False,  True,  True],
+       [False,  True, False, ..., False, False, False],
+       [ True,  True,  True, ..., False,  True, False]]), array([[ True,  True, False, ...,  True,  True, False],
+       [False,  True, False, ...,  True, False,  True],
+       [False, False,  True, ...,  True,  True, False],
+       ...,
+       [False, False,  True, ...,  True, False, False],
+       [ True,  True,  True, ..., False,  True, False],
+       [False,  True, False, ...,  True, False, False]]), array([[False,  True,  True, ...,  True, False,  True],
+       [ True, False, False, ...,  True, False, False],
+       [ True,  True,  True, ...,  True, False, False],
+       ...,
+       [False, False, False, ...,  True,  True,  True],
+       [ True, False,  True, ..., False,  True,  True],
+       [ True, False,  True, ..., False,  True, False]]), array([[False,  True, False, ..., False, False, False],
+       [ True,  True,  True, ..., False, False, False],
+       [False,  True, False, ...,  True, False,  True],
+       ...,
+       [False,  True,  True, ...,  True, False,  True],
+       [ True, False,  True, ...,  True, False, False],
+       [False, False,  True, ...,  True, False,  True]]), array([[False, False,  True, ..., False, False,  True],
+       [ True, False,  True, ...,  True,  True, False],
+       [ True, False,  True, ..., False, False,  True],
+       ...,
+       [False, False,  True, ...,  True,  True, False],
+       [ True,  True, False, ..., False, False,  True],
+       [False, False, False, ..., False,  True,  True]]), array([[False,  True, False, ..., False, False,  True],
+       [False,  True,  True, ...,  True,  True, False],
+       [ True, False, False, ..., False, False, False],
+       ...,
+       [False, False, False, ...,  True, False,  True],
+       [ True, False,  True, ...,  True,  True, False],
+       [ True, False,  True, ...,  True, False, False]])]
+current batch [[False  True False ...  True False  True]
+ [ True  True False ...  True  True False]
+ [ True False False ... False False  True]
+ ...
+ [False  True  True ...  True False  True]
+ [ True False  True ... False False  True]
+ [ True False  True ... False False False]]
+Batch 0 subspace dimension: 400
+current batch [[ True  True False ... False  True  True]
+ [ True False  True ... False  True  True]
+ [ True  True False ... False  True False]
+ ...
+ [ True False False ... False  True  True]
+ [ True  True  True ...  True False  True]
+ [False  True False ...  True False False]]
+Batch 1 subspace dimension: 400
+current batch [[ True False False ...  True False False]
+ [ True False  True ...  True False  True]
+ [ True False  True ... False False  True]
+ ...
+ [False  True  True ...  True  True False]
+ [False  True False ... False False  True]
+ [ True  True False ...  True False  True]]
+Batch 2 subspace dimension: 400
+current batch [[ True False False ... False  True False]
+ [ True False False ... False  True  True]
+ [False False  True ... False  True False]
+ ...
+ [False  True False ...  True False  True]
+ [False  True  True ... False  True  True]
+ [ True False  True ... False False False]]
+Batch 3 subspace dimension: 400
+current batch [[ True False False ...  True False False]
+ [ True False  True ... False False  True]
+ [False False  True ...  True  True False]
+ ...
+ [ True False  True ... False  True  True]
+ [False  True False ... False False False]
+ [ True  True  True ... False  True False]]
+Batch 4 subspace dimension: 400
+current batch [[ True  True False ...  True  True False]
+ [False  True False ...  True False  True]
+ [False False  True ...  True  True False]
+ ...
+ [False False  True ...  True False False]
+ [ True  True  True ... False  True False]
+ [False  True False ...  True False False]]
+Batch 5 subspace dimension: 400
+current batch [[False  True  True ...  True False  True]
+ [ True False False ...  True False False]
+ [ True  True  True ...  True False False]
+ ...
+ [False False False ...  True  True  True]
+ [ True False  True ... False  True  True]
+ [ True False  True ... False  True False]]
+Batch 6 subspace dimension: 400
+current batch [[False  True False ... False False False]
+ [ True  True  True ... False False False]
+ [False  True False ...  True False  True]
+ ...
+ [False  True  True ...  True False  True]
+ [ True False  True ...  True False False]
+ [False False  True ...  True False  True]]
+Batch 7 subspace dimension: 400
+current batch [[False False  True ... False False  True]
+ [ True False  True ...  True  True False]
+ [ True False  True ... False False  True]
+ ...
+ [False False  True ...  True  True False]
+ [ True  True False ... False False  True]
+ [False False False ... False  True  True]]
+Batch 8 subspace dimension: 400
+current batch [[False  True False ... False False  True]
+ [False  True  True ...  True  True False]
+ [ True False False ... False False False]
+ ...
+ [False False False ...  True False  True]
+ [ True False  True ...  True  True False]
+ [ True False  True ...  True False False]]
+Batch 9 subspace dimension: 400
+
+
+Starting configuration recovery iteration 8
+batches [array([[ True,  True, False, ..., False,  True, False],
+       [False, False, False, ..., False, False,  True],
+       [False, False,  True, ...,  True, False, False],
+       ...,
+       [False,  True,  True, ...,  True, False,  True],
+       [ True, False,  True, ...,  True, False, False],
+       [False,  True, False, ...,  True, False, False]]), array([[ True, False,  True, ..., False,  True, False],
+       [False,  True,  True, ..., False, False,  True],
+       [ True,  True,  True, ..., False, False, False],
+       ...,
+       [ True, False, False, ..., False,  True, False],
+       [False, False,  True, ..., False, False,  True],
+       [False,  True, False, ...,  True,  True,  True]]), array([[False,  True, False, ..., False,  True,  True],
+       [False,  True,  True, ...,  True, False, False],
+       [ True, False,  True, ..., False, False,  True],
+       ...,
+       [ True,  True, False, ...,  True, False,  True],
+       [False, False, False, ..., False,  True, False],
+       [ True,  True, False, ..., False,  True, False]]), array([[ True, False,  True, ...,  True, False, False],
+       [False,  True,  True, ...,  True, False, False],
+       [ True, False, False, ...,  True, False,  True],
+       ...,
+       [ True, False,  True, ..., False,  True, False],
+       [ True, False,  True, ...,  True,  True, False],
+       [ True,  True,  True, ...,  True,  True, False]]), array([[False,  True, False, ..., False,  True, False],
+       [False,  True,  True, ...,  True,  True,  True],
+       [ True,  True, False, ...,  True, False,  True],
+       ...,
+       [False, False,  True, ...,  True,  True, False],
+       [False,  True, False, ...,  True,  True, False],
+       [ True, False,  True, ..., False, False,  True]]), array([[ True, False, False, ...,  True,  True, False],
+       [False, False,  True, ...,  True,  True,  True],
+       [ True,  True, False, ..., False,  True,  True],
+       ...,
+       [False, False, False, ..., False,  True, False],
+       [ True,  True,  True, ..., False,  True, False],
+       [ True,  True, False, ...,  True,  True, False]]), array([[False,  True, False, ...,  True,  True, False],
+       [False, False,  True, ...,  True,  True, False],
+       [ True, False,  True, ..., False,  True,  True],
+       ...,
+       [ True, False, False, ...,  True,  True, False],
+       [ True,  True, False, ...,  True,  True, False],
+       [ True,  True, False, ..., False, False,  True]]), array([[False, False,  True, ..., False, False,  True],
+       [False, False,  True, ..., False,  True,  True],
+       [False,  True, False, ...,  True, False,  True],
+       ...,
+       [ True, False,  True, ...,  True,  True, False],
+       [ True, False,  True, ...,  True, False, False],
+       [False, False,  True, ..., False,  True, False]]), array([[ True,  True, False, ..., False, False,  True],
+       [False,  True, False, ...,  True, False, False],
+       [False,  True,  True, ..., False,  True,  True],
+       ...,
+       [ True, False,  True, ...,  True, False, False],
+       [False,  True, False, ..., False, False, False],
+       [ True, False,  True, ..., False, False,  True]]), array([[ True, False, False, ..., False, False,  True],
+       [False, False,  True, ..., False, False, False],
+       [False,  True, False, ..., False,  True,  True],
+       ...,
+       [False, False,  True, ..., False, False,  True],
+       [ True, False, False, ..., False,  True, False],
+       [ True, False, False, ...,  True, False, False]])]
+current batch [[ True  True False ... False  True False]
+ [False False False ... False False  True]
+ [False False  True ...  True False False]
+ ...
+ [False  True  True ...  True False  True]
+ [ True False  True ...  True False False]
+ [False  True False ...  True False False]]
+Batch 0 subspace dimension: 400
+current batch [[ True False  True ... False  True False]
+ [False  True  True ... False False  True]
+ [ True  True  True ... False False False]
+ ...
+ [ True False False ... False  True False]
+ [False False  True ... False False  True]
+ [False  True False ...  True  True  True]]
+Batch 1 subspace dimension: 400
+current batch [[False  True False ... False  True  True]
+ [False  True  True ...  True False False]
+ [ True False  True ... False False  True]
+ ...
+ [ True  True False ...  True False  True]
+ [False False False ... False  True False]
+ [ True  True False ... False  True False]]
+Batch 2 subspace dimension: 400
+current batch [[ True False  True ...  True False False]
+ [False  True  True ...  True False False]
+ [ True False False ...  True False  True]
+ ...
+ [ True False  True ... False  True False]
+ [ True False  True ...  True  True False]
+ [ True  True  True ...  True  True False]]
+Batch 3 subspace dimension: 400
+current batch [[False  True False ... False  True False]
+ [False  True  True ...  True  True  True]
+ [ True  True False ...  True False  True]
+ ...
+ [False False  True ...  True  True False]
+ [False  True False ...  True  True False]
+ [ True False  True ... False False  True]]
+Batch 4 subspace dimension: 400
+current batch [[ True False False ...  True  True False]
+ [False False  True ...  True  True  True]
+ [ True  True False ... False  True  True]
+ ...
+ [False False False ... False  True False]
+ [ True  True  True ... False  True False]
+ [ True  True False ...  True  True False]]
+Batch 5 subspace dimension: 400
+current batch [[False  True False ...  True  True False]
+ [False False  True ...  True  True False]
+ [ True False  True ... False  True  True]
+ ...
+ [ True False False ...  True  True False]
+ [ True  True False ...  True  True False]
+ [ True  True False ... False False  True]]
+Batch 6 subspace dimension: 400
+current batch [[False False  True ... False False  True]
+ [False False  True ... False  True  True]
+ [False  True False ...  True False  True]
+ ...
+ [ True False  True ...  True  True False]
+ [ True False  True ...  True False False]
+ [False False  True ... False  True False]]
+Batch 7 subspace dimension: 400
+current batch [[ True  True False ... False False  True]
+ [False  True False ...  True False False]
+ [False  True  True ... False  True  True]
+ ...
+ [ True False  True ...  True False False]
+ [False  True False ... False False False]
+ [ True False  True ... False False  True]]
+Batch 8 subspace dimension: 400
+current batch [[ True False False ... False False  True]
+ [False False  True ... False False False]
+ [False  True False ... False  True  True]
+ ...
+ [False False  True ... False False  True]
+ [ True False False ... False  True False]
+ [ True False False ...  True False False]]
+Batch 9 subspace dimension: 400
+
+
+Starting configuration recovery iteration 9
+batches [array([[False,  True,  True, ..., False,  True, False],
+       [False,  True,  True, ..., False, False,  True],
+       [ True, False,  True, ..., False,  True,  True],
+       ...,
+       [ True, False,  True, ..., False, False, False],
+       [ True,  True, False, ...,  True, False, False],
+       [ True, False,  True, ..., False,  True,  True]]), array([[ True,  True, False, ..., False,  True,  True],
+       [False,  True, False, ..., False, False,  True],
+       [False,  True,  True, ...,  True, False, False],
+       ...,
+       [False,  True,  True, ..., False, False,  True],
+       [False,  True, False, ..., False,  True, False],
+       [False, False,  True, ..., False,  True, False]]), array([[False,  True, False, ..., False,  True, False],
+       [False,  True, False, ...,  True, False,  True],
+       [ True, False,  True, ...,  True,  True, False],
+       ...,
+       [False,  True, False, ..., False,  True, False],
+       [ True,  True, False, ..., False,  True,  True],
+       [ True, False,  True, ..., False,  True,  True]]), array([[ True, False, False, ..., False,  True,  True],
+       [ True, False, False, ...,  True, False,  True],
+       [False,  True, False, ...,  True,  True, False],
+       ...,
+       [False,  True,  True, ...,  True, False, False],
+       [ True, False, False, ..., False,  True,  True],
+       [ True,  True, False, ...,  True,  True, False]]), array([[ True, False,  True, ..., False, False,  True],
+       [False, False,  True, ...,  True,  True, False],
+       [ True, False, False, ...,  True,  True,  True],
+       ...,
+       [False, False,  True, ..., False,  True, False],
+       [False, False,  True, ..., False, False,  True],
+       [False, False, False, ..., False, False,  True]]), array([[ True,  True, False, ...,  True, False, False],
+       [False,  True,  True, ...,  True, False, False],
+       [ True, False,  True, ..., False, False,  True],
+       ...,
+       [False, False, False, ...,  True, False, False],
+       [ True, False, False, ...,  True,  True, False],
+       [ True, False, False, ...,  True,  True, False]]), array([[False, False,  True, ..., False,  True,  True],
+       [False, False, False, ...,  True,  True,  True],
+       [False, False,  True, ..., False,  True,  True],
+       ...,
+       [False,  True,  True, ...,  True, False, False],
+       [ True, False, False, ...,  True, False,  True],
+       [ True,  True, False, ..., False,  True, False]]), array([[ True, False,  True, ...,  True, False,  True],
+       [ True, False,  True, ...,  True,  True,  True],
+       [ True,  True, False, ...,  True, False, False],
+       ...,
+       [ True, False,  True, ...,  True, False, False],
+       [False,  True, False, ...,  True, False, False],
+       [ True, False, False, ...,  True,  True, False]]), array([[ True,  True,  True, ..., False,  True,  True],
+       [False,  True, False, ..., False, False,  True],
+       [False,  True,  True, ...,  True,  True, False],
+       ...,
+       [False, False,  True, ...,  True, False, False],
+       [False, False,  True, ..., False,  True, False],
+       [ True,  True, False, ..., False,  True, False]]), array([[False, False,  True, ...,  True,  True,  True],
+       [False,  True, False, ...,  True,  True,  True],
+       [ True,  True, False, ..., False,  True, False],
+       ...,
+       [ True,  True,  True, ..., False,  True,  True],
+       [False, False,  True, ...,  True, False,  True],
+       [ True,  True, False, ...,  True, False,  True]])]
+current batch [[False  True  True ... False  True False]
+ [False  True  True ... False False  True]
+ [ True False  True ... False  True  True]
+ ...
+ [ True False  True ... False False False]
+ [ True  True False ...  True False False]
+ [ True False  True ... False  True  True]]
+Batch 0 subspace dimension: 400
+current batch [[ True  True False ... False  True  True]
+ [False  True False ... False False  True]
+ [False  True  True ...  True False False]
+ ...
+ [False  True  True ... False False  True]
+ [False  True False ... False  True False]
+ [False False  True ... False  True False]]
+Batch 1 subspace dimension: 400
+current batch [[False  True False ... False  True False]
+ [False  True False ...  True False  True]
+ [ True False  True ...  True  True False]
+ ...
+ [False  True False ... False  True False]
+ [ True  True False ... False  True  True]
+ [ True False  True ... False  True  True]]
+Batch 2 subspace dimension: 400
+current batch [[ True False False ... False  True  True]
+ [ True False False ...  True False  True]
+ [False  True False ...  True  True False]
+ ...
+ [False  True  True ...  True False False]
+ [ True False False ... False  True  True]
+ [ True  True False ...  True  True False]]
+Batch 3 subspace dimension: 400
+current batch [[ True False  True ... False False  True]
+ [False False  True ...  True  True False]
+ [ True False False ...  True  True  True]
+ ...
+ [False False  True ... False  True False]
+ [False False  True ... False False  True]
+ [False False False ... False False  True]]
+Batch 4 subspace dimension: 400
+current batch [[ True  True False ...  True False False]
+ [False  True  True ...  True False False]
+ [ True False  True ... False False  True]
+ ...
+ [False False False ...  True False False]
+ [ True False False ...  True  True False]
+ [ True False False ...  True  True False]]
+Batch 5 subspace dimension: 400
+current batch [[False False  True ... False  True  True]
+ [False False False ...  True  True  True]
+ [False False  True ... False  True  True]
+ ...
+ [False  True  True ...  True False False]
+ [ True False False ...  True False  True]
+ [ True  True False ... False  True False]]
+Batch 6 subspace dimension: 400
+current batch [[ True False  True ...  True False  True]
+ [ True False  True ...  True  True  True]
+ [ True  True False ...  True False False]
+ ...
+ [ True False  True ...  True False False]
+ [False  True False ...  True False False]
+ [ True False False ...  True  True False]]
+Batch 7 subspace dimension: 400
+current batch [[ True  True  True ... False  True  True]
+ [False  True False ... False False  True]
+ [False  True  True ...  True  True False]
+ ...
+ [False False  True ...  True False False]
+ [False False  True ... False  True False]
+ [ True  True False ... False  True False]]
+Batch 8 subspace dimension: 400
+current batch [[False False  True ...  True  True  True]
+ [False  True False ...  True  True  True]
+ [ True  True False ... False  True False]
+ ...
+ [ True  True  True ... False  True  True]
+ [False False  True ...  True False  True]
+ [ True  True False ...  True False  True]]
+Batch 9 subspace dimension: 400
+
+las-lucj-sqd energy is -12.522951027797157
+total energy is -2649.146183634355

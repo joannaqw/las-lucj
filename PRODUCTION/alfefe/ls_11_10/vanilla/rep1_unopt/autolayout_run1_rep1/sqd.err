@@ -1,0 +1,59 @@
+WARN: Even tempered Gaussians are generated as DF auxbasis for  Fe H O Al C
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+WARN: possible (pa|aa) inconsistency; max err = 1.441060e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.475725e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.492027e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.529298e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.536633e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.538965e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539615e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539714e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539672e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539661e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539654e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539665e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539677e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539683e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539687e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539690e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539691e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539694e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539694e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539694e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539692e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539691e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539689e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539688e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539687e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539685e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539684e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539683e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539682e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539681e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539680e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539679e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539678e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539677e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539676e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539675e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539674e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539673e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539672e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.539671e-08
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.rohf.ROHF'>
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/alfefe/ls_11_10/vanilla/rep1_unopt/autolayout_run1_rep1/las_lucj.py", line 85, in <module>
+    qlas,ucj_op = LUCJ_load(las.ncas_sub[f],nelec_f[f][0],nelec_f[f][1],h1_frag,h2_frag,las.ci[f][0])
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/alfefe/ls_11_10/vanilla/rep1_unopt/autolayout_run1_rep1/LUCJ_loader.py", line 55, in LUCJ_load
+    operator = ffsim.UCJOpSpinUnbalanced.from_t_amplitudes(t2=t2, t1=mc.t1, n_reps=n_reps)
+  File "/home/qjwang/.local/lib/python3.9/site-packages/ffsim/variational/ucj_spin_unbalanced.py", line 514, in from_t_amplitudes
+    linalg.double_factorized_t2_alpha_beta(t2ab, tol=tol)
+  File "/home/qjwang/.local/lib/python3.9/site-packages/ffsim/linalg/double_factorized_decomposition.py", line 645, in double_factorized_t2_alpha_beta
+    left_vecs, singular_vals, right_vecs = _truncated_svd(
+  File "/home/qjwang/.local/lib/python3.9/site-packages/ffsim/linalg/double_factorized_decomposition.py", line 48, in _truncated_svd
+    left_vecs, singular_vals, right_vecs = scipy.linalg.svd(mat, full_matrices=False)
+  File "/home/qjwang/.local/lib/python3.9/site-packages/scipy/linalg/_decomp_svd.py", line 137, in svd
+    lwork = _compute_lwork(gesXd_lwork, a1.shape[0], a1.shape[1],
+  File "/home/qjwang/.local/lib/python3.9/site-packages/scipy/linalg/lapack.py", line 1007, in _compute_lwork
+    raise ValueError("Internal work array size computation failed: "
+ValueError: Internal work array size computation failed: -5

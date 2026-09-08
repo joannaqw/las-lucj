@@ -1,0 +1,4 @@
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.rohf.ROHF'>
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.hf.RHF'>
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/6_10/vanilla/rep1_unopt/run3/las_lucj.py:164: DeprecationWarning: The function ``qiskit_addon_sqd.subsampling.postselect_and_subsample()`` is deprecated as of qiskit-addon-sqd 0.12.0. It will be removed no earlier than v0.13.0. Instead, use the ``postselect_by_hamming_right_and_left`` and ``subsample`` functions.
+  batches = postselect_and_subsample(

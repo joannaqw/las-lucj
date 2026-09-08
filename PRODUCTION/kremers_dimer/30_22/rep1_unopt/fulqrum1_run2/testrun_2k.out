@@ -1,0 +1,3431 @@
+overwrite output file: KD_ls.log
+HF energy:  -2649.1455509803973
+LASSCF energy:  -2649.2957900348038
+ecore -2415.486075653889
+Num fermionic terms: 918632
+Num qubit terms after extended JW: 336246
+num_alpha 15
+num_beta 15
+num_orbitals 22
+
+Starting Fulqrum SQD / configuration recovery iteration 0
+Number of postselected/recovered bitstrings: 800
+
+Iteration 0, batch 0
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 22.8483 s
+Eigensolve took 2.6001 s
+Batch 0 electronic energy: -232.3666930286764
+Batch 0 carryover candidates: 7
+
+Iteration 0, batch 1
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.3362 s
+Eigensolve took 2.9847 s
+Batch 1 electronic energy: -232.3666930286764
+Batch 1 carryover candidates: 7
+
+Iteration 0, batch 2
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.7922 s
+Eigensolve took 2.2304 s
+Batch 2 electronic energy: -232.3666930286764
+Batch 2 carryover candidates: 7
+
+Iteration 0, batch 3
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.6530 s
+Eigensolve took 2.3669 s
+Batch 3 electronic energy: -232.3666930286764
+Batch 3 carryover candidates: 7
+
+Iteration 0, batch 4
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.6970 s
+Eigensolve took 2.7717 s
+Batch 4 electronic energy: -232.3666930286764
+Batch 4 carryover candidates: 7
+
+Iteration 0, batch 5
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.7142 s
+Eigensolve took 2.9136 s
+Batch 5 electronic energy: -232.3666930286764
+Batch 5 carryover candidates: 7
+
+Iteration 0, batch 6
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.6214 s
+Eigensolve took 2.4964 s
+Batch 6 electronic energy: -232.3666930286764
+Batch 6 carryover candidates: 7
+
+Iteration 0, batch 7
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.4989 s
+Eigensolve took 2.5101 s
+Batch 7 electronic energy: -232.3666930286764
+Batch 7 carryover candidates: 7
+
+Iteration 0, batch 8
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.8155 s
+Eigensolve took 3.0579 s
+Batch 8 electronic energy: -232.3666930286764
+Batch 8 carryover candidates: 7
+
+Iteration 0, batch 9
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.7099 s
+Eigensolve took 2.2659 s
+Batch 9 electronic energy: -232.3666930286764
+Batch 9 carryover candidates: 7
+
+Iteration 0, batch 10
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.8159 s
+Eigensolve took 2.8551 s
+Batch 10 electronic energy: -232.3666930286764
+Batch 10 carryover candidates: 7
+
+Iteration 0, batch 11
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.6232 s
+Eigensolve took 2.8751 s
+Batch 11 electronic energy: -232.3666930286764
+Batch 11 carryover candidates: 7
+
+Iteration 0, batch 12
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.3791 s
+Eigensolve took 2.7355 s
+Batch 12 electronic energy: -232.3666930286764
+Batch 12 carryover candidates: 7
+
+Iteration 0, batch 13
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.9061 s
+Eigensolve took 3.0284 s
+Batch 13 electronic energy: -232.3666930286764
+Batch 13 carryover candidates: 7
+
+Iteration 0, batch 14
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.0771 s
+Eigensolve took 2.8945 s
+Batch 14 electronic energy: -232.3666930286764
+Batch 14 carryover candidates: 7
+
+Iteration 0, batch 15
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.9301 s
+Eigensolve took 2.0573 s
+Batch 15 electronic energy: -232.3666930286764
+Batch 15 carryover candidates: 7
+
+Iteration 0, batch 16
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.4423 s
+Eigensolve took 2.5482 s
+Batch 16 electronic energy: -232.3666930286764
+Batch 16 carryover candidates: 7
+
+Iteration 0, batch 17
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.8027 s
+Eigensolve took 2.1480 s
+Batch 17 electronic energy: -232.3666930286764
+Batch 17 carryover candidates: 7
+
+Iteration 0, batch 18
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.7357 s
+Eigensolve took 2.7834 s
+Batch 18 electronic energy: -232.3666930286764
+Batch 18 carryover candidates: 7
+
+Iteration 0, batch 19
+alpha half strings: 800, beta half strings: 798
+Subspace dimension: 800 x 798 = 638400
+Projection took 23.8225 s
+Eigensolve took 3.1696 s
+Batch 19 electronic energy: -232.3666930286764
+Batch 19 carryover candidates: 7
+
+Iteration 0 energies: [-232.36669303 -232.36669303 -232.36669303 -232.36669303 -232.36669303
+ -232.36669303 -232.36669303 -232.36669303 -232.36669303 -232.36669303
+ -232.36669303 -232.36669303 -232.36669303 -232.36669303 -232.36669303
+ -232.36669303 -232.36669303 -232.36669303 -232.36669303 -232.36669303]
+Iteration 0 min energy: -232.3666930286764
+Carryover strings for next iteration: 7
+Iteration 0 took 528.6036 s
+
+Starting Fulqrum SQD / configuration recovery iteration 1
+Number of postselected/recovered bitstrings: 499173
+
+Iteration 1, batch 0
+alpha half strings: 1920, beta half strings: 1903
+Subspace dimension: 1920 x 1903 = 3653760
+Projection took 145.1225 s
+Eigensolve took 6.7753 s
+Batch 0 electronic energy: -233.5251531989222
+Batch 0 carryover candidates: 26
+
+Iteration 1, batch 1
+alpha half strings: 1878, beta half strings: 1921
+Subspace dimension: 1878 x 1921 = 3607638
+Projection took 144.4742 s
+Eigensolve took 6.8498 s
+Batch 1 electronic energy: -233.48619123770234
+Batch 1 carryover candidates: 76
+
+Iteration 1, batch 2
+alpha half strings: 1895, beta half strings: 1910
+Subspace dimension: 1895 x 1910 = 3619450
+Projection took 145.2805 s
+Eigensolve took 18.4035 s
+Batch 2 electronic energy: -233.3561164771936
+Batch 2 carryover candidates: 106
+
+Iteration 1, batch 3
+alpha half strings: 1894, beta half strings: 1891
+Subspace dimension: 1894 x 1891 = 3581554
+Projection took 142.9418 s
+Eigensolve took 7.1284 s
+Batch 3 electronic energy: -233.66519570422142
+Batch 3 carryover candidates: 103
+
+Iteration 1, batch 4
+alpha half strings: 1907, beta half strings: 1916
+Subspace dimension: 1907 x 1916 = 3653812
+Projection took 147.4439 s
+Eigensolve took 6.4828 s
+Batch 4 electronic energy: -233.50415977306417
+Batch 4 carryover candidates: 128
+
+Iteration 1, batch 5
+alpha half strings: 1919, beta half strings: 1905
+Subspace dimension: 1919 x 1905 = 3655695
+Projection took 148.2039 s
+Eigensolve took 11.2536 s
+Batch 5 electronic energy: -233.35963421241055
+Batch 5 carryover candidates: 97
+
+Iteration 1, batch 6
+alpha half strings: 1899, beta half strings: 1925
+Subspace dimension: 1899 x 1925 = 3655575
+Projection took 152.8605 s
+Eigensolve took 7.0967 s
+Batch 6 electronic energy: -233.49032324317787
+Batch 6 carryover candidates: 41
+
+Iteration 1, batch 7
+alpha half strings: 1899, beta half strings: 1911
+Subspace dimension: 1899 x 1911 = 3628989
+Projection took 147.6618 s
+Eigensolve took 10.8453 s
+Batch 7 electronic energy: -233.5299799649648
+Batch 7 carryover candidates: 123
+
+Iteration 1, batch 8
+alpha half strings: 1920, beta half strings: 1910
+Subspace dimension: 1920 x 1910 = 3667200
+Projection took 151.2889 s
+Eigensolve took 23.4786 s
+Batch 8 electronic energy: -233.35979976748706
+Batch 8 carryover candidates: 166
+
+Iteration 1, batch 9
+alpha half strings: 1902, beta half strings: 1909
+Subspace dimension: 1902 x 1909 = 3630918
+Projection took 147.1782 s
+Eigensolve took 18.0029 s
+Batch 9 electronic energy: -233.52938877210696
+Batch 9 carryover candidates: 186
+
+Iteration 1, batch 10
+alpha half strings: 1926, beta half strings: 1930
+Subspace dimension: 1926 x 1930 = 3717180
+Projection took 152.1772 s
+Eigensolve took 11.0831 s
+Batch 10 electronic energy: -233.46414626477159
+Batch 10 carryover candidates: 111
+
+Iteration 1, batch 11
+alpha half strings: 1898, beta half strings: 1890
+Subspace dimension: 1898 x 1890 = 3587220
+Projection took 145.8995 s
+Eigensolve took 51.0207 s
+Batch 11 electronic energy: -233.46931833500895
+Batch 11 carryover candidates: 259
+
+Iteration 1, batch 12
+alpha half strings: 1918, beta half strings: 1906
+Subspace dimension: 1918 x 1906 = 3655708
+Projection took 151.2053 s
+Eigensolve took 7.1437 s
+Batch 12 electronic energy: -233.48350822078226
+Batch 12 carryover candidates: 94
+
+Iteration 1, batch 13
+alpha half strings: 1911, beta half strings: 1911
+Subspace dimension: 1911 x 1911 = 3651921
+Projection took 148.4111 s
+Eigensolve took 40.5419 s
+Batch 13 electronic energy: -233.36203010001896
+Batch 13 carryover candidates: 153
+
+Iteration 1, batch 14
+alpha half strings: 1902, beta half strings: 1912
+Subspace dimension: 1902 x 1912 = 3636624
+Projection took 146.8218 s
+Eigensolve took 18.0270 s
+Batch 14 electronic energy: -233.46957217032804
+Batch 14 carryover candidates: 207
+
+Iteration 1, batch 15
+alpha half strings: 1903, beta half strings: 1908
+Subspace dimension: 1903 x 1908 = 3630924
+Projection took 143.0873 s
+Eigensolve took 55.0867 s
+Batch 15 electronic energy: -233.31713918823715
+Batch 15 carryover candidates: 329
+
+Iteration 1, batch 16
+alpha half strings: 1900, beta half strings: 1901
+Subspace dimension: 1900 x 1901 = 3611900
+Projection took 144.7963 s
+Eigensolve took 21.9612 s
+Batch 16 electronic energy: -233.49931885436305
+Batch 16 carryover candidates: 273
+
+Iteration 1, batch 17
+alpha half strings: 1899, beta half strings: 1913
+Subspace dimension: 1899 x 1913 = 3632787
+Projection took 154.1488 s
+Eigensolve took 10.6604 s
+Batch 17 electronic energy: -233.52561273523932
+Batch 17 carryover candidates: 93
+
+Iteration 1, batch 18
+alpha half strings: 1906, beta half strings: 1919
+Subspace dimension: 1906 x 1919 = 3657614
+Projection took 149.4446 s
+Eigensolve took 14.7535 s
+Batch 18 electronic energy: -233.36331571866947
+Batch 18 carryover candidates: 250
+
+Iteration 1, batch 19
+alpha half strings: 1886, beta half strings: 1898
+Subspace dimension: 1886 x 1898 = 3579628
+Projection took 142.6110 s
+Eigensolve took 20.1333 s
+Batch 19 electronic energy: -233.5109857547884
+Batch 19 carryover candidates: 188
+
+Iteration 1 energies: [-233.5251532  -233.48619124 -233.35611648 -233.6651957  -233.50415977
+ -233.35963421 -233.49032324 -233.52997996 -233.35979977 -233.52938877
+ -233.46414626 -233.46931834 -233.48350822 -233.3620301  -233.46957217
+ -233.31713919 -233.49931885 -233.52561274 -233.36331572 -233.51098575]
+Iteration 1 min energy: -233.66519570422142
+Carryover strings for next iteration: 2771
+Iteration 1 took 3340.3462 s
+
+Starting Fulqrum SQD / configuration recovery iteration 2
+Number of postselected/recovered bitstrings: 494873
+
+Iteration 2, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 166.7710 s
+Eigensolve took 36.1597 s
+Batch 0 electronic energy: -233.68048250310233
+Batch 0 carryover candidates: 1115
+
+Iteration 2, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 171.4518 s
+Eigensolve took 35.2526 s
+Batch 1 electronic energy: -233.68652430254957
+Batch 1 carryover candidates: 1321
+
+Iteration 2, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 171.2630 s
+Eigensolve took 35.1100 s
+Batch 2 electronic energy: -233.67388387079276
+Batch 2 carryover candidates: 663
+
+Iteration 2, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 165.5864 s
+Eigensolve took 38.4203 s
+Batch 3 electronic energy: -233.67017229139046
+Batch 3 carryover candidates: 627
+
+Iteration 2, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 167.1977 s
+Eigensolve took 15.0170 s
+Batch 4 electronic energy: -233.67094427784536
+Batch 4 carryover candidates: 415
+
+Iteration 2, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 171.2750 s
+Eigensolve took 36.0609 s
+Batch 5 electronic energy: -233.68609617177378
+Batch 5 carryover candidates: 1400
+
+Iteration 2, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 170.7730 s
+Eigensolve took 29.7030 s
+Batch 6 electronic energy: -233.67678224210601
+Batch 6 carryover candidates: 538
+
+Iteration 2, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 169.8638 s
+Eigensolve took 34.3281 s
+Batch 7 electronic energy: -233.67145549903765
+Batch 7 carryover candidates: 553
+
+Iteration 2, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 166.5497 s
+Eigensolve took 33.6940 s
+Batch 8 electronic energy: -233.68346641985588
+Batch 8 carryover candidates: 1114
+
+Iteration 2, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 166.4523 s
+Eigensolve took 38.1980 s
+Batch 9 electronic energy: -233.67185238486817
+Batch 9 carryover candidates: 729
+
+Iteration 2, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 169.1418 s
+Eigensolve took 29.0832 s
+Batch 10 electronic energy: -233.6928576566901
+Batch 10 carryover candidates: 1286
+
+Iteration 2, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 169.3730 s
+Eigensolve took 15.0353 s
+Batch 11 electronic energy: -233.6762652803725
+Batch 11 carryover candidates: 452
+
+Iteration 2, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 167.0583 s
+Eigensolve took 14.4368 s
+Batch 12 electronic energy: -233.6680011424183
+Batch 12 carryover candidates: 419
+
+Iteration 2, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 168.2783 s
+Eigensolve took 28.9688 s
+Batch 13 electronic energy: -233.6738331856037
+Batch 13 carryover candidates: 459
+
+Iteration 2, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 167.0435 s
+Eigensolve took 32.0612 s
+Batch 14 electronic energy: -233.68192008699998
+Batch 14 carryover candidates: 1055
+
+Iteration 2, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 172.6655 s
+Eigensolve took 24.8234 s
+Batch 15 electronic energy: -233.6824332112069
+Batch 15 carryover candidates: 1095
+
+Iteration 2, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 168.2160 s
+Eigensolve took 14.0319 s
+Batch 16 electronic energy: -233.6763471585205
+Batch 16 carryover candidates: 422
+
+Iteration 2, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 165.9087 s
+Eigensolve took 28.7871 s
+Batch 17 electronic energy: -233.67679761289992
+Batch 17 carryover candidates: 596
+
+Iteration 2, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 167.6673 s
+Eigensolve took 82.0239 s
+Batch 18 electronic energy: -233.6728705132828
+Batch 18 carryover candidates: 2378
+
+Iteration 2, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 170.6840 s
+Eigensolve took 40.3556 s
+Batch 19 electronic energy: -233.6868120252483
+Batch 19 carryover candidates: 1294
+
+Iteration 2 energies: [-233.6804825  -233.6865243  -233.67388387 -233.67017229 -233.67094428
+ -233.68609617 -233.67678224 -233.6714555  -233.68346642 -233.67185238
+ -233.69285766 -233.67626528 -233.66800114 -233.67383319 -233.68192009
+ -233.68243321 -233.67634716 -233.67679761 -233.67287051 -233.68681203]
+Iteration 2 min energy: -233.6928576566901
+Carryover strings for next iteration: 7013
+Iteration 2 took 4044.3384 s
+
+Starting Fulqrum SQD / configuration recovery iteration 3
+Number of postselected/recovered bitstrings: 493871
+
+Iteration 3, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 172.8119 s
+Eigensolve took 48.2047 s
+Batch 0 electronic energy: -233.72780590919712
+Batch 0 carryover candidates: 3819
+
+Iteration 3, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 172.0822 s
+Eigensolve took 49.3040 s
+Batch 1 electronic energy: -233.72873243603317
+Batch 1 carryover candidates: 3506
+
+Iteration 3, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 170.5026 s
+Eigensolve took 41.7162 s
+Batch 2 electronic energy: -233.72779583388703
+Batch 2 carryover candidates: 3696
+
+Iteration 3, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 169.9109 s
+Eigensolve took 41.5706 s
+Batch 3 electronic energy: -233.73044668528073
+Batch 3 carryover candidates: 3424
+
+Iteration 3, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 171.8548 s
+Eigensolve took 43.9166 s
+Batch 4 electronic energy: -233.73073453908933
+Batch 4 carryover candidates: 3507
+
+Iteration 3, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 170.8707 s
+Eigensolve took 49.6390 s
+Batch 5 electronic energy: -233.72740227454173
+Batch 5 carryover candidates: 3832
+
+Iteration 3, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 173.1712 s
+Eigensolve took 47.3032 s
+Batch 6 electronic energy: -233.7266131781152
+Batch 6 carryover candidates: 3684
+
+Iteration 3, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 169.9427 s
+Eigensolve took 49.2750 s
+Batch 7 electronic energy: -233.72671405607417
+Batch 7 carryover candidates: 3725
+
+Iteration 3, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 172.1249 s
+Eigensolve took 48.7155 s
+Batch 8 electronic energy: -233.72668201948093
+Batch 8 carryover candidates: 3788
+
+Iteration 3, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 173.8660 s
+Eigensolve took 47.8828 s
+Batch 9 electronic energy: -233.72594649970966
+Batch 9 carryover candidates: 3750
+
+Iteration 3, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 173.8813 s
+Eigensolve took 46.4664 s
+Batch 10 electronic energy: -233.72642232465634
+Batch 10 carryover candidates: 3761
+
+Iteration 3, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 172.1497 s
+Eigensolve took 51.0041 s
+Batch 11 electronic energy: -233.72961525890756
+Batch 11 carryover candidates: 3850
+
+Iteration 3, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 172.9594 s
+Eigensolve took 48.6204 s
+Batch 12 electronic energy: -233.72341004627302
+Batch 12 carryover candidates: 3895
+
+Iteration 3, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 173.5799 s
+Eigensolve took 41.2550 s
+Batch 13 electronic energy: -233.7366638865292
+Batch 13 carryover candidates: 3582
+
+Iteration 3, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 173.5702 s
+Eigensolve took 50.7912 s
+Batch 14 electronic energy: -233.72797620174742
+Batch 14 carryover candidates: 3822
+
+Iteration 3, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 176.4116 s
+Eigensolve took 49.1428 s
+Batch 15 electronic energy: -233.7264299930085
+Batch 15 carryover candidates: 3817
+
+Iteration 3, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 174.2509 s
+Eigensolve took 44.4060 s
+Batch 16 electronic energy: -233.7275324836709
+Batch 16 carryover candidates: 3612
+
+Iteration 3, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 172.2348 s
+Eigensolve took 47.4646 s
+Batch 17 electronic energy: -233.72603312406764
+Batch 17 carryover candidates: 3716
+
+Iteration 3, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 171.5296 s
+Eigensolve took 46.5390 s
+Batch 18 electronic energy: -233.72605351723894
+Batch 18 carryover candidates: 3859
+
+Iteration 3, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 175.0356 s
+Eigensolve took 42.0902 s
+Batch 19 electronic energy: -233.73309282776998
+Batch 19 carryover candidates: 3648
+
+Iteration 3 energies: [-233.72780591 -233.72873244 -233.72779583 -233.73044669 -233.73073454
+ -233.72740227 -233.72661318 -233.72671406 -233.72668202 -233.7259465
+ -233.72642232 -233.72961526 -233.72341005 -233.73666389 -233.7279762
+ -233.72642999 -233.72753248 -233.72603312 -233.72605352 -233.73309283]
+Iteration 3 min energy: -233.7366638865292
+Carryover strings for next iteration: 7568
+Iteration 3 took 4423.1114 s
+
+Starting Fulqrum SQD / configuration recovery iteration 4
+Number of postselected/recovered bitstrings: 499179
+
+Iteration 4, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 165.7213 s
+Eigensolve took 45.8088 s
+Batch 0 electronic energy: -233.7927984723509
+Batch 0 carryover candidates: 6970
+
+Iteration 4, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 171.2395 s
+Eigensolve took 41.0324 s
+Batch 1 electronic energy: -233.7910436064269
+Batch 1 carryover candidates: 7029
+
+Iteration 4, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 168.5777 s
+Eigensolve took 38.8511 s
+Batch 2 electronic energy: -233.79311302937344
+Batch 2 carryover candidates: 6923
+
+Iteration 4, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 170.2423 s
+Eigensolve took 40.1005 s
+Batch 3 electronic energy: -233.79348712184844
+Batch 3 carryover candidates: 6871
+
+Iteration 4, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 168.1739 s
+Eigensolve took 44.0006 s
+Batch 4 electronic energy: -233.79544559856177
+Batch 4 carryover candidates: 6710
+
+Iteration 4, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 166.6759 s
+Eigensolve took 43.9999 s
+Batch 5 electronic energy: -233.7908904542957
+Batch 5 carryover candidates: 6786
+
+Iteration 4, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 165.3998 s
+Eigensolve took 39.5864 s
+Batch 6 electronic energy: -233.7944037044586
+Batch 6 carryover candidates: 6808
+
+Iteration 4, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 166.6249 s
+Eigensolve took 37.9635 s
+Batch 7 electronic energy: -233.79095730222832
+Batch 7 carryover candidates: 6871
+
+Iteration 4, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 167.2298 s
+Eigensolve took 43.2700 s
+Batch 8 electronic energy: -233.79180975694908
+Batch 8 carryover candidates: 6842
+
+Iteration 4, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 167.0410 s
+Eigensolve took 46.7284 s
+Batch 9 electronic energy: -233.79552959344022
+Batch 9 carryover candidates: 7012
+
+Iteration 4, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 169.0362 s
+Eigensolve took 36.9948 s
+Batch 10 electronic energy: -233.7937286189582
+Batch 10 carryover candidates: 6904
+
+Iteration 4, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 167.7603 s
+Eigensolve took 43.3587 s
+Batch 11 electronic energy: -233.79315893753528
+Batch 11 carryover candidates: 6845
+
+Iteration 4, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 165.7742 s
+Eigensolve took 42.7356 s
+Batch 12 electronic energy: -233.795487937613
+Batch 12 carryover candidates: 6789
+
+Iteration 4, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 168.9273 s
+Eigensolve took 38.0279 s
+Batch 13 electronic energy: -233.79407705882528
+Batch 13 carryover candidates: 6966
+
+Iteration 4, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 167.6050 s
+Eigensolve took 43.7059 s
+Batch 14 electronic energy: -233.79096330931392
+Batch 14 carryover candidates: 6911
+
+Iteration 4, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 167.3156 s
+Eigensolve took 39.1688 s
+Batch 15 electronic energy: -233.79545283070414
+Batch 15 carryover candidates: 6790
+
+Iteration 4, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 168.7831 s
+Eigensolve took 37.6991 s
+Batch 16 electronic energy: -233.79100584330152
+Batch 16 carryover candidates: 6859
+
+Iteration 4, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 169.6489 s
+Eigensolve took 45.9178 s
+Batch 17 electronic energy: -233.79105671768022
+Batch 17 carryover candidates: 6882
+
+Iteration 4, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 171.5563 s
+Eigensolve took 37.1913 s
+Batch 18 electronic energy: -233.7941224196373
+Batch 18 carryover candidates: 6812
+
+Iteration 4, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 169.6273 s
+Eigensolve took 38.7956 s
+Batch 19 electronic energy: -233.79104901100953
+Batch 19 carryover candidates: 6915
+
+Iteration 4 energies: [-233.79279847 -233.79104361 -233.79311303 -233.79348712 -233.7954456
+ -233.79089045 -233.7944037  -233.7909573  -233.79180976 -233.79552959
+ -233.79372862 -233.79315894 -233.79548794 -233.79407706 -233.79096331
+ -233.79545283 -233.79100584 -233.79105672 -233.79412242 -233.79104901]
+Iteration 4 min energy: -233.79552959344022
+Carryover strings for next iteration: 11075
+Iteration 4 took 4225.2514 s
+
+Starting Fulqrum SQD / configuration recovery iteration 5
+Number of postselected/recovered bitstrings: 499119
+
+Iteration 5, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.0991 s
+Eigensolve took 59.2737 s
+Batch 0 electronic energy: -233.8036080950004
+Batch 0 carryover candidates: 11256
+
+Iteration 5, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 182.2088 s
+Eigensolve took 60.2601 s
+Batch 1 electronic energy: -233.804238336351
+Batch 1 carryover candidates: 11306
+
+Iteration 5, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.1452 s
+Eigensolve took 52.4627 s
+Batch 2 electronic energy: -233.80486561458326
+Batch 2 carryover candidates: 11239
+
+Iteration 5, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.4543 s
+Eigensolve took 52.9152 s
+Batch 3 electronic energy: -233.80359232444945
+Batch 3 carryover candidates: 11202
+
+Iteration 5, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.0405 s
+Eigensolve took 54.7448 s
+Batch 4 electronic energy: -233.80360110469712
+Batch 4 carryover candidates: 11245
+
+Iteration 5, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 183.8031 s
+Eigensolve took 52.2448 s
+Batch 5 electronic energy: -233.80362959544442
+Batch 5 carryover candidates: 11234
+
+Iteration 5, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.4808 s
+Eigensolve took 53.3789 s
+Batch 6 electronic energy: -233.80362784152558
+Batch 6 carryover candidates: 11215
+
+Iteration 5, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.1109 s
+Eigensolve took 55.7967 s
+Batch 7 electronic energy: -233.80362163139296
+Batch 7 carryover candidates: 11215
+
+Iteration 5, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.5735 s
+Eigensolve took 52.9894 s
+Batch 8 electronic energy: -233.80361992085963
+Batch 8 carryover candidates: 11221
+
+Iteration 5, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.6358 s
+Eigensolve took 57.0797 s
+Batch 9 electronic energy: -233.80489446479297
+Batch 9 carryover candidates: 11258
+
+Iteration 5, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.5413 s
+Eigensolve took 55.1541 s
+Batch 10 electronic energy: -233.80418405475442
+Batch 10 carryover candidates: 11251
+
+Iteration 5, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.6932 s
+Eigensolve took 52.9607 s
+Batch 11 electronic energy: -233.8069984943229
+Batch 11 carryover candidates: 11186
+
+Iteration 5, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 183.3753 s
+Eigensolve took 49.9887 s
+Batch 12 electronic energy: -233.8036010841653
+Batch 12 carryover candidates: 11231
+
+Iteration 5, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.5442 s
+Eigensolve took 51.1884 s
+Batch 13 electronic energy: -233.80360154461798
+Batch 13 carryover candidates: 11217
+
+Iteration 5, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.2989 s
+Eigensolve took 52.9543 s
+Batch 14 electronic energy: -233.804851052159
+Batch 14 carryover candidates: 11274
+
+Iteration 5, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.6266 s
+Eigensolve took 57.3803 s
+Batch 15 electronic energy: -233.80361058787489
+Batch 15 carryover candidates: 11270
+
+Iteration 5, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.2607 s
+Eigensolve took 53.1953 s
+Batch 16 electronic energy: -233.8035857851388
+Batch 16 carryover candidates: 11201
+
+Iteration 5, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.0916 s
+Eigensolve took 57.5965 s
+Batch 17 electronic energy: -233.8048216261456
+Batch 17 carryover candidates: 11235
+
+Iteration 5, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.8117 s
+Eigensolve took 55.7174 s
+Batch 18 electronic energy: -233.8048630158524
+Batch 18 carryover candidates: 11232
+
+Iteration 5, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 183.3713 s
+Eigensolve took 52.9834 s
+Batch 19 electronic energy: -233.80360594879858
+Batch 19 carryover candidates: 11237
+
+Iteration 5 energies: [-233.8036081  -233.80423834 -233.80486561 -233.80359232 -233.8036011
+ -233.8036296  -233.80362784 -233.80362163 -233.80361992 -233.80489446
+ -233.80418405 -233.80699849 -233.80360108 -233.80360154 -233.80485105
+ -233.80361059 -233.80358579 -233.80482163 -233.80486302 -233.80360595]
+Iteration 5 min energy: -233.8069984943229
+Carryover strings for next iteration: 12763
+Iteration 5 took 4805.9874 s
+
+Starting Fulqrum SQD / configuration recovery iteration 6
+Number of postselected/recovered bitstrings: 499130
+
+Iteration 6, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.8403 s
+Eigensolve took 46.9922 s
+Batch 0 electronic energy: -233.81057029213878
+Batch 0 carryover candidates: 12319
+
+Iteration 6, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.7221 s
+Eigensolve took 44.9745 s
+Batch 1 electronic energy: -233.81056957728217
+Batch 1 carryover candidates: 12323
+
+Iteration 6, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.6460 s
+Eigensolve took 45.4626 s
+Batch 2 electronic energy: -233.8105867539088
+Batch 2 carryover candidates: 12359
+
+Iteration 6, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.0255 s
+Eigensolve took 47.3052 s
+Batch 3 electronic energy: -233.81061145882987
+Batch 3 carryover candidates: 12346
+
+Iteration 6, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.3892 s
+Eigensolve took 48.0775 s
+Batch 4 electronic energy: -233.81060655202384
+Batch 4 carryover candidates: 12355
+
+Iteration 6, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.6943 s
+Eigensolve took 46.0916 s
+Batch 5 electronic energy: -233.8105758493149
+Batch 5 carryover candidates: 12340
+
+Iteration 6, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.3571 s
+Eigensolve took 46.8923 s
+Batch 6 electronic energy: -233.81060302347612
+Batch 6 carryover candidates: 12326
+
+Iteration 6, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.8200 s
+Eigensolve took 51.4649 s
+Batch 7 electronic energy: -233.81057447474186
+Batch 7 carryover candidates: 12324
+
+Iteration 6, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.7341 s
+Eigensolve took 46.4231 s
+Batch 8 electronic energy: -233.81057633138138
+Batch 8 carryover candidates: 12334
+
+Iteration 6, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.8479 s
+Eigensolve took 46.7569 s
+Batch 9 electronic energy: -233.81059169760104
+Batch 9 carryover candidates: 12352
+
+Iteration 6, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.0696 s
+Eigensolve took 48.2401 s
+Batch 10 electronic energy: -233.81057831201483
+Batch 10 carryover candidates: 12332
+
+Iteration 6, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.0239 s
+Eigensolve took 47.6652 s
+Batch 11 electronic energy: -233.81059032757918
+Batch 11 carryover candidates: 12337
+
+Iteration 6, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6079 s
+Eigensolve took 43.8865 s
+Batch 12 electronic energy: -233.81058726269924
+Batch 12 carryover candidates: 12371
+
+Iteration 6, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.3498 s
+Eigensolve took 45.6119 s
+Batch 13 electronic energy: -233.81060788284182
+Batch 13 carryover candidates: 12398
+
+Iteration 6, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.0134 s
+Eigensolve took 44.5921 s
+Batch 14 electronic energy: -233.81057562715208
+Batch 14 carryover candidates: 12319
+
+Iteration 6, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.5766 s
+Eigensolve took 46.2098 s
+Batch 15 electronic energy: -233.81056503729502
+Batch 15 carryover candidates: 12314
+
+Iteration 6, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.7868 s
+Eigensolve took 45.7424 s
+Batch 16 electronic energy: -233.81057767888075
+Batch 16 carryover candidates: 12333
+
+Iteration 6, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.9074 s
+Eigensolve took 46.4319 s
+Batch 17 electronic energy: -233.81058780307288
+Batch 17 carryover candidates: 12344
+
+Iteration 6, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.1884 s
+Eigensolve took 45.8921 s
+Batch 18 electronic energy: -233.81057321204142
+Batch 18 carryover candidates: 12327
+
+Iteration 6, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.7992 s
+Eigensolve took 52.1259 s
+Batch 19 electronic energy: -233.81057111767538
+Batch 19 carryover candidates: 12319
+
+Iteration 6 energies: [-233.81057029 -233.81056958 -233.81058675 -233.81061146 -233.81060655
+ -233.81057585 -233.81060302 -233.81057447 -233.81057633 -233.8105917
+ -233.81057831 -233.81059033 -233.81058726 -233.81060788 -233.81057563
+ -233.81056504 -233.81057768 -233.8105878  -233.81057321 -233.81057112]
+Iteration 6 min energy: -233.81061145882987
+Carryover strings for next iteration: 12972
+Iteration 6 took 4702.3186 s
+
+Starting Fulqrum SQD / configuration recovery iteration 7
+Number of postselected/recovered bitstrings: 499165
+
+Iteration 7, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.6061 s
+Eigensolve took 38.7983 s
+Batch 0 electronic energy: -233.81088989925783
+Batch 0 carryover candidates: 12895
+
+Iteration 7, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.2221 s
+Eigensolve took 39.5917 s
+Batch 1 electronic energy: -233.81089167240094
+Batch 1 carryover candidates: 12901
+
+Iteration 7, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.2507 s
+Eigensolve took 36.9171 s
+Batch 2 electronic energy: -233.81089199215447
+Batch 2 carryover candidates: 12906
+
+Iteration 7, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.9603 s
+Eigensolve took 39.4951 s
+Batch 3 electronic energy: -233.81089881231014
+Batch 3 carryover candidates: 12926
+
+Iteration 7, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.0443 s
+Eigensolve took 40.9735 s
+Batch 4 electronic energy: -233.81091831010463
+Batch 4 carryover candidates: 12912
+
+Iteration 7, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.4776 s
+Eigensolve took 38.5111 s
+Batch 5 electronic energy: -233.8108895965792
+Batch 5 carryover candidates: 12903
+
+Iteration 7, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.4538 s
+Eigensolve took 39.4382 s
+Batch 6 electronic energy: -233.81092082874406
+Batch 6 carryover candidates: 12907
+
+Iteration 7, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.5658 s
+Eigensolve took 40.8928 s
+Batch 7 electronic energy: -233.8108926823769
+Batch 7 carryover candidates: 12905
+
+Iteration 7, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.1667 s
+Eigensolve took 36.9972 s
+Batch 8 electronic energy: -233.81089592855727
+Batch 8 carryover candidates: 12912
+
+Iteration 7, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.7888 s
+Eigensolve took 38.7074 s
+Batch 9 electronic energy: -233.81089376499963
+Batch 9 carryover candidates: 12903
+
+Iteration 7, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.8761 s
+Eigensolve took 37.6357 s
+Batch 10 electronic energy: -233.81092056496257
+Batch 10 carryover candidates: 12914
+
+Iteration 7, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.8449 s
+Eigensolve took 40.7307 s
+Batch 11 electronic energy: -233.81089764292273
+Batch 11 carryover candidates: 12924
+
+Iteration 7, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.8704 s
+Eigensolve took 38.6490 s
+Batch 12 electronic energy: -233.8109003077796
+Batch 12 carryover candidates: 12906
+
+Iteration 7, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.5316 s
+Eigensolve took 39.0608 s
+Batch 13 electronic energy: -233.81089580247516
+Batch 13 carryover candidates: 12900
+
+Iteration 7, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.1454 s
+Eigensolve took 39.5767 s
+Batch 14 electronic energy: -233.81091439735698
+Batch 14 carryover candidates: 12921
+
+Iteration 7, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.1454 s
+Eigensolve took 41.8157 s
+Batch 15 electronic energy: -233.81089743373664
+Batch 15 carryover candidates: 12905
+
+Iteration 7, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.8186 s
+Eigensolve took 38.2924 s
+Batch 16 electronic energy: -233.81089761113873
+Batch 16 carryover candidates: 12915
+
+Iteration 7, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.9901 s
+Eigensolve took 38.3903 s
+Batch 17 electronic energy: -233.81091864748603
+Batch 17 carryover candidates: 12917
+
+Iteration 7, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 183.5427 s
+Eigensolve took 37.7004 s
+Batch 18 electronic energy: -233.8108981555977
+Batch 18 carryover candidates: 12908
+
+Iteration 7, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 183.9362 s
+Eigensolve took 38.4548 s
+Batch 19 electronic energy: -233.81090028584487
+Batch 19 carryover candidates: 12913
+
+Iteration 7 energies: [-233.8108899  -233.81089167 -233.81089199 -233.81089881 -233.81091831
+ -233.8108896  -233.81092083 -233.81089268 -233.81089593 -233.81089376
+ -233.81092056 -233.81089764 -233.81090031 -233.8108958  -233.8109144
+ -233.81089743 -233.81089761 -233.81091865 -233.81089816 -233.81090029]
+Iteration 7 min energy: -233.81092082874406
+Carryover strings for next iteration: 13268
+Iteration 7 took 4505.1947 s
+
+Starting Fulqrum SQD / configuration recovery iteration 8
+Number of postselected/recovered bitstrings: 499160
+
+Iteration 8, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.4213 s
+Eigensolve took 40.5051 s
+Batch 0 electronic energy: -233.81111436194405
+Batch 0 carryover candidates: 13211
+
+Iteration 8, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.1280 s
+Eigensolve took 39.3524 s
+Batch 1 electronic energy: -233.81111369824254
+Batch 1 carryover candidates: 13216
+
+Iteration 8, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.1640 s
+Eigensolve took 38.2113 s
+Batch 2 electronic energy: -233.81111909762066
+Batch 2 carryover candidates: 13214
+
+Iteration 8, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.4752 s
+Eigensolve took 37.9771 s
+Batch 3 electronic energy: -233.81112059371443
+Batch 3 carryover candidates: 13224
+
+Iteration 8, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.0974 s
+Eigensolve took 39.2293 s
+Batch 4 electronic energy: -233.8111190711657
+Batch 4 carryover candidates: 13215
+
+Iteration 8, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.5149 s
+Eigensolve took 38.1775 s
+Batch 5 electronic energy: -233.81111437913657
+Batch 5 carryover candidates: 13207
+
+Iteration 8, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.9404 s
+Eigensolve took 38.2630 s
+Batch 6 electronic energy: -233.81111587569657
+Batch 6 carryover candidates: 13220
+
+Iteration 8, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.6412 s
+Eigensolve took 41.4256 s
+Batch 7 electronic energy: -233.81112635471234
+Batch 7 carryover candidates: 13238
+
+Iteration 8, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.8136 s
+Eigensolve took 38.3974 s
+Batch 8 electronic energy: -233.81111933011297
+Batch 8 carryover candidates: 13225
+
+Iteration 8, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.7094 s
+Eigensolve took 41.0392 s
+Batch 9 electronic energy: -233.81111345675112
+Batch 9 carryover candidates: 13214
+
+Iteration 8, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.2068 s
+Eigensolve took 41.0912 s
+Batch 10 electronic energy: -233.8111343947405
+Batch 10 carryover candidates: 13230
+
+Iteration 8, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.1129 s
+Eigensolve took 40.1502 s
+Batch 11 electronic energy: -233.81111520773317
+Batch 11 carryover candidates: 13217
+
+Iteration 8, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.8569 s
+Eigensolve took 42.0309 s
+Batch 12 electronic energy: -233.81111461471633
+Batch 12 carryover candidates: 13214
+
+Iteration 8, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.6310 s
+Eigensolve took 38.8423 s
+Batch 13 electronic energy: -233.81111425009104
+Batch 13 carryover candidates: 13215
+
+Iteration 8, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.1843 s
+Eigensolve took 41.6089 s
+Batch 14 electronic energy: -233.81112078816366
+Batch 14 carryover candidates: 13229
+
+Iteration 8, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.9530 s
+Eigensolve took 38.9234 s
+Batch 15 electronic energy: -233.81111406523186
+Batch 15 carryover candidates: 13212
+
+Iteration 8, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 184.7866 s
+Eigensolve took 38.1258 s
+Batch 16 electronic energy: -233.8111136049921
+Batch 16 carryover candidates: 13212
+
+Iteration 8, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.2558 s
+Eigensolve took 36.2236 s
+Batch 17 electronic energy: -233.8111148955447
+Batch 17 carryover candidates: 13214
+
+Iteration 8, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.5981 s
+Eigensolve took 39.1523 s
+Batch 18 electronic energy: -233.8111452854613
+Batch 18 carryover candidates: 13239
+
+Iteration 8, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.9216 s
+Eigensolve took 39.3325 s
+Batch 19 electronic energy: -233.81113574829257
+Batch 19 carryover candidates: 13223
+
+Iteration 8 energies: [-233.81111436 -233.8111137  -233.8111191  -233.81112059 -233.81111907
+ -233.81111438 -233.81111588 -233.81112635 -233.81111933 -233.81111346
+ -233.81113439 -233.81111521 -233.81111461 -233.81111425 -233.81112079
+ -233.81111407 -233.8111136  -233.8111149  -233.81114529 -233.81113575]
+Iteration 8 min energy: -233.8111452854613
+Carryover strings for next iteration: 13386
+Iteration 8 took 4537.4007 s
+
+Starting Fulqrum SQD / configuration recovery iteration 9
+Number of postselected/recovered bitstrings: 499161
+
+Iteration 9, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.2212 s
+Eigensolve took 38.6976 s
+Batch 0 electronic energy: -233.8112131419126
+Batch 0 carryover candidates: 13358
+
+Iteration 9, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.5812 s
+Eigensolve took 39.3890 s
+Batch 1 electronic energy: -233.81121124332415
+Batch 1 carryover candidates: 13352
+
+Iteration 9, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.4506 s
+Eigensolve took 39.4215 s
+Batch 2 electronic energy: -233.81123699300292
+Batch 2 carryover candidates: 13362
+
+Iteration 9, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.7606 s
+Eigensolve took 42.8466 s
+Batch 3 electronic energy: -233.8112118010468
+Batch 3 carryover candidates: 13352
+
+Iteration 9, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.8429 s
+Eigensolve took 40.7361 s
+Batch 4 electronic energy: -233.81121894031554
+Batch 4 carryover candidates: 13365
+
+Iteration 9, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.4252 s
+Eigensolve took 43.1080 s
+Batch 5 electronic energy: -233.81121151338795
+Batch 5 carryover candidates: 13354
+
+Iteration 9, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.6138 s
+Eigensolve took 39.2889 s
+Batch 6 electronic energy: -233.81121275842656
+Batch 6 carryover candidates: 13355
+
+Iteration 9, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.1806 s
+Eigensolve took 36.7977 s
+Batch 7 electronic energy: -233.81121396703597
+Batch 7 carryover candidates: 13358
+
+Iteration 9, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1915 s
+Eigensolve took 41.7500 s
+Batch 8 electronic energy: -233.8112200456457
+Batch 8 carryover candidates: 13363
+
+Iteration 9, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.3938 s
+Eigensolve took 39.4215 s
+Batch 9 electronic energy: -233.81121936569548
+Batch 9 carryover candidates: 13358
+
+Iteration 9, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.6752 s
+Eigensolve took 40.0947 s
+Batch 10 electronic energy: -233.8112121410165
+Batch 10 carryover candidates: 13347
+
+Iteration 9, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.8840 s
+Eigensolve took 42.5571 s
+Batch 11 electronic energy: -233.81121184693282
+Batch 11 carryover candidates: 13349
+
+Iteration 9, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.5726 s
+Eigensolve took 37.5473 s
+Batch 12 electronic energy: -233.81121782789816
+Batch 12 carryover candidates: 13361
+
+Iteration 9, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.7038 s
+Eigensolve took 44.2192 s
+Batch 13 electronic energy: -233.8112123603579
+Batch 13 carryover candidates: 13350
+
+Iteration 9, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6021 s
+Eigensolve took 39.0833 s
+Batch 14 electronic energy: -233.8112162003489
+Batch 14 carryover candidates: 13355
+
+Iteration 9, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.5756 s
+Eigensolve took 40.7182 s
+Batch 15 electronic energy: -233.811216632331
+Batch 15 carryover candidates: 13373
+
+Iteration 9, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.2311 s
+Eigensolve took 39.7686 s
+Batch 16 electronic energy: -233.81121834384308
+Batch 16 carryover candidates: 13367
+
+Iteration 9, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.4636 s
+Eigensolve took 39.6098 s
+Batch 17 electronic energy: -233.8112122830343
+Batch 17 carryover candidates: 13352
+
+Iteration 9, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.9463 s
+Eigensolve took 40.8079 s
+Batch 18 electronic energy: -233.81121226114612
+Batch 18 carryover candidates: 13354
+
+Iteration 9, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.9100 s
+Eigensolve took 38.6685 s
+Batch 19 electronic energy: -233.81121572125696
+Batch 19 carryover candidates: 13348
+
+Iteration 9 energies: [-233.81121314 -233.81121124 -233.81123699 -233.8112118  -233.81121894
+ -233.81121151 -233.81121276 -233.81121397 -233.81122005 -233.81121937
+ -233.81121214 -233.81121185 -233.81121783 -233.81121236 -233.8112162
+ -233.81121663 -233.81121834 -233.81121228 -233.81121226 -233.81121572]
+Iteration 9 min energy: -233.81123699300292
+Carryover strings for next iteration: 13518
+Iteration 9 took 4587.3089 s
+
+Starting Fulqrum SQD / configuration recovery iteration 10
+Number of postselected/recovered bitstrings: 499162
+
+Iteration 10, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.7205 s
+Eigensolve took 40.7257 s
+Batch 0 electronic energy: -233.81128223814468
+Batch 0 carryover candidates: 13477
+
+Iteration 10, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.7195 s
+Eigensolve took 41.3742 s
+Batch 1 electronic energy: -233.81128653109084
+Batch 1 carryover candidates: 13481
+
+Iteration 10, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.2696 s
+Eigensolve took 42.7708 s
+Batch 2 electronic energy: -233.81128777658722
+Batch 2 carryover candidates: 13480
+
+Iteration 10, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.4321 s
+Eigensolve took 39.6165 s
+Batch 3 electronic energy: -233.81128745701292
+Batch 3 carryover candidates: 13488
+
+Iteration 10, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.2093 s
+Eigensolve took 39.2669 s
+Batch 4 electronic energy: -233.81128959559888
+Batch 4 carryover candidates: 13484
+
+Iteration 10, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.7209 s
+Eigensolve took 41.8558 s
+Batch 5 electronic energy: -233.81128156605257
+Batch 5 carryover candidates: 13469
+
+Iteration 10, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.0853 s
+Eigensolve took 40.1627 s
+Batch 6 electronic energy: -233.81128489254766
+Batch 6 carryover candidates: 13481
+
+Iteration 10, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.2616 s
+Eigensolve took 38.0606 s
+Batch 7 electronic energy: -233.8112830028196
+Batch 7 carryover candidates: 13481
+
+Iteration 10, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.9170 s
+Eigensolve took 40.0199 s
+Batch 8 electronic energy: -233.81128447085072
+Batch 8 carryover candidates: 13484
+
+Iteration 10, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.3599 s
+Eigensolve took 39.1648 s
+Batch 9 electronic energy: -233.81128600901437
+Batch 9 carryover candidates: 13490
+
+Iteration 10, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.9267 s
+Eigensolve took 39.4098 s
+Batch 10 electronic energy: -233.8112845835562
+Batch 10 carryover candidates: 13471
+
+Iteration 10, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.0123 s
+Eigensolve took 40.6243 s
+Batch 11 electronic energy: -233.81128256434718
+Batch 11 carryover candidates: 13475
+
+Iteration 10, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.5294 s
+Eigensolve took 40.5812 s
+Batch 12 electronic energy: -233.81128185856153
+Batch 12 carryover candidates: 13472
+
+Iteration 10, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.2826 s
+Eigensolve took 39.3322 s
+Batch 13 electronic energy: -233.811282891509
+Batch 13 carryover candidates: 13479
+
+Iteration 10, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.1895 s
+Eigensolve took 41.5202 s
+Batch 14 electronic energy: -233.81128593471436
+Batch 14 carryover candidates: 13487
+
+Iteration 10, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.9244 s
+Eigensolve took 40.2860 s
+Batch 15 electronic energy: -233.81128179435515
+Batch 15 carryover candidates: 13476
+
+Iteration 10, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.8837 s
+Eigensolve took 42.1657 s
+Batch 16 electronic energy: -233.81128748165733
+Batch 16 carryover candidates: 13491
+
+Iteration 10, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.2118 s
+Eigensolve took 40.4300 s
+Batch 17 electronic energy: -233.81128787864822
+Batch 17 carryover candidates: 13490
+
+Iteration 10, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1110 s
+Eigensolve took 39.7253 s
+Batch 18 electronic energy: -233.8112823642002
+Batch 18 carryover candidates: 13476
+
+Iteration 10, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 185.6399 s
+Eigensolve took 38.2627 s
+Batch 19 electronic energy: -233.81128644205194
+Batch 19 carryover candidates: 13479
+
+Iteration 10 energies: [-233.81128224 -233.81128653 -233.81128778 -233.81128746 -233.8112896
+ -233.81128157 -233.81128489 -233.811283   -233.81128447 -233.81128601
+ -233.81128458 -233.81128256 -233.81128186 -233.81128289 -233.81128593
+ -233.81128179 -233.81128748 -233.81128788 -233.81128236 -233.81128644]
+Iteration 10 min energy: -233.81128959559888
+Carryover strings for next iteration: 13640
+Iteration 10 took 4586.2218 s
+
+Starting Fulqrum SQD / configuration recovery iteration 11
+Number of postselected/recovered bitstrings: 499168
+
+Iteration 11, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.8256 s
+Eigensolve took 44.5876 s
+Batch 0 electronic energy: -233.8113455467892
+Batch 0 carryover candidates: 13603
+
+Iteration 11, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.4480 s
+Eigensolve took 40.3766 s
+Batch 1 electronic energy: -233.8113406641772
+Batch 1 carryover candidates: 13596
+
+Iteration 11, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1815 s
+Eigensolve took 41.5003 s
+Batch 2 electronic energy: -233.8113433683702
+Batch 2 carryover candidates: 13599
+
+Iteration 11, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.5081 s
+Eigensolve took 38.5269 s
+Batch 3 electronic energy: -233.8113403672598
+Batch 3 carryover candidates: 13594
+
+Iteration 11, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.4415 s
+Eigensolve took 40.5564 s
+Batch 4 electronic energy: -233.81134076613208
+Batch 4 carryover candidates: 13598
+
+Iteration 11, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9884 s
+Eigensolve took 38.1954 s
+Batch 5 electronic energy: -233.81134133838577
+Batch 5 carryover candidates: 13593
+
+Iteration 11, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1076 s
+Eigensolve took 41.5487 s
+Batch 6 electronic energy: -233.81134284481593
+Batch 6 carryover candidates: 13602
+
+Iteration 11, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.4307 s
+Eigensolve took 40.9394 s
+Batch 7 electronic energy: -233.81134590377937
+Batch 7 carryover candidates: 13606
+
+Iteration 11, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.5809 s
+Eigensolve took 40.5686 s
+Batch 8 electronic energy: -233.81134894631776
+Batch 8 carryover candidates: 13615
+
+Iteration 11, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1146 s
+Eigensolve took 41.0775 s
+Batch 9 electronic energy: -233.81134226246473
+Batch 9 carryover candidates: 13599
+
+Iteration 11, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.4164 s
+Eigensolve took 39.4609 s
+Batch 10 electronic energy: -233.81134202852977
+Batch 10 carryover candidates: 13601
+
+Iteration 11, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.5239 s
+Eigensolve took 39.4334 s
+Batch 11 electronic energy: -233.81134315628233
+Batch 11 carryover candidates: 13607
+
+Iteration 11, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.0708 s
+Eigensolve took 39.3683 s
+Batch 12 electronic energy: -233.81134849417515
+Batch 12 carryover candidates: 13609
+
+Iteration 11, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.3604 s
+Eigensolve took 39.1036 s
+Batch 13 electronic energy: -233.81134039909418
+Batch 13 carryover candidates: 13596
+
+Iteration 11, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1132 s
+Eigensolve took 40.1325 s
+Batch 14 electronic energy: -233.8113464742605
+Batch 14 carryover candidates: 13608
+
+Iteration 11, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.4062 s
+Eigensolve took 41.2684 s
+Batch 15 electronic energy: -233.81134527398123
+Batch 15 carryover candidates: 13596
+
+Iteration 11, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.5883 s
+Eigensolve took 38.7327 s
+Batch 16 electronic energy: -233.81134179356047
+Batch 16 carryover candidates: 13598
+
+Iteration 11, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.1880 s
+Eigensolve took 41.3644 s
+Batch 17 electronic energy: -233.8113413764255
+Batch 17 carryover candidates: 13592
+
+Iteration 11, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.2852 s
+Eigensolve took 41.0413 s
+Batch 18 electronic energy: -233.8113493196012
+Batch 18 carryover candidates: 13602
+
+Iteration 11, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.2422 s
+Eigensolve took 39.1262 s
+Batch 19 electronic energy: -233.81134806774995
+Batch 19 carryover candidates: 13605
+
+Iteration 11 energies: [-233.81134555 -233.81134066 -233.81134337 -233.81134037 -233.81134077
+ -233.81134134 -233.81134284 -233.8113459  -233.81134895 -233.81134226
+ -233.81134203 -233.81134316 -233.81134849 -233.8113404  -233.81134647
+ -233.81134527 -233.81134179 -233.81134138 -233.81134932 -233.81134807]
+Iteration 11 min energy: -233.8113493196012
+Carryover strings for next iteration: 13766
+Iteration 11 took 4590.1698 s
+
+Starting Fulqrum SQD / configuration recovery iteration 12
+Number of postselected/recovered bitstrings: 499148
+
+Iteration 12, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.6317 s
+Eigensolve took 42.1868 s
+Batch 0 electronic energy: -233.81141374407224
+Batch 0 carryover candidates: 13757
+
+Iteration 12, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.4695 s
+Eigensolve took 43.5582 s
+Batch 1 electronic energy: -233.81140145116908
+Batch 1 carryover candidates: 13731
+
+Iteration 12, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.0834 s
+Eigensolve took 39.5589 s
+Batch 2 electronic energy: -233.81140075387412
+Batch 2 carryover candidates: 13732
+
+Iteration 12, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.8578 s
+Eigensolve took 38.2759 s
+Batch 3 electronic energy: -233.81139716069814
+Batch 3 carryover candidates: 13727
+
+Iteration 12, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.6441 s
+Eigensolve took 39.7236 s
+Batch 4 electronic energy: -233.81139772486705
+Batch 4 carryover candidates: 13724
+
+Iteration 12, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.9899 s
+Eigensolve took 39.8922 s
+Batch 5 electronic energy: -233.81139731693878
+Batch 5 carryover candidates: 13726
+
+Iteration 12, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.0608 s
+Eigensolve took 40.7082 s
+Batch 6 electronic energy: -233.8113983651375
+Batch 6 carryover candidates: 13727
+
+Iteration 12, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.8556 s
+Eigensolve took 38.3180 s
+Batch 7 electronic energy: -233.81139761231285
+Batch 7 carryover candidates: 13724
+
+Iteration 12, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.1281 s
+Eigensolve took 43.2156 s
+Batch 8 electronic energy: -233.8113975801876
+Batch 8 carryover candidates: 13732
+
+Iteration 12, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.4799 s
+Eigensolve took 44.8782 s
+Batch 9 electronic energy: -233.8113977178099
+Batch 9 carryover candidates: 13728
+
+Iteration 12, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1119 s
+Eigensolve took 39.2548 s
+Batch 10 electronic energy: -233.81139857197562
+Batch 10 carryover candidates: 13724
+
+Iteration 12, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6735 s
+Eigensolve took 40.0642 s
+Batch 11 electronic energy: -233.81140298713737
+Batch 11 carryover candidates: 13741
+
+Iteration 12, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.0756 s
+Eigensolve took 41.3057 s
+Batch 12 electronic energy: -233.8113979745015
+Batch 12 carryover candidates: 13727
+
+Iteration 12, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6702 s
+Eigensolve took 43.6902 s
+Batch 13 electronic energy: -233.8113974657338
+Batch 13 carryover candidates: 13727
+
+Iteration 12, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.3947 s
+Eigensolve took 38.9165 s
+Batch 14 electronic energy: -233.8114050912446
+Batch 14 carryover candidates: 13733
+
+Iteration 12, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.7902 s
+Eigensolve took 38.5224 s
+Batch 15 electronic energy: -233.8113982621786
+Batch 15 carryover candidates: 13724
+
+Iteration 12, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.6705 s
+Eigensolve took 39.4569 s
+Batch 16 electronic energy: -233.81139776607506
+Batch 16 carryover candidates: 13731
+
+Iteration 12, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.0082 s
+Eigensolve took 38.6272 s
+Batch 17 electronic energy: -233.81140101992904
+Batch 17 carryover candidates: 13731
+
+Iteration 12, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.4904 s
+Eigensolve took 38.6968 s
+Batch 18 electronic energy: -233.81139863626817
+Batch 18 carryover candidates: 13726
+
+Iteration 12, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1582 s
+Eigensolve took 41.8330 s
+Batch 19 electronic energy: -233.81139795267896
+Batch 19 carryover candidates: 13728
+
+Iteration 12 energies: [-233.81141374 -233.81140145 -233.81140075 -233.81139716 -233.81139772
+ -233.81139732 -233.81139837 -233.81139761 -233.81139758 -233.81139772
+ -233.81139857 -233.81140299 -233.81139797 -233.81139747 -233.81140509
+ -233.81139826 -233.81139777 -233.81140102 -233.81139864 -233.81139795]
+Iteration 12 min energy: -233.81141374407224
+Carryover strings for next iteration: 13822
+Iteration 12 took 4611.2605 s
+
+Starting Fulqrum SQD / configuration recovery iteration 13
+Number of postselected/recovered bitstrings: 499148
+
+Iteration 13, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.8041 s
+Eigensolve took 39.3317 s
+Batch 0 electronic energy: -233.8114332383687
+Batch 0 carryover candidates: 13790
+
+Iteration 13, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9424 s
+Eigensolve took 41.8308 s
+Batch 1 electronic energy: -233.81143454768804
+Batch 1 carryover candidates: 13791
+
+Iteration 13, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.7291 s
+Eigensolve took 39.9049 s
+Batch 2 electronic energy: -233.81143254910322
+Batch 2 carryover candidates: 13787
+
+Iteration 13, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1601 s
+Eigensolve took 41.0432 s
+Batch 3 electronic energy: -233.8114352126173
+Batch 3 carryover candidates: 13791
+
+Iteration 13, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.4665 s
+Eigensolve took 40.5538 s
+Batch 4 electronic energy: -233.81143184761214
+Batch 4 carryover candidates: 13790
+
+Iteration 13, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.2087 s
+Eigensolve took 39.7228 s
+Batch 5 electronic energy: -233.81143245512368
+Batch 5 carryover candidates: 13789
+
+Iteration 13, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6665 s
+Eigensolve took 42.3960 s
+Batch 6 electronic energy: -233.81143120110204
+Batch 6 carryover candidates: 13789
+
+Iteration 13, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.6215 s
+Eigensolve took 43.1243 s
+Batch 7 electronic energy: -233.81144111814805
+Batch 7 carryover candidates: 13795
+
+Iteration 13, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.6980 s
+Eigensolve took 40.7047 s
+Batch 8 electronic energy: -233.81143441830378
+Batch 8 carryover candidates: 13798
+
+Iteration 13, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.4741 s
+Eigensolve took 41.2500 s
+Batch 9 electronic energy: -233.8114315902203
+Batch 9 carryover candidates: 13784
+
+Iteration 13, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.2261 s
+Eigensolve took 40.4955 s
+Batch 10 electronic energy: -233.81143111713524
+Batch 10 carryover candidates: 13790
+
+Iteration 13, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 198.8570 s
+Eigensolve took 41.7104 s
+Batch 11 electronic energy: -233.81143277750957
+Batch 11 carryover candidates: 13793
+
+Iteration 13, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 198.2289 s
+Eigensolve took 42.9136 s
+Batch 12 electronic energy: -233.81143166041204
+Batch 12 carryover candidates: 13788
+
+Iteration 13, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 198.6197 s
+Eigensolve took 41.3647 s
+Batch 13 electronic energy: -233.81143392970486
+Batch 13 carryover candidates: 13789
+
+Iteration 13, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 195.7717 s
+Eigensolve took 40.5906 s
+Batch 14 electronic energy: -233.81143278862928
+Batch 14 carryover candidates: 13792
+
+Iteration 13, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.8372 s
+Eigensolve took 39.4231 s
+Batch 15 electronic energy: -233.8114321037813
+Batch 15 carryover candidates: 13788
+
+Iteration 13, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.0582 s
+Eigensolve took 39.9321 s
+Batch 16 electronic energy: -233.81143227889797
+Batch 16 carryover candidates: 13784
+
+Iteration 13, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.5918 s
+Eigensolve took 39.9240 s
+Batch 17 electronic energy: -233.811431281031
+Batch 17 carryover candidates: 13786
+
+Iteration 13, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.2970 s
+Eigensolve took 39.8296 s
+Batch 18 electronic energy: -233.8114344950445
+Batch 18 carryover candidates: 13791
+
+Iteration 13, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.7245 s
+Eigensolve took 41.8028 s
+Batch 19 electronic energy: -233.8114314718395
+Batch 19 carryover candidates: 13784
+
+Iteration 13 energies: [-233.81143324 -233.81143455 -233.81143255 -233.81143521 -233.81143185
+ -233.81143246 -233.8114312  -233.81144112 -233.81143442 -233.81143159
+ -233.81143112 -233.81143278 -233.81143166 -233.81143393 -233.81143279
+ -233.8114321  -233.81143228 -233.81143128 -233.8114345  -233.81143147]
+Iteration 13 min energy: -233.81144111814805
+Carryover strings for next iteration: 13894
+Iteration 13 took 4652.1430 s
+
+Starting Fulqrum SQD / configuration recovery iteration 14
+Number of postselected/recovered bitstrings: 499147
+
+Iteration 14, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.9425 s
+Eigensolve took 40.7988 s
+Batch 0 electronic energy: -233.81146037873103
+Batch 0 carryover candidates: 13857
+
+Iteration 14, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.9110 s
+Eigensolve took 38.2962 s
+Batch 1 electronic energy: -233.81145950527718
+Batch 1 carryover candidates: 13852
+
+Iteration 14, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.4435 s
+Eigensolve took 41.2211 s
+Batch 2 electronic energy: -233.81146417635878
+Batch 2 carryover candidates: 13858
+
+Iteration 14, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.5137 s
+Eigensolve took 42.1375 s
+Batch 3 electronic energy: -233.81145932198612
+Batch 3 carryover candidates: 13850
+
+Iteration 14, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.0054 s
+Eigensolve took 41.6289 s
+Batch 4 electronic energy: -233.811459272547
+Batch 4 carryover candidates: 13851
+
+Iteration 14, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.0721 s
+Eigensolve took 38.9220 s
+Batch 5 electronic energy: -233.8114623643847
+Batch 5 carryover candidates: 13865
+
+Iteration 14, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6866 s
+Eigensolve took 46.0979 s
+Batch 6 electronic energy: -233.811465195044
+Batch 6 carryover candidates: 13855
+
+Iteration 14, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.8350 s
+Eigensolve took 41.3682 s
+Batch 7 electronic energy: -233.81145955048967
+Batch 7 carryover candidates: 13856
+
+Iteration 14, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6168 s
+Eigensolve took 40.2024 s
+Batch 8 electronic energy: -233.81145895364347
+Batch 8 carryover candidates: 13853
+
+Iteration 14, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.2152 s
+Eigensolve took 39.2614 s
+Batch 9 electronic energy: -233.81145910611752
+Batch 9 carryover candidates: 13855
+
+Iteration 14, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.4613 s
+Eigensolve took 44.3388 s
+Batch 10 electronic energy: -233.81145894765237
+Batch 10 carryover candidates: 13854
+
+Iteration 14, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.5684 s
+Eigensolve took 38.5028 s
+Batch 11 electronic energy: -233.81146000024458
+Batch 11 carryover candidates: 13851
+
+Iteration 14, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.6769 s
+Eigensolve took 42.3688 s
+Batch 12 electronic energy: -233.81145914262746
+Batch 12 carryover candidates: 13852
+
+Iteration 14, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.2519 s
+Eigensolve took 39.3300 s
+Batch 13 electronic energy: -233.8114620552194
+Batch 13 carryover candidates: 13853
+
+Iteration 14, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9953 s
+Eigensolve took 42.1281 s
+Batch 14 electronic energy: -233.81146040157896
+Batch 14 carryover candidates: 13851
+
+Iteration 14, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.4786 s
+Eigensolve took 39.5156 s
+Batch 15 electronic energy: -233.81146140341275
+Batch 15 carryover candidates: 13852
+
+Iteration 14, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.8495 s
+Eigensolve took 39.8920 s
+Batch 16 electronic energy: -233.81145938657806
+Batch 16 carryover candidates: 13851
+
+Iteration 14, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.7028 s
+Eigensolve took 38.1232 s
+Batch 17 electronic energy: -233.81145989376978
+Batch 17 carryover candidates: 13855
+
+Iteration 14, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.9450 s
+Eigensolve took 44.7918 s
+Batch 18 electronic energy: -233.81146017400602
+Batch 18 carryover candidates: 13853
+
+Iteration 14, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1603 s
+Eigensolve took 43.5022 s
+Batch 19 electronic energy: -233.81146277420405
+Batch 19 carryover candidates: 13850
+
+Iteration 14 energies: [-233.81146038 -233.81145951 -233.81146418 -233.81145932 -233.81145927
+ -233.81146236 -233.8114652  -233.81145955 -233.81145895 -233.81145911
+ -233.81145895 -233.81146    -233.81145914 -233.81146206 -233.8114604
+ -233.8114614  -233.81145939 -233.81145989 -233.81146017 -233.81146277]
+Iteration 14 min energy: -233.811465195044
+Carryover strings for next iteration: 13935
+Iteration 14 took 4621.0337 s
+
+Starting Fulqrum SQD / configuration recovery iteration 15
+Number of postselected/recovered bitstrings: 499147
+
+Iteration 15, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.8278 s
+Eigensolve took 42.5021 s
+Batch 0 electronic energy: -233.81147928414174
+Batch 0 carryover candidates: 13890
+
+Iteration 15, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9082 s
+Eigensolve took 38.6199 s
+Batch 1 electronic energy: -233.81147930465806
+Batch 1 carryover candidates: 13890
+
+Iteration 15, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.0864 s
+Eigensolve took 39.2027 s
+Batch 2 electronic energy: -233.8114795810347
+Batch 2 carryover candidates: 13893
+
+Iteration 15, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.1706 s
+Eigensolve took 38.9398 s
+Batch 3 electronic energy: -233.81148014439324
+Batch 3 carryover candidates: 13892
+
+Iteration 15, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.7300 s
+Eigensolve took 40.7524 s
+Batch 4 electronic energy: -233.81147895757732
+Batch 4 carryover candidates: 13889
+
+Iteration 15, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.4160 s
+Eigensolve took 40.6859 s
+Batch 5 electronic energy: -233.81147911242502
+Batch 5 carryover candidates: 13887
+
+Iteration 15, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6401 s
+Eigensolve took 39.2571 s
+Batch 6 electronic energy: -233.81148200334226
+Batch 6 carryover candidates: 13903
+
+Iteration 15, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.8487 s
+Eigensolve took 41.1283 s
+Batch 7 electronic energy: -233.81147835920893
+Batch 7 carryover candidates: 13890
+
+Iteration 15, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.3535 s
+Eigensolve took 40.0567 s
+Batch 8 electronic energy: -233.81147962843866
+Batch 8 carryover candidates: 13893
+
+Iteration 15, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.2921 s
+Eigensolve took 42.2253 s
+Batch 9 electronic energy: -233.81147979226924
+Batch 9 carryover candidates: 13892
+
+Iteration 15, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.2765 s
+Eigensolve took 40.3329 s
+Batch 10 electronic energy: -233.81148238315757
+Batch 10 carryover candidates: 13905
+
+Iteration 15, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.4160 s
+Eigensolve took 40.7624 s
+Batch 11 electronic energy: -233.8114794578559
+Batch 11 carryover candidates: 13890
+
+Iteration 15, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.7756 s
+Eigensolve took 41.2589 s
+Batch 12 electronic energy: -233.81147990028634
+Batch 12 carryover candidates: 13885
+
+Iteration 15, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.5886 s
+Eigensolve took 39.1733 s
+Batch 13 electronic energy: -233.81147952394068
+Batch 13 carryover candidates: 13891
+
+Iteration 15, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.2551 s
+Eigensolve took 40.8362 s
+Batch 14 electronic energy: -233.81147910484378
+Batch 14 carryover candidates: 13891
+
+Iteration 15, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9149 s
+Eigensolve took 44.5871 s
+Batch 15 electronic energy: -233.81147892146316
+Batch 15 carryover candidates: 13889
+
+Iteration 15, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.1319 s
+Eigensolve took 38.8328 s
+Batch 16 electronic energy: -233.81147946633644
+Batch 16 carryover candidates: 13895
+
+Iteration 15, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.3839 s
+Eigensolve took 42.6607 s
+Batch 17 electronic energy: -233.81147926335223
+Batch 17 carryover candidates: 13894
+
+Iteration 15, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.1569 s
+Eigensolve took 38.9171 s
+Batch 18 electronic energy: -233.81147998125095
+Batch 18 carryover candidates: 13895
+
+Iteration 15, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.1758 s
+Eigensolve took 40.9637 s
+Batch 19 electronic energy: -233.81147896054716
+Batch 19 carryover candidates: 13895
+
+Iteration 15 energies: [-233.81147928 -233.8114793  -233.81147958 -233.81148014 -233.81147896
+ -233.81147911 -233.811482   -233.81147836 -233.81147963 -233.81147979
+ -233.81148238 -233.81147946 -233.8114799  -233.81147952 -233.8114791
+ -233.81147892 -233.81147947 -233.81147926 -233.81147998 -233.81147896]
+Iteration 15 min energy: -233.81148238315757
+Carryover strings for next iteration: 13946
+Iteration 15 took 4609.5241 s
+
+Starting Fulqrum SQD / configuration recovery iteration 16
+Number of postselected/recovered bitstrings: 499146
+
+Iteration 16, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 191.1946 s
+Eigensolve took 43.1275 s
+Batch 0 electronic energy: -233.81148489038526
+Batch 0 carryover candidates: 13912
+
+Iteration 16, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.4957 s
+Eigensolve took 41.4196 s
+Batch 1 electronic energy: -233.81148349370466
+Batch 1 carryover candidates: 13909
+
+Iteration 16, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.2218 s
+Eigensolve took 41.3025 s
+Batch 2 electronic energy: -233.8114840153618
+Batch 2 carryover candidates: 13912
+
+Iteration 16, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.2958 s
+Eigensolve took 42.7783 s
+Batch 3 electronic energy: -233.81148418865786
+Batch 3 carryover candidates: 13909
+
+Iteration 16, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.0703 s
+Eigensolve took 40.6539 s
+Batch 4 electronic energy: -233.81148357541917
+Batch 4 carryover candidates: 13913
+
+Iteration 16, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.7497 s
+Eigensolve took 39.7025 s
+Batch 5 electronic energy: -233.81148336707187
+Batch 5 carryover candidates: 13909
+
+Iteration 16, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.1191 s
+Eigensolve took 40.5418 s
+Batch 6 electronic energy: -233.81148427341546
+Batch 6 carryover candidates: 13907
+
+Iteration 16, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6547 s
+Eigensolve took 41.6037 s
+Batch 7 electronic energy: -233.81148377000105
+Batch 7 carryover candidates: 13909
+
+Iteration 16, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.3042 s
+Eigensolve took 42.9440 s
+Batch 8 electronic energy: -233.8114837912098
+Batch 8 carryover candidates: 13912
+
+Iteration 16, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.1304 s
+Eigensolve took 40.2106 s
+Batch 9 electronic energy: -233.81148440794982
+Batch 9 carryover candidates: 13914
+
+Iteration 16, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.9859 s
+Eigensolve took 39.9112 s
+Batch 10 electronic energy: -233.8114836106409
+Batch 10 carryover candidates: 13917
+
+Iteration 16, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.1880 s
+Eigensolve took 38.0500 s
+Batch 11 electronic energy: -233.8114845214095
+Batch 11 carryover candidates: 13915
+
+Iteration 16, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6996 s
+Eigensolve took 38.9834 s
+Batch 12 electronic energy: -233.81148471891657
+Batch 12 carryover candidates: 13910
+
+Iteration 16, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.3763 s
+Eigensolve took 38.7326 s
+Batch 13 electronic energy: -233.81151102563467
+Batch 13 carryover candidates: 13907
+
+Iteration 16, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.3309 s
+Eigensolve took 43.7809 s
+Batch 14 electronic energy: -233.8114846152731
+Batch 14 carryover candidates: 13911
+
+Iteration 16, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.4942 s
+Eigensolve took 38.0515 s
+Batch 15 electronic energy: -233.8114841732435
+Batch 15 carryover candidates: 13909
+
+Iteration 16, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.5878 s
+Eigensolve took 39.1419 s
+Batch 16 electronic energy: -233.81148368170906
+Batch 16 carryover candidates: 13913
+
+Iteration 16, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.4386 s
+Eigensolve took 40.6383 s
+Batch 17 electronic energy: -233.81148470191613
+Batch 17 carryover candidates: 13906
+
+Iteration 16, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.6283 s
+Eigensolve took 38.2231 s
+Batch 18 electronic energy: -233.81148352904867
+Batch 18 carryover candidates: 13906
+
+Iteration 16, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9996 s
+Eigensolve took 45.0248 s
+Batch 19 electronic energy: -233.81148345060384
+Batch 19 carryover candidates: 13919
+
+Iteration 16 energies: [-233.81148489 -233.81148349 -233.81148402 -233.81148419 -233.81148358
+ -233.81148337 -233.81148427 -233.81148377 -233.81148379 -233.81148441
+ -233.81148361 -233.81148452 -233.81148472 -233.81151103 -233.81148462
+ -233.81148417 -233.81148368 -233.8114847  -233.81148353 -233.81148345]
+Iteration 16 min energy: -233.81151102563467
+Carryover strings for next iteration: 13961
+Iteration 16 took 4617.0540 s
+
+Starting Fulqrum SQD / configuration recovery iteration 17
+Number of postselected/recovered bitstrings: 499146
+
+Iteration 17, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1678 s
+Eigensolve took 42.1200 s
+Batch 0 electronic energy: -233.81151189294297
+Batch 0 carryover candidates: 13922
+
+Iteration 17, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.8564 s
+Eigensolve took 39.1765 s
+Batch 1 electronic energy: -233.81151279598816
+Batch 1 carryover candidates: 13914
+
+Iteration 17, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.8730 s
+Eigensolve took 39.2513 s
+Batch 2 electronic energy: -233.81151259356025
+Batch 2 carryover candidates: 13918
+
+Iteration 17, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.4242 s
+Eigensolve took 44.4603 s
+Batch 3 electronic energy: -233.8115127444162
+Batch 3 carryover candidates: 13918
+
+Iteration 17, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.8841 s
+Eigensolve took 40.7546 s
+Batch 4 electronic energy: -233.81151305757177
+Batch 4 carryover candidates: 13916
+
+Iteration 17, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.9121 s
+Eigensolve took 40.4598 s
+Batch 5 electronic energy: -233.81151220628294
+Batch 5 carryover candidates: 13916
+
+Iteration 17, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.9469 s
+Eigensolve took 44.1203 s
+Batch 6 electronic energy: -233.81152142911554
+Batch 6 carryover candidates: 13922
+
+Iteration 17, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.0665 s
+Eigensolve took 42.2636 s
+Batch 7 electronic energy: -233.81151313172927
+Batch 7 carryover candidates: 13914
+
+Iteration 17, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1832 s
+Eigensolve took 38.2886 s
+Batch 8 electronic energy: -233.81151488438556
+Batch 8 carryover candidates: 13925
+
+Iteration 17, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1376 s
+Eigensolve took 39.4599 s
+Batch 9 electronic energy: -233.81151242047704
+Batch 9 carryover candidates: 13914
+
+Iteration 17, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.3784 s
+Eigensolve took 42.6523 s
+Batch 10 electronic energy: -233.81151225930347
+Batch 10 carryover candidates: 13914
+
+Iteration 17, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9498 s
+Eigensolve took 40.5127 s
+Batch 11 electronic energy: -233.81151300733444
+Batch 11 carryover candidates: 13913
+
+Iteration 17, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.5495 s
+Eigensolve took 41.4485 s
+Batch 12 electronic energy: -233.81151184257826
+Batch 12 carryover candidates: 13914
+
+Iteration 17, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1651 s
+Eigensolve took 39.0749 s
+Batch 13 electronic energy: -233.81151278084357
+Batch 13 carryover candidates: 13917
+
+Iteration 17, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.0148 s
+Eigensolve took 39.0158 s
+Batch 14 electronic energy: -233.81151242356714
+Batch 14 carryover candidates: 13917
+
+Iteration 17, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.5104 s
+Eigensolve took 47.4007 s
+Batch 15 electronic energy: -233.81151211000977
+Batch 15 carryover candidates: 13918
+
+Iteration 17, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.7814 s
+Eigensolve took 42.2554 s
+Batch 16 electronic energy: -233.81151303451884
+Batch 16 carryover candidates: 13914
+
+Iteration 17, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.2823 s
+Eigensolve took 39.4700 s
+Batch 17 electronic energy: -233.81151214614079
+Batch 17 carryover candidates: 13916
+
+Iteration 17, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9879 s
+Eigensolve took 38.3028 s
+Batch 18 electronic energy: -233.81151303202026
+Batch 18 carryover candidates: 13918
+
+Iteration 17, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9910 s
+Eigensolve took 40.4492 s
+Batch 19 electronic energy: -233.81151262624888
+Batch 19 carryover candidates: 13916
+
+Iteration 17 energies: [-233.81151189 -233.8115128  -233.81151259 -233.81151274 -233.81151306
+ -233.81151221 -233.81152143 -233.81151313 -233.81151488 -233.81151242
+ -233.81151226 -233.81151301 -233.81151184 -233.81151278 -233.81151242
+ -233.81151211 -233.81151303 -233.81151215 -233.81151303 -233.81151263]
+Iteration 17 min energy: -233.81152142911554
+Carryover strings for next iteration: 13979
+Iteration 17 took 4611.6386 s
+
+Starting Fulqrum SQD / configuration recovery iteration 18
+Number of postselected/recovered bitstrings: 499150
+
+Iteration 18, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.9114 s
+Eigensolve took 39.1988 s
+Batch 0 electronic energy: -233.81152483313255
+Batch 0 carryover candidates: 13942
+
+Iteration 18, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.9021 s
+Eigensolve took 39.9167 s
+Batch 1 electronic energy: -233.81152448033637
+Batch 1 carryover candidates: 13941
+
+Iteration 18, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.7493 s
+Eigensolve took 38.6707 s
+Batch 2 electronic energy: -233.81152585474814
+Batch 2 carryover candidates: 13938
+
+Iteration 18, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.2580 s
+Eigensolve took 42.2125 s
+Batch 3 electronic energy: -233.8115262276526
+Batch 3 carryover candidates: 13943
+
+Iteration 18, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.9247 s
+Eigensolve took 40.4664 s
+Batch 4 electronic energy: -233.81152475026943
+Batch 4 carryover candidates: 13942
+
+Iteration 18, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.4937 s
+Eigensolve took 41.6970 s
+Batch 5 electronic energy: -233.81152978333492
+Batch 5 carryover candidates: 13954
+
+Iteration 18, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.1079 s
+Eigensolve took 44.3647 s
+Batch 6 electronic energy: -233.81152494041353
+Batch 6 carryover candidates: 13939
+
+Iteration 18, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6698 s
+Eigensolve took 42.0306 s
+Batch 7 electronic energy: -233.81152537537582
+Batch 7 carryover candidates: 13935
+
+Iteration 18, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.4181 s
+Eigensolve took 39.2976 s
+Batch 8 electronic energy: -233.81152546557496
+Batch 8 carryover candidates: 13944
+
+Iteration 18, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.9098 s
+Eigensolve took 41.8366 s
+Batch 9 electronic energy: -233.81152588312452
+Batch 9 carryover candidates: 13938
+
+Iteration 18, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.1177 s
+Eigensolve took 41.4903 s
+Batch 10 electronic energy: -233.81152511455284
+Batch 10 carryover candidates: 13939
+
+Iteration 18, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.8560 s
+Eigensolve took 42.5664 s
+Batch 11 electronic energy: -233.81153090653743
+Batch 11 carryover candidates: 13945
+
+Iteration 18, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.1156 s
+Eigensolve took 40.3945 s
+Batch 12 electronic energy: -233.81152564393832
+Batch 12 carryover candidates: 13944
+
+Iteration 18, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9574 s
+Eigensolve took 41.1183 s
+Batch 13 electronic energy: -233.81152523142373
+Batch 13 carryover candidates: 13937
+
+Iteration 18, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.0184 s
+Eigensolve took 39.0667 s
+Batch 14 electronic energy: -233.81152535164665
+Batch 14 carryover candidates: 13939
+
+Iteration 18, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.5329 s
+Eigensolve took 39.1670 s
+Batch 15 electronic energy: -233.81152582695466
+Batch 15 carryover candidates: 13944
+
+Iteration 18, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.0943 s
+Eigensolve took 43.6879 s
+Batch 16 electronic energy: -233.811525871281
+Batch 16 carryover candidates: 13943
+
+Iteration 18, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6707 s
+Eigensolve took 39.5886 s
+Batch 17 electronic energy: -233.81152964433218
+Batch 17 carryover candidates: 13951
+
+Iteration 18, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.3902 s
+Eigensolve took 42.0151 s
+Batch 18 electronic energy: -233.81152559312528
+Batch 18 carryover candidates: 13939
+
+Iteration 18, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.0715 s
+Eigensolve took 38.5975 s
+Batch 19 electronic energy: -233.81152548116572
+Batch 19 carryover candidates: 13939
+
+Iteration 18 energies: [-233.81152483 -233.81152448 -233.81152585 -233.81152623 -233.81152475
+ -233.81152978 -233.81152494 -233.81152538 -233.81152547 -233.81152588
+ -233.81152511 -233.81153091 -233.81152564 -233.81152523 -233.81152535
+ -233.81152583 -233.81152587 -233.81152964 -233.81152559 -233.81152548]
+Iteration 18 min energy: -233.81153090653743
+Carryover strings for next iteration: 14005
+Iteration 18 took 4611.6415 s
+
+Starting Fulqrum SQD / configuration recovery iteration 19
+Number of postselected/recovered bitstrings: 499151
+
+Iteration 19, batch 0
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 186.5541 s
+Eigensolve took 38.2555 s
+Batch 0 electronic energy: -233.81154103625644
+Batch 0 carryover candidates: 13960
+
+Iteration 19, batch 1
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9164 s
+Eigensolve took 38.3002 s
+Batch 1 electronic energy: -233.81154137719517
+Batch 1 carryover candidates: 13972
+
+Iteration 19, batch 2
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.5690 s
+Eigensolve took 41.0359 s
+Batch 2 electronic energy: -233.81154048248678
+Batch 2 carryover candidates: 13965
+
+Iteration 19, batch 3
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.3103 s
+Eigensolve took 40.2814 s
+Batch 3 electronic energy: -233.81154046429575
+Batch 3 carryover candidates: 13978
+
+Iteration 19, batch 4
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.6697 s
+Eigensolve took 47.5944 s
+Batch 4 electronic energy: -233.81154087745927
+Batch 4 carryover candidates: 13972
+
+Iteration 19, batch 5
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.5521 s
+Eigensolve took 39.3463 s
+Batch 5 electronic energy: -233.8115402515223
+Batch 5 carryover candidates: 13969
+
+Iteration 19, batch 6
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.5629 s
+Eigensolve took 43.5998 s
+Batch 6 electronic energy: -233.8115405668285
+Batch 6 carryover candidates: 13964
+
+Iteration 19, batch 7
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.5799 s
+Eigensolve took 39.3421 s
+Batch 7 electronic energy: -233.8115410391372
+Batch 7 carryover candidates: 13967
+
+Iteration 19, batch 8
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.7196 s
+Eigensolve took 39.4277 s
+Batch 8 electronic energy: -233.81154115902046
+Batch 8 carryover candidates: 13972
+
+Iteration 19, batch 9
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.4838 s
+Eigensolve took 38.6508 s
+Batch 9 electronic energy: -233.81153994620064
+Batch 9 carryover candidates: 13968
+
+Iteration 19, batch 10
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.0199 s
+Eigensolve took 42.5289 s
+Batch 10 electronic energy: -233.81154018403882
+Batch 10 carryover candidates: 13972
+
+Iteration 19, batch 11
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9779 s
+Eigensolve took 40.9110 s
+Batch 11 electronic energy: -233.81154806032782
+Batch 11 carryover candidates: 13974
+
+Iteration 19, batch 12
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.0599 s
+Eigensolve took 45.2166 s
+Batch 12 electronic energy: -233.81154006936222
+Batch 12 carryover candidates: 13967
+
+Iteration 19, batch 13
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 187.9825 s
+Eigensolve took 39.5508 s
+Batch 13 electronic energy: -233.8115431424716
+Batch 13 carryover candidates: 13974
+
+Iteration 19, batch 14
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.5042 s
+Eigensolve took 41.9684 s
+Batch 14 electronic energy: -233.81154097196216
+Batch 14 carryover candidates: 13963
+
+Iteration 19, batch 15
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.2032 s
+Eigensolve took 40.9942 s
+Batch 15 electronic energy: -233.8115401185804
+Batch 15 carryover candidates: 13967
+
+Iteration 19, batch 16
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.5011 s
+Eigensolve took 39.2301 s
+Batch 16 electronic energy: -233.81154066189768
+Batch 16 carryover candidates: 13964
+
+Iteration 19, batch 17
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 189.4673 s
+Eigensolve took 39.6362 s
+Batch 17 electronic energy: -233.81154292018587
+Batch 17 carryover candidates: 13974
+
+Iteration 19, batch 18
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 190.0188 s
+Eigensolve took 45.2859 s
+Batch 18 electronic energy: -233.81154143604394
+Batch 18 carryover candidates: 13966
+
+Iteration 19, batch 19
+alpha half strings: 2000, beta half strings: 2000
+Subspace dimension: 2000 x 2000 = 4000000
+Projection took 188.9363 s
+Eigensolve took 45.1147 s
+Batch 19 electronic energy: -233.81154064179654
+Batch 19 carryover candidates: 13969
+
+Iteration 19 energies: [-233.81154104 -233.81154138 -233.81154048 -233.81154046 -233.81154088
+ -233.81154025 -233.81154057 -233.81154104 -233.81154116 -233.81153995
+ -233.81154018 -233.81154806 -233.81154007 -233.81154314 -233.81154097
+ -233.81154012 -233.81154066 -233.81154292 -233.81154144 -233.81154064]
+Iteration 19 min energy: -233.81154806032782
+Carryover strings for next iteration: 14028
+Iteration 19 took 4621.1206 s
+Fulqrum LASSQD/SQD electronic energy is -233.81154806032782
+total energy is -2649.297623714217

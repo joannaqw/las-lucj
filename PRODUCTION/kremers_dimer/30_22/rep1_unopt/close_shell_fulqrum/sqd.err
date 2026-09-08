@@ -1,0 +1,8 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/30_22/vanilla/rep1_unopt/close_shell_fulqrum/input.py:168: UserWarning: 'num_terms' will be removed, use 'size()' instead
+  print(f"Num fermionic terms: {fermionic_op.num_terms}")
+/var/spool/slurm/d/job49634230/slurm_script: line 30: 1410568 Killed                  python input.py > testrun.out
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=49634230.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

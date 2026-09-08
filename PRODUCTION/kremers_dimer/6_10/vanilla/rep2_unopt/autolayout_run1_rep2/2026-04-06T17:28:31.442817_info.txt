@@ -1,0 +1,8 @@
+optimization_level 3 
+dynamical_decoupling True 
+twirling True 
+shots 200000 
+initial_layout [147, 137, 127, 128, 129, 118, 109, 110, 111, 98, 149, 150, 151, 138, 131, 132, 133, 119, 113, 114] 
+backend <IBMBackend('ibm_pittsburgh')> 
+logfile 2026-04-06T17:28:31.442817_logfile.txt 
+circuits_per_job 100 
