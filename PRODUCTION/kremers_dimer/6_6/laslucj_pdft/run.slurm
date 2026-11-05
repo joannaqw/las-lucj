@@ -19,13 +19,14 @@
 
 #module load mkl/2023.1
 #source ~/.bashrc     
-#conda activate lassqd
+conda activate lassqd
 
 export PYTHONPATH=
 export PYSCF_EXT_PATH=
 export PYSCF=/project/lgagliardi/shared/Apps/pyscf
 #/home/qjwang/.local/lib/python3.9/site-packages/pyscf
-export MRH=/project/lgagliardi/qjwang:/project/lgagliardi/qjwang/mrh
+#export MRH=/project/lgagliardi/qjwang:/project/lgagliardi/qjwang/mrh
+export MRH=/project/lgagliardi/shared/Apps/mrh
 export PYTHONPATH=$MRH$PYSCF:$PYTHONPATH
 
 python las_lucj.py > hardware_run_pdft.out

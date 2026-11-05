@@ -1,11 +1,9 @@
 import numpy as np   
-from pyscf import gto, scf, mcscf, ao2mo, tools, fci, cc
+from pyscf import gto, cc
 import ffsim
-from qiskit_aer import AerSimulator
+#from qiskit_aer import AerSimulator
 from qiskit import QuantumRegister,ClassicalRegister,QuantumCircuit
 from qiskit.compiler import transpile
-import scipy
-from ffsim.optimize import minimize_linear_method
 def append_measurements(qc):
     n = qc.num_qubits
     qrg = QuantumRegister(n)

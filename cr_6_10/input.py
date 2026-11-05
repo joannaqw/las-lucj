@@ -7,12 +7,12 @@ import time
 # PySCF imports
 from pyscf import gto, scf, lib, mcscf, ao2mo,tools
 from pyscf.mcscf import avas
-
+from mrh.my_pyscf import mcpdft    
 # mrh imports
 from mrh.my_pyscf.mcscf.lasscf_o0 import LASSCF
 
-from qiskit.primitives import Estimator
-from scipy.optimize import minimize
+#from qiskit.primitives import Estimator
+#from scipy.optimize import minimize
 
 
 #----------------Here we perform the calculation with user-defined molecule
@@ -45,6 +45,12 @@ las = LASSCF (mf, (5,5), ((3,0),(3,0)),spin_sub=(4,4))
 las.max_cycle_macro= 200
 las.kernel(mo)
 print("LASSCF HS energy: ", las.e_tot)
+mc = mcpdft.LASSCF(las, 'tPBE',(5,5),((3,0),(3,0)))
+mc.kernel()
+print ("E(LAS-tPBE) =", mc.e_tot)
+exit()
+
+
 tools.molden.from_mo(mol,'as_increase_crcr_las_hs.molden',las.mo_coeff)
 np.save('kd_6_10_lasmo_hs',las.mo_coeff)
 #np.save('kf_6_10_lasci', las.ci) 

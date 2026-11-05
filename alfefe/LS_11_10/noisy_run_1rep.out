@@ -1,7 +1,7 @@
 overwrite output file: alfefe.log
-HF energy:  -3943.0493670901246
-LASSCF energy:  -3971.7909092448367
-CASCI with LAS orbital -3971.7921704337077
+HF energy:  -3943.0493670901283
+LASSCF energy:  -3971.790909244902
+CASCI with LAS orbital -3971.792177446765
 current fragment 0
 frag norb 5
 converged SCF energy = -542.770322927233
@@ -9,7 +9,7 @@ converged SCF energy = -542.770322927233
 
 WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
 
-E(UCCSD) = -542.7703229272335  E_corr = -2.349794108689319e-22
+E(UCCSD) = -542.7703229272327  E_corr = -2.34979752565318e-22
 nelec (5, 1)
 current fid 1.0
 current fid 1.0
@@ -49,8 +49,7 @@ current fid 1.0
 current fid 1.0
 current fid 1.0
 current fid 1.0
-current fid 1.0
-current fid 0.9999999999999998
+current fid 1.0000000000000004
 current fid 1.0000000000000004
 current fid 1.0
 current fid 1.0
@@ -110,8 +109,9 @@ current fid 1.0
 current fid 1.0
 current fid 1.0
 current fid 1.0
-current fid 0.9999999999999996
 current fid 1.0
+current fid 1.0000000000000004
+current fid 0.9999999999999998
 current fid 1.0
 current fid 1.0
 current fid 1.0
@@ -128,12 +128,12 @@ Optimization level  3 OrderedDict([('x', 6)]) 1
 two qubit gate depth 0
 current fragment 1
 frag norb 5
-converged SCF energy = -12.9842450087629
-converged SCF energy = -12.9842450087629
+converged SCF energy = -12.9842450087761
+converged SCF energy = -12.9842450087761
 
 WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
 
-E(UCCSD) = -12.98424500876293  E_corr = 0
+E(UCCSD) = -12.9842450087761  E_corr = 0
 nelec (0, 5)
 current fid 1.0
 current fid 1.0
@@ -251,14 +251,234 @@ qubits QuantumRegister(10, 'q')
 Optimization level  3 OrderedDict([('x', 5)]) 1
 two qubit gate depth 0
 SCF not converged.
-SCF energy = -548.164402560799
+SCF energy = -548.164402452411
 SCF not converged.
-SCF energy = -548.164402581507
+SCF energy = -548.164402506233
 
 WARN: RCCSD method does not support ROHF method. ROHF object is converted to UHF object and UCCSD method is called.
 
-E(UCCSD) = -548.160138553573  E_corr = 0.004264027933813451
-Optimization level  3 OrderedDict([('rz', 1094), ('sx', 997), ('cx', 360), ('x', 37), ('measure', 20), ('barrier', 2)]) 203
+E(UCCSD) = -548.1601385387436  E_corr = 0.004263967489471989
+Optimization level  3 OrderedDict([('rz', 1096), ('sx', 1019), ('cx', 362), ('x', 24), ('measure', 20), ('barrier', 2)]) 203
 two qubit gate depth 40
 num_alpha 5
 num_beta 6
+Iteration 1
+	Subsample 0
+		Energy: 2894.553390849921
+		Subspace dimension: 24236
+	Subsample 1
+		Energy: 2894.578461676474
+		Subspace dimension: 22176
+	Subsample 2
+		Energy: 2894.443154809262
+		Subspace dimension: 23550
+	Subsample 3
+		Energy: 2894.4615888096296
+		Subspace dimension: 24320
+	Subsample 4
+		Energy: 2894.450037198031
+		Subspace dimension: 21996
+	Subsample 5
+		Energy: 2894.438020508869
+		Subspace dimension: 23079
+	Subsample 6
+		Energy: 2894.555815683083
+		Subspace dimension: 25758
+	Subsample 7
+		Energy: 2894.564650734297
+		Subspace dimension: 22330
+	Subsample 8
+		Energy: 2894.451336946107
+		Subspace dimension: 24160
+	Subsample 9
+		Energy: 2894.5558874434705
+		Subspace dimension: 21038
+Iteration 2
+	Subsample 0
+		Energy: 2894.401998971833
+		Subspace dimension: 24734
+	Subsample 1
+		Energy: 2894.4045043049346
+		Subspace dimension: 26690
+	Subsample 2
+		Energy: 2894.4049033006686
+		Subspace dimension: 27054
+	Subsample 3
+		Energy: 2894.3987221728685
+		Subspace dimension: 24960
+	Subsample 4
+		Energy: 2894.3967729368333
+		Subspace dimension: 26208
+	Subsample 5
+		Energy: 2894.4042780371606
+		Subspace dimension: 26568
+	Subsample 6
+		Energy: 2894.401727610404
+		Subspace dimension: 24000
+	Subsample 7
+		Energy: 2894.4046377257832
+		Subspace dimension: 26732
+	Subsample 8
+		Energy: 2894.4030365171184
+		Subspace dimension: 27209
+	Subsample 9
+		Energy: 2894.400067211239
+		Subspace dimension: 26082
+Iteration 3
+	Subsample 0
+		Energy: 2894.390622469085
+		Subspace dimension: 29230
+	Subsample 1
+		Energy: 2894.393777852952
+		Subspace dimension: 27680
+	Subsample 2
+		Energy: 2894.390035218139
+		Subspace dimension: 30082
+	Subsample 3
+		Energy: 2894.3931073727026
+		Subspace dimension: 28658
+	Subsample 4
+		Energy: 2894.385983751347
+		Subspace dimension: 28160
+	Subsample 5
+		Energy: 2894.390530166868
+		Subspace dimension: 29463
+	Subsample 6
+		Energy: 2894.390959409711
+		Subspace dimension: 30240
+	Subsample 7
+		Energy: 2894.3855806731067
+		Subspace dimension: 28710
+	Subsample 8
+		Energy: 2894.388885587434
+		Subspace dimension: 28851
+	Subsample 9
+		Energy: 2894.392644376828
+		Subspace dimension: 27318
+Iteration 4
+	Subsample 0
+		Energy: 2894.383730938956
+		Subspace dimension: 30751
+	Subsample 1
+		Energy: 2894.3832044746896
+		Subspace dimension: 30046
+	Subsample 2
+		Energy: 2894.3807951034614
+		Subspace dimension: 29666
+	Subsample 3
+		Energy: 2894.383103464103
+		Subspace dimension: 27176
+	Subsample 4
+		Energy: 2894.383066761392
+		Subspace dimension: 28800
+	Subsample 5
+		Energy: 2894.3802650185316
+		Subspace dimension: 29177
+	Subsample 6
+		Energy: 2894.382777508061
+		Subspace dimension: 30240
+	Subsample 7
+		Energy: 2894.3804072352277
+		Subspace dimension: 28836
+	Subsample 8
+		Energy: 2894.384105270771
+		Subspace dimension: 29370
+	Subsample 9
+		Energy: 2894.3830417437375
+		Subspace dimension: 30378
+Iteration 5
+	Subsample 0
+		Energy: 2894.379244311338
+		Subspace dimension: 28891
+	Subsample 1
+		Energy: 2894.3778113790136
+		Subspace dimension: 29880
+	Subsample 2
+		Energy: 2894.377775430117
+		Subspace dimension: 29646
+	Subsample 3
+		Energy: 2894.379244311326
+		Subspace dimension: 30544
+	Subsample 4
+		Energy: 2894.3802650185526
+		Subspace dimension: 29205
+	Subsample 5
+		Energy: 2894.379244311359
+		Subspace dimension: 30340
+	Subsample 6
+		Energy: 2894.3777754301764
+		Subspace dimension: 29340
+	Subsample 7
+		Energy: 2894.3802650185116
+		Subspace dimension: 30927
+	Subsample 8
+		Energy: 2894.374811688088
+		Subspace dimension: 29760
+	Subsample 9
+		Energy: 2894.38026501856
+		Subspace dimension: 29160
+Iteration 6
+	Subsample 0
+		Energy: 2894.373463251629
+		Subspace dimension: 28674
+	Subsample 1
+		Energy: 2894.374811688085
+		Subspace dimension: 29070
+	Subsample 2
+		Energy: 2894.3748116880956
+		Subspace dimension: 31540
+	Subsample 3
+		Energy: 2894.374811688079
+		Subspace dimension: 31020
+	Subsample 4
+		Energy: 2894.374811688118
+		Subspace dimension: 28860
+	Subsample 5
+		Energy: 2894.37346325161
+		Subspace dimension: 30340
+	Subsample 6
+		Energy: 2894.3734632515875
+		Subspace dimension: 29302
+	Subsample 7
+		Energy: 2894.3734632516075
+		Subspace dimension: 29733
+	Subsample 8
+		Energy: 2894.3734632515816
+		Subspace dimension: 31897
+	Subsample 9
+		Energy: 2894.374811688147
+		Subspace dimension: 28282
+Iteration 7
+	Subsample 0
+		Energy: 2894.37346325163
+		Subspace dimension: 29503
+	Subsample 1
+		Energy: 2894.3734632516043
+		Subspace dimension: 29829
+	Subsample 2
+		Energy: 2894.3734632516257
+		Subspace dimension: 30012
+	Subsample 3
+		Energy: 2894.373463251614
+		Subspace dimension: 28497
+	Subsample 4
+		Energy: 2894.3734632516057
+		Subspace dimension: 29568
+	Subsample 5
+		Energy: 2894.3734632516107
+		Subspace dimension: 29700
+	Subsample 6
+		Energy: 2894.3734632516007
+		Subspace dimension: 31110
+	Subsample 7
+		Energy: 2894.3734632516357
+		Subspace dimension: 29920
+	Subsample 8
+		Energy: 2894.373463251628
+		Subspace dimension: 29733
+	Subsample 9
+		Energy: 2894.3734632516484
+		Subspace dimension: 30240
+las-lucj-sqd energy is [-560.8666919323193, -560.9079395043551, -560.9191317680816, -560.9244474226564, -560.9299007531006, -560.9312491896068, -560.9312491895873]
+total energy is [2894.43802051 2894.39677294 2894.38558067 2894.38026502 2894.37481169
+ 2894.37346325 2894.37346325]

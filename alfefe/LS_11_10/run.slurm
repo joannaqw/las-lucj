@@ -24,4 +24,4 @@ export PYSCF=/project/lgagliardi/shared/Apps/pyscf
 export MRH=/project/lgagliardi/qjwang:/project/lgagliardi/qjwang/mrh
 export PYTHONPATH=$MRH$PYSCF:$PYTHONPATH
 
-python las_lucj.py > noisy_run_1rep.out
+python input.py > testiferror.out

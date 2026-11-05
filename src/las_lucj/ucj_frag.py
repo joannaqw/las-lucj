@@ -16,6 +16,8 @@ def ucj_frag_circuit(
     big_ucj_op: ffsim.UCJOpSpinBalanced | ffsim.UCJOpSpinUnbalanced,
 ) -> QuantumCircuit:
     norb = sum(op.norb for op in small_ucj_ops)
+    print('norb from ucj frag', norb)
+    print('big_ucj_op', big_ucj_op.norb)
     assert norb == big_ucj_op.norb
     qubits = QuantumRegister(2 * norb, name="q")
     circuit = QuantumCircuit(qubits)

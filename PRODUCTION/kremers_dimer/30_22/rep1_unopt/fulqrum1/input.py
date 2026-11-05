@@ -200,7 +200,7 @@ def make_hf_half_string(norb, nelec):
 # SQD options
 ITERATIONS = 20
 NUM_BATCHES = 20
-SAMPLES_PER_BATCH = 4000
+SAMPLES_PER_BATCH = 5000
 
 # Fulqrum / eigensolver options
 EIGSH_TOL = 1e-6

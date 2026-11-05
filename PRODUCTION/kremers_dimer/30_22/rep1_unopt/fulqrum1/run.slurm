@@ -27,4 +27,4 @@ export LASLUCJ=/project/lgagliardi/qjwang/las-lucj/src
 export MRH=/project/lgagliardi/qjwang:/project/lgagliardi/qjwang/mrh
 export PYTHONPATH=$LASLUCJ:$MRH:$PYSCF:$PYTHONPATH
 
-python input.py > testrun_4k.out
+python input.py > testrun_5k.out

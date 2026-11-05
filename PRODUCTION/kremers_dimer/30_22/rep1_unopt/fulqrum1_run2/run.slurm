@@ -1,11 +1,11 @@
 #!/bin/bash -l            
-#SBATCH --job-name=bigjob 
+#SBATCH --job-name=4k5 
 #SBATCH --account=pi-lgagliardi
 #SBATCH --qos=lgagliardi
 #SBATCH --time=130:00:00
 #SBATCH --nodes=1
 ##SBATCH --partition=lgagliardi-ld,lgagliardi-amd,bigmem
-#SBATCH --partition=lgagliardi-ld,lgagliardi-hm
+#SBATCH --partition=lgagliardi-ld,lgagliardi-hm,lgagliardi-amd
 ##SBATCH --partition=build
 ##SBATCH --partition=lgagliardi-net
 #SBATCH --mem-per-cpu=40G

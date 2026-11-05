@@ -113,7 +113,7 @@ H.print_arguments()
 with open("job_id.txt", "r") as f:
     job_id = f.read().strip()
 print('job_id',job_id)
-#service = QiskitRuntimeService(channel="ibm_cloud", token='ApiKey-c97727fa-17bd-4842-bf01-0c4f84d6b55a', instance='crn:v1:bluemix:public:quantum-computing:us-east:a/ed5d7d2fb3b249c6baea6864058116cb:36e451b2-5596-4f04-8689-05eced668a0e::')
+#service = QiskitRuntimeService(channel="ibm_cloud", token='<IBM_QUANTUM_API_KEY>', instance='crn:v1:bluemix:public:quantum-computing:us-east:a/ed5d7d2fb3b249c6baea6864058116cb:36e451b2-5596-4f04-8689-05eced668a0e::')
 '''
 job_id = 'd7aje9oeecps73d9l2d0'
 service =  QiskitRuntimeService()

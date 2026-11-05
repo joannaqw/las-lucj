@@ -22,7 +22,7 @@ class hardware_simulator:
     #self.args['provider'] = IBMProvider()
 
   def get_service(self,instance="quantum-demonstrations/main/qsci"):
-      #return QiskitRuntimeService(channel="ibm_cloud", token='ApiKey-c97727fa-17bd-4842-bf01-0c4f84d6b55a', instance='crn:v1:bluemix:public:quantum-computing:us-east:a/ed5d7d2fb3b249c6baea6864058116cb:36e451b2-5596-4f04-8689-05eced668a0e::')
+      #return QiskitRuntimeService(channel="ibm_cloud", token='<IBM_QUANTUM_API_KEY>', instance='crn:v1:bluemix:public:quantum-computing:us-east:a/ed5d7d2fb3b249c6baea6864058116cb:36e451b2-5596-4f04-8689-05eced668a0e::')
       #return QiskitRuntimeService(channel='ibm_quantum', instance=instance)
       return QiskitRuntimeService()
 

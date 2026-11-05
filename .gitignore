@@ -172,3 +172,11 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Large generated outputs (keep locally, not in git)
+*.molden
+**/testrun_*.out
+slurm-*.out
+*.chk
+*.h5
+cr_30_22/1rep_hw/cr3022_vanilla_circuit.png

@@ -1,11 +1,9 @@
 import numpy as np   
-from pyscf import gto, scf, mcscf, ao2mo, tools, fci, cc
+from pyscf import gto, cc
 import ffsim
-from qiskit_aer import AerSimulator
-from qiskit import QuantumRegister,ClassicalRegister,QuantumCircuit
-from qiskit.compiler import transpile
+#from qiskit_aer import AerSimulator
+from qiskit import QuantumRegister,QuantumCircuit
 import scipy
-from scipy import optimize
 def LUCJ_load(norb, nelec_a, nelec_b, hcore, eri,las_ci):
     '''LUCJ circuit for loading las'''
     
@@ -119,7 +117,6 @@ def LUCJ_load(norb, nelec_a, nelec_b, hcore, eri,las_ci):
         interaction_pairs=interaction_pairs,
         with_final_orbital_rotation=True)
     #qlas = ffsim.apply_unitary(reference_state, ucj_op, norb=norb, nelec=nelec)
-    from qiskit import QuantumCircuit, QuantumRegister
     qubits = QuantumRegister(2 * norb, name="q")
     print('norb',norb)
     print('qubits',qubits)

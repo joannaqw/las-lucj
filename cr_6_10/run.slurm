@@ -1,5 +1,5 @@
 #!/bin/bash -l            
-#SBATCH --job-name=load_las 
+#SBATCH --job-name=laspdft610hs 
 #SBATCH --account=pi-lgagliardi
 #SBATCH --qos=lgagliardi
 #SBATCH --time=130:00:00
@@ -17,11 +17,11 @@ export OMP_NUM_THREADS=14
 #conda activate laslucj
 conda activate lassqd
 #module load mkl/2023.1
-export PYTHONPATH=
-export PYSCF_EXT_PATH=
-export PYSCF=/project/lgagliardi/shared/Apps/pyscf
+#export PYTHONPATH=
+#export PYSCF_EXT_PATH=
+#export PYSCF=/project/lgagliardi/shared/Apps/pyscf
 #/home/qjwang/.local/lib/python3.9/site-packages/pyscf
-export MRH=/project/lgagliardi/qjwang:/project/lgagliardi/qjwang/mrh
-export PYTHONPATH=$MRH$PYSCF:$PYTHONPATH
+#export MRH=/project/lgagliardi/qjwang:/project/lgagliardi/qjwang/mrh
+#export PYTHONPATH=$MRH$PYSCF:$PYTHONPATH
 
-python input.py > hs.out
+python input.py > hs_pdft.out

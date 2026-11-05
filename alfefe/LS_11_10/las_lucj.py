@@ -9,7 +9,7 @@ from pyscf.mcscf import avas
 # mrh imports
 from mrh.my_pyscf.mcscf.lasscf_o0 import LASSCF
 
-from qiskit.primitives import Estimator
+#from qiskit.primitives import Estimator
 from scipy.optimize import minimize
 
 #----------------Here we perform the calculation with user-defined molecule
@@ -47,6 +47,7 @@ ncas = las.ncas
 ncas_sub = las.ncas_sub
 # CASCI h1 & h2 for VQE Hamiltonian
 mc = mcscf.CASCI(mf,10,(5,6))
+mc.fix_spin_(ss=3/4) 
 mc.mo_coeff =las.mo_coeff
 cas_h1e, e_core = mc.h1e_for_cas()
 eri_cas = mc.get_h2eff(las.mo_coeff)
@@ -118,17 +119,18 @@ result = job.result()[0]          # PubResult for the first circuit
 meas = result.data.meas           # BitArray
 counts = meas.get_counts()  
 r = counts
+#r = meas
 #simulator = AerSimulator()
 #r = simulator.run(transpiled,shots=300_000).result().get_counts()
 #print('this is result from simulations',r)
 #print(' bitstring_matrix_full', bitstring_matrix_full)
 # SQD options
 
-ITERATIONS = 5
+ITERATIONS = 15
 open_shell = True
 spin_sq =(1/2)*(1/2+1)
 # Eigenstate solver options
-NUM_BATCHES = 5
+NUM_BATCHES = 10
 SAMPLES_PER_BATCH = 150
 MAX_DAVIDSON_CYCLES = 200
 num_alpha = mc.nelecas[0]
@@ -142,12 +144,12 @@ from qiskit_addon_sqd.fermion import SCIResult, diagonalize_fermionic_hamiltonia
 # SQD options
 energy_tol = 1e-3
 occupancies_tol = 1e-3
-max_iterations = 5
+max_iterations = 15
 
 # Eigenstate solver options
 num_batches = 10
-samples_per_batch = 150
-symmetrize_spin = True
+samples_per_batch = 250
+symmetrize_spin = False
 carryover_threshold = 1e-4
 max_cycle = 200
 
@@ -169,7 +171,10 @@ def callback(results: list[SCIResult]):
         print(f"\t\tEnergy: {result.energy + nuclear_repulsion_energy}")
         print(f"\t\tSubspace dimension: {np.prod(result.sci_state.amplitudes.shape)}")
 
-bit_array = r
+from qiskit_addon_sqd.counts import counts_to_arrays
+#bitstring_matrix_full, probs_array_full = counts_to_arrays(r)
+bit_array = meas
+#bitstring_matrix_full
 num_orbitals = norb
 nelec = jw_nelec
 rng = np.random.default_rng(24)
