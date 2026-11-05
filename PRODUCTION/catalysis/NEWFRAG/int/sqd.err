@@ -1,0 +1,4 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH

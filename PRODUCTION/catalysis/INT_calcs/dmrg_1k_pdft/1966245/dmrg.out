@@ -1,0 +1,2 @@
+INTEL MKL ERROR: /home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/block2.libs/libmkl_def.so.1: undefined symbol: mkl_sparse_optimize_bsr_trsm_i8.
+Intel MKL FATAL ERROR: Cannot load libmkl_def.so.1.

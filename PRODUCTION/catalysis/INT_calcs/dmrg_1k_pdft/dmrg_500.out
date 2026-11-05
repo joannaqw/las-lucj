@@ -1,0 +1,5 @@
+overwrite output file: int_out_2822_pdft.log
+tot grids = 453320
+Total DMRG-CASCI Energy (LAS orbitals): -3066.6285299761 Ha
+Total DMRG-PDFT Energy (tPBE): -3073.3732314877 Ha
+On-top functional contribution: -253.9239892972 Ha

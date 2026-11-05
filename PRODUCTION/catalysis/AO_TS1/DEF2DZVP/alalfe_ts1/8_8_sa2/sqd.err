@@ -1,0 +1,5 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+WARN: HOMO 0.09298685687607512 > LUMO -1.9912602656391147 was found in the canonicalized orbitals.

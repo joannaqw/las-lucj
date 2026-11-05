@@ -1,0 +1,4 @@
+WARN: HOMO 0.17237003256881242 > LUMO -0.5555574452917739 was found in the canonicalized orbitals.
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/TS_calcs/pdft2/input.py:146: UserWarning: 'num_terms' will be removed, use 'size()' instead
+  print(f"Num fermionic terms: {fermionic_op.num_terms}")

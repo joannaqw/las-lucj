@@ -1,0 +1,6 @@
+WARN: HOMO 0.17237003256879263 > LUMO -0.5555574452903017 was found in the canonicalized orbitals.
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/TS_calcs/pdft3/input.py:146: UserWarning: 'num_terms' will be removed, use 'size()' instead
+  print(f"Num fermionic terms: {fermionic_op.num_terms}")
+/var/spool/slurm/d/job59705691/slurm_script: line 31: 2719679 Killed                  python input.py > sub_2k5.out
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=59705691.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

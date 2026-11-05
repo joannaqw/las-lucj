@@ -1,0 +1,9 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+WARN: HOMO 0.1401979100547049 > LUMO -0.5828649016922964 was found in the canonicalized orbitals.
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+/var/spool/slurm/d/job60636966/slurm_script: line 30: 3354035 Killed                  python inp_int.py > newfrag.out
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=60636966.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

@@ -1,0 +1,5 @@
+/var/spool/slurm/d/job59839419/slurm_script: line 25: export: `=': not a valid identifier
+/var/spool/slurm/d/job59839419/slurm_script: line 25: export: `/home/qjwang/.local/lib/python3.9/site-packages/pyscf': not a valid identifier
+WARN: HOMO 0.14010076954620668 > LUMO -0.5818028220002409 was found in the canonicalized orbitals.
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/INT_calcs/int_pr4/input.py:151: UserWarning: 'num_terms' will be removed, use 'size()' instead
+  print(f"Num fermionic terms: {fermionic_op.num_terms}")

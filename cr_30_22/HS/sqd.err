@@ -1,0 +1,2 @@
+/project/lgagliardi/qjwang/las-lucj/cr_30_22/HS/las_lucj.py:8: FutureWarning: Most MC-PDFT and MC-DCFT modules have been moved to pyscf-forge (github.com/pyscf/pyscf-forge) and will be removed from mrh soon.
+  from mrh.my_pyscf import mcpdft

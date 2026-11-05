@@ -1,0 +1,36 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+WARN: HOMO 0.17228488636550382 > LUMO -0.555181721951844 was found in the canonicalized orbitals.
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: Encountered scipy.linalg.LinAlgError during SVD: SVD did not converge
+WARN: attempting fake SVD using eigh
+WARN: Checking fake svd accuracy
+WARN: max(abs(u.s.vh - a)) = 7.416041e-10
+WARN: Can't separate env occ from env virt in async_split ia2x_gradorbs; Schmidt failure? svals=[3.11732599e-06 2.22045874e-06 5.95857668e-07 3.68793814e-07
+ 2.80859854e-07 1.30293188e-07 8.04622345e-08 4.68047882e-08
+ 2.38295962e-08 1.93117176e-08]
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: Can't separate env occ from env virt in async_split ia2x_gradorbs; Schmidt failure? svals=[1.26389027e-08]
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: LASCI encountered an unmaskable instability; calculation may not converge
+WARN: Can't separate env occ from env virt in async_split ia2x_gradorbs; Schmidt failure? svals=[1.18685836e-08]
+slurmstepd: error: *** JOB 60645019 ON midway3-0440 CANCELLED AT 2026-10-17T08:54:33 DUE TO TIME LIMIT ***

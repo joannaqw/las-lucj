@@ -1,0 +1,24 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+WARN: HOMO 0.16536593010401313 > LUMO -0.7018423593761683 was found in the canonicalized orbitals.
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/AO_TS1/ts1/las/inp_ts.py", line 59, in <module>
+    localized_mo2=las.set_fragments_(([24,26],[28,29,30,31,32,33]),sorted_mo)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasscf_async/lasscf_async.py", line 241, in set_fragments_
+    self.frags_orbs = interpret_frags_atoms (self.mol, frags_atoms, frags_by_AOs=frags_by_AOs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasscf_guess.py", line 185, in interpret_frags_atoms
+    frags_orbs = [[orb for atom in frags_atoms 
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasscf_guess.py", line 185, in <listcomp>
+    frags_orbs = [[orb for atom in frags_atoms 
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasscf_guess.py", line 186, in <listcomp>
+    for orb in list (range (ao_offset[atom,2], ao_offset[atom,3]))]
+                            ~~~~~~~~~^^^^^^^^
+IndexError: index 31 is out of bounds for axis 0 with size 31

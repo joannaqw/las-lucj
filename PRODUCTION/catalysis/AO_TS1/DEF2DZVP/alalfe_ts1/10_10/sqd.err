@@ -1,0 +1,28 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+/project/lgagliardi/shared/Apps/pyscf/pyscf/gto/basis/__init__.py:688: UserWarning: Basis may be available in basis-set-exchange. It is recommended to install basis-set-exchange: pip install basis-set-exchange
+  warnings.warn(
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/AO_TS1/DEF2DZVP/alalfe_ts1/10_10/inp_ts.py", line 9, in <module>
+    mol=gto.M(atom='ts1.xyz',basis='def2dzvp',verbose=4,output='ts_out_8e8o.log',charge=0,spin=4)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/gto/mole.py", line 119, in M
+    mol.build(*args, **kwargs)
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/gto/mole.py", line 2562, in build
+    self._basis = self.format_basis(_basis)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/gto/mole.py", line 458, in format_basis
+    _basis = basis_converter(symb, atom_basis)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/gto/mole.py", line 493, in converter
+    _basis = load(raw_basis, _std_symbol_without_ghost(symb))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/gto/mole.py", line 486, in load
+    _basis = basis.load(basis_name, symb)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/gto/basis/__init__.py", line 699, in load
+    raise BasisNotFoundError(f'Unknown basis format or basis name\n{filename_or_basisname}')
+pyscf.lib.exceptions.BasisNotFoundError: Unknown basis format or basis name
+def2dzvp

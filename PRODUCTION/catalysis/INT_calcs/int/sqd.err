@@ -1,0 +1,27 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/int/input.py:4: FutureWarning: Most MC-PDFT and MC-DCFT modules have been moved to pyscf-forge (github.com/pyscf/pyscf-forge) and will be removed from mrh soon.
+  from mrh.my_pyscf import mcpdft
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/int/input.py", line 30, in <module>
+    las.kernel(mo_coeff)
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasci.py", line 1022, in kernel
+    self.ci, h2eff_sub, veff = _kern(mo_coeff=mo_coeff, ci0=ci0, verbose=verbose, \
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasci_sync.py", line 86, in kernel
+    veff += las.fast_veffa (dcasdm1s, h2eff_sub, mo_coeff=mo_coeff, ci=ci1) 
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasci.py", line 1968, in fast_veffa
+    bPmn = sparsedf_array (self.with_df._cderi)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/df/sparse_df.py", line 10, in __new__
+    assert (inp.flags['C_CONTIGUOUS'] or inp.flags['F_CONTIGUOUS'])
+            ^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/tempfile.py", line 495, in __getattr__
+    a = getattr(file, name)
+        ^^^^^^^^^^^^^^^^^^^
+AttributeError: '_io.BufferedRandom' object has no attribute 'flags'

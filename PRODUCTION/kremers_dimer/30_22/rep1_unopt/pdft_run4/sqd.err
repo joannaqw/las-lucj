@@ -1,0 +1,5 @@
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/30_22/rep1_unopt/pdft_run4/input.py:166: UserWarning: 'num_terms' will be removed, use 'size()' instead
+  print(f"Num fermionic terms: {fermionic_op.num_terms}")
+slurmstepd: error: *** JOB 60110610 ON midway3-0557 CANCELLED AT 2026-10-24T03:00:32 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 60110610 STEPD TERMINATED ON midway3-0557 AT 2026-10-24T03:01:33 DUE TO JOB NOT ENDING WITH SIGNALS ***

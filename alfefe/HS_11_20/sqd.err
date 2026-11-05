@@ -1,0 +1,239 @@
+WARN: Even tempered Gaussians are generated as DF auxbasis for  Fe
+WARN: HOMO 0.0727565923761743 >= LUMO -0.711747888269229
+WARN: HOMO 0.0727838546682123 >= LUMO -0.595585772597433
+WARN: HOMO 0.155943259230295 >= LUMO -0.632827716855983
+WARN: HOMO -0.308913325861924 >= LUMO -0.444569299413052
+WARN: HOMO 0.0183950531511057 >= LUMO -0.585694385495181
+WARN: HOMO 0.0536450248603458 >= LUMO -0.509857666308645
+WARN: HOMO -0.106747916846228 >= LUMO -0.492603462528488
+WARN: HOMO 0.236219720600314 >= LUMO -0.000987733926314729
+WARN: HOMO 0.310022148931596 >= LUMO -0.0855741569056996
+WARN: HOMO 0.228261939482395 >= LUMO -0.233898060829034
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+WARN: possible (pa|aa) inconsistency; max err = 1.308327e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.510018e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.526510e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.527435e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.553656e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.554565e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.555162e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.551832e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.528420e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.552558e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.527548e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.533144e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.551409e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.551780e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.554357e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.528214e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.532679e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.564766e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.519420e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.532976e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.577807e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.519821e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.533254e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.588332e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.595901e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.531819e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.605853e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.610992e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.532054e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.574229e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.534842e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.623349e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.532434e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.535077e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.552263e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.608257e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.560957e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.570371e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.573383e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.533967e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.527688e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.611015e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.610325e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.610649e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.610954e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.611194e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.641872e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.615325e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.612634e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.536325e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.549537e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.612811e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.542497e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.619016e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.612788e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.612118e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.620624e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.555905e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.612532e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.612433e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.612321e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.537162e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.622396e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.611928e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.537352e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.623202e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.611475e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.623640e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.626240e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.564178e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.624195e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.610578e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.611894e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.611814e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.624817e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.561193e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.564657e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.625233e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.609207e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.538126e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.625579e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.608619e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.544688e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.551369e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.608044e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.565140e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.563036e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.555264e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.625141e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.625224e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.606973e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.610176e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.626712e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.625106e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.608606e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.565465e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.605973e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.605806e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.605664e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.605524e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.595935e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.551847e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.536478e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.604658e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.538475e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.626550e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.604587e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.545103e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.628039e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.604232e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.573166e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.591517e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.563973e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.628461e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.603732e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.544973e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.628894e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.624992e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.565286e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.629482e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.603157e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.603045e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.657200e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.572637e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.630387e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.602573e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.602509e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.657999e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.602498e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.593792e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.631698e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.572426e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.099644e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.612777e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.594776e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.099597e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.635504e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.569468e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.099918e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.099944e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.097156e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.591035e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.805711e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.030400e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.831800e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.142358e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.160060e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.639567e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.943066e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.105997e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.932759e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.703196e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.421924e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.179017e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.199522e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.578305e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.824659e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.099998e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.598497e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.575439e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.103576e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.617901e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.596758e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.103869e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.103953e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.104024e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.104093e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.596939e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.597081e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.030821e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.030875e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.597605e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.098363e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.023935e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.598193e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.104453e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.620575e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.576318e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.104492e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.599201e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.576347e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.104501e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.104498e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.600031e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.104484e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.011485e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.600665e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.104447e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.104430e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.605328e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.098394e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.028988e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.028960e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.102853e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.579650e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.009325e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.009292e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.603231e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.027837e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.016098e-08
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.hf.RHF'>
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/alfefe/HS_11_20/las_lucj.py", line 61, in <module>
+    qlas,ucj_op = LUCJ_load(las.ncas_sub[f],nelec_f[f][0],nelec_f[f][1],h1_frag,h2_frag,las.ci[f][0])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/las-lucj/alfefe/HS_11_20/LUCJ_loader.py", line 43, in LUCJ_load
+    mc.kernel()
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/cc/ccsd.py", line 1084, in kernel
+    return self.ccsd(t1, t2, eris)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/cc/ccsd.py", line 1096, in ccsd
+    eris = self.ao2mo(self.mo_coeff)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/cc/ccsd.py", line 1204, in ao2mo
+    return _make_eris_outcore(self, mo_coeff)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/cc/ccsd.py", line 1557, in _make_eris_outcore
+    ao2mo.full(mol, orbv, eris.feri2, max_memory=max_memory, verbose=log)
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/ao2mo/__init__.py", line 154, in full
+    return mod.full(eri_or_mol, mo_coeff, erifile, dataname, intor,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/ao2mo/outcore.py", line 110, in full
+    general(mol, (mo_coeff,)*4, erifile, dataname,
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/ao2mo/outcore.py", line 218, in general
+    assert (nao == mol.nao_nr('_cart' in intor))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

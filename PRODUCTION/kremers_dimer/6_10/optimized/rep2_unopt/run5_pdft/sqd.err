@@ -1,0 +1,11 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.rohf.ROHF'>
+Overwritten attributes  get_ovlp get_hcore  of <class 'pyscf.scf.hf.RHF'>
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/6_10/optimized/rep2_unopt/run5_pdft/run_las_lucj.py:160: DeprecationWarning: The function ``qiskit_addon_sqd.subsampling.postselect_and_subsample()`` is deprecated as of qiskit-addon-sqd 0.12.0. It will be removed no earlier than v0.13.0. Instead, use the ``postselect_by_hamming_right_and_left`` and ``subsample`` functions.
+  batches = postselect_and_subsample(
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/6_10/optimized/rep2_unopt/run5_pdft/laslucj_pdft.py:2: FutureWarning: Most MC-PDFT and MC-DCFT modules have been moved to pyscf-forge (github.com/pyscf/pyscf-forge) and will be removed from mrh soon.
+  from mrh.my_pyscf.mcpdft.laspdft import get_mcpdft_child_class

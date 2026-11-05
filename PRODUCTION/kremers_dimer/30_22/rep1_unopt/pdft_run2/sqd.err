@@ -1,0 +1,29 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/30_22/rep1_unopt/pdft_run2/input.py:166: UserWarning: 'num_terms' will be removed, use 'size()' instead
+  print(f"Num fermionic terms: {fermionic_op.num_terms}")
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/kremers_dimer/30_22/rep1_unopt/pdft_run2/input.py", line 228, in <module>
+    from pyscf import mcpdft
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/mcpdft/__init__.py", line 32, in <module>
+    from pyscf.mcpdft.mcpdft import get_mcpdft_child_class
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/mcpdft/mcpdft.py", line 27, in <module>
+    from pyscf.mcpdft.otfnal import transfnal, get_transfnal
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/mcpdft/otfnal.py", line 25, in <module>
+    from pyscf.mcpdft import pdft_veff, tfnal_derivs, _libxc, _dms, pdft_feff, pdft_eff
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/mcpdft/_dms.py", line 27, in <module>
+    from pyscf import dmrgscf
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/dmrgscf/__init__.py", line 106, in <module>
+    from pyscf.dmrgscf import dmrgci
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/dmrgscf/dmrgci.py", line 41, in <module>
+    libunpack = lib.load_library('libunpack')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/shared/Apps/pyscf/pyscf/lib/misc.py", line 147, in load_library
+    lib = numpy.ctypeslib.load_library(libname, libpath)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/numpy/ctypeslib/_ctypeslib.py", line 165, in load_library
+    raise OSError("no file with expected extension")
+OSError: no file with expected extension

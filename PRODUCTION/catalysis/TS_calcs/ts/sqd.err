@@ -1,0 +1,28 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+WARN: possible (pa|aa) inconsistency; max err = 3.721989e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.356589e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.336946e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.337670e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.337526e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.337465e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.337304e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.337192e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.337127e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.337029e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.337020e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.336987e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.336816e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.336747e-08
+WARN: possible (pa|aa) inconsistency; max err = 3.336780e-08
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/ts/input.py:32: FutureWarning: Most MC-PDFT and MC-DCFT modules have been moved to pyscf-forge (github.com/pyscf/pyscf-forge) and will be removed from mrh soon.
+  from mrh.my_pyscf import mcpdft
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/ts/input.py", line 64, in <module>
+    eri = ao2mo.restore(1, eri_cas,mc.ncas)
+          ^^^^^
+NameError: name 'ao2mo' is not defined

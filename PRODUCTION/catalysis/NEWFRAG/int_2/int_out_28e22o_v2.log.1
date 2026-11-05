@@ -1,0 +1,3549 @@
+#INFO: **** input file is /project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/NEWFRAG/int_2/inp_int.py ****
+import pyscf
+import numpy as np
+from pyscf import gto, lib, scf, mcscf
+from pyscf.mcscf import avas
+from pyscf.tools import molden
+from mrh.my_pyscf.tools import molden
+from mrh.my_pyscf.mcscf import lasscf_async as asyn
+from pyscf.lib import param
+
+mol=gto.M(atom='int.xyz',basis='def2tzvp',verbose=4,output='int_out_28e22o_v2.log',charge=0,spin=4)
+mol.max_memory=500000
+mf=scf.ROHF(mol)
+mf=mf.density_fit()
+mf=mf.newton()
+mf.mo_coeff = np.load('mf.npy')
+mf.max_cycle = 1
+mf.kernel()
+#ao_labels=['Fe 3d','!O 2p','O1 2p', '!C 2p','!H 1s']
+# int geometry
+ao_labels = ['Fe 3d',   # Fe
+             '!O 2p',    # oxo O (use '28 O1 2p' if it is labeled O1 in int.xyz)
+             '!C 2p',
+             '!H 1s']    # reactive H (int)
+
+# ts geometry: same, but the reactive H is atom 33
+#ao_labels = ['26 Fe 3d', '28 O 2p', '24 O 2p', '33 H 1s']
+
+ncas, nelecas, mo_coeff = avas.avas(mf, ao_labels, minao=mol.basis,
+                                     openshell_option=3, threshold=0.1)
+#ncas,nelecas,mo_coeff=avas.avas(mf,ao_labels,minao=mol.basis,openshell_option=3)
+#mc_test = mcscf.CASCI(mf,ncas,nelecas)
+#molden.from_mo(mol, 'avas_int_new2frag_complete.molden',mo_coeff)
+        #[:,mc_test.ncore:mc_test.ncore+ncas])
+#exit()
+mo_list=[95, #topO
+         96, #Fe-O Top
+         97, #Fe-O TOP
+         98, #O-AL 
+         99, #o-fe-o
+         100, #CHbonding
+         101,#O bottom
+         104,105, #Fe
+         106, #Fe-O botoom
+         108, #Fe,
+         109, #o-fe-o
+         115] #antibonding
+         
+#mo_list=[_+mc_test.ncore for _ in mo_list]
+
+#scheme 1: [O-Fe-O_bot] | [CH4]
+las=asyn.LASSCF(mf,(11,2),((10,6),(1,1)),spin_sub=(5,1),verbose=4)
+sorted_mo=las.sort_mo(mo_list,mo_coeff)
+molden.from_mo(mol, 'sorted_int_1813.molden',sorted_mo)
+
+localized_mo1=las.set_fragments_(([24,26,28],[29,30,31,32,33]),sorted_mo)
+molden.from_mo(mol, 'local1_int_1813.molden',localized_mo1)
+las.max_cycle_macro=200
+las.kernel(localized_mo1)
+molden.from_lasscf(las, 'int1_lasscf_1813_2frag.molden')
+
+mc= mcscf.CASSCF(mf,18,(11,7))
+mc.max_cycle_macro = 100
+mc.kernel(localized_mo1)
+
+localized_mo2=las.set_fragments_(([24,26],[28,29,30,31,32,33]),sorted_mo)
+molden.from_mo(mol, 'local2_int_1813.molden',localized_mo2)
+#scheme 1: [Fe-O_bot] | [0-CH4]
+las2=asyn.LASSCF(mf,(5,8), ((4,4),(7,3)),spin_sub=(1,5),verbose=4)
+las2.max_cycle_macro=200
+las2.max_cycle_macro=100
+las2.kernel(localized_mo2)
+molden.from_lasscf(las2, 'int2_lasscf_1813_2frag_VW.molden')
+
+
+#INFO: ******************** input file end ********************
+
+
+System: uname_result(system='Linux', node='midway3-0557.rcc.local', release='4.18.0-305.3.1.el8.x86_64', version='#1 SMP Tue Jun 1 16:14:33 UTC 2021', machine='x86_64')  Threads 16
+Python 3.11.11 (main, Dec 11 2024, 16:28:39) [GCC 11.2.0]
+numpy 2.4.4  scipy 1.15.1  h5py 3.12.1
+Date: Tue Oct 13 12:53:14 2026
+PySCF version 2.14.0
+PySCF path  /project/lgagliardi/shared/Apps/pyscf
+GIT ORIG_HEAD 1d623af43631345d596db2589371c9e66f0e18a3
+GIT HEAD (branch master) babc1ecc77b8f274cabbc48550ef2b065bcb9158
+mrh path  /project/lgagliardi/qjwang/mrh
+GIT ORIG_HEAD e5cf184d23ec209e5a8449660416e8d81d7575e1
+GIT HEAD (branch extremely_asyn) 3ac5592558cba0321455f145be7d2a6590523223
+
+[ENV] SHARED_PYSCF_ext /project/lgagliardi/shared/Apps/pyscf_ext/pyscf-forge
+[ENV] PYSCF_EXT_PATH 
+[ENV] SHARED_PYSCF /project/lgagliardi/shared/Apps/pyscf
+[ENV] PYSCF /project/lgagliardi/shared/Apps/pyscf
+[CONFIG] conf_file None
+[INPUT] verbose = 4
+[INPUT] num. atoms = 1
+[INPUT] num. electrons = 1
+[INPUT] charge = 0
+[INPUT] spin (= nelec alpha-beta = 2S) = 1
+[INPUT] symmetry False subgroup None
+[INPUT] Mole.unit = angstrom
+[INPUT] Symbol           X                Y                Z      unit          X                Y                Z       unit  Magmom
+[INPUT]  1 H      0.000000000000   0.000000000000   0.000000000000 AA    0.000000000000   0.000000000000   0.000000000000 Bohr   0.0
+
+nuclear repulsion = 0
+number of shells = 1
+number of NR pGTOs = 3
+number of NR cGTOs = 1
+basis = sto-3g
+ecp = {}
+CPU time:      5886.36
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.697913e-13
+Schmidt decomp SVD error = 6.071532e-17
+nfrag after schmidt = 115
+nelec in fragment = 114
+nfrag after gradorbs 2 = 118
+nelec in fragment = 114
+43 occupied and 112 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 56, nvir = 60
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8494 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3059.21654457099  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 ( 21 JK    4 micro), CASSCF E = -3059.44069997301  dE = -2.24155402e-01  S^2 = 0.0000000
+               |grad[o]|= 1.98  |ddm|=0.00278  |maxRot[o]|=0.314
+macro iter   2 ( 21 JK    4 micro), CASSCF E = -3059.68607015951  dE = -2.45370186e-01  S^2 = 0.0000000
+               |grad[o]|= 1.61  |ddm|=0.00425  |maxRot[o]|=0.315
+macro iter   3 ( 21 JK    4 micro), CASSCF E = -3059.88562826807  dE = -1.99558109e-01  S^2 = 0.0000000
+               |grad[o]|= 1.14  |ddm|=0.00591  |maxRot[o]|=0.314
+macro iter   4 ( 21 JK    4 micro), CASSCF E = -3059.90659969951  dE = -2.09714314e-02  S^2 = 0.0000000
+               |grad[o]|=0.307  |ddm|=0.0107  |maxRot[o]|=  0.2
+macro iter   5 ( 11 JK    4 micro), CASSCF E = -3059.90873877899  dE = -2.13907948e-03  S^2 = 0.0000000
+               |grad[o]|=0.0958  |ddm|=0.00481  |maxRot[o]|=0.0638
+macro iter   6 (  8 JK    3 micro), CASSCF E = -3059.90873914730  dE = -3.68313977e-07  S^2 = 0.0000000
+               |grad[o]|=0.00065  |ddm|=0.000424  |maxRot[o]|=0.00127
+macro iter   7 (  1 JK    1 micro), CASSCF E = -3059.90873914730  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=2.7e-05  |ddm|=1.32e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   7 macro (104 JK  24 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98210649 0.01789351]
+CASSCF energy = -3059.90873914730
+CASCI state   0  E = -3059.90873914730  E(CI) = -1.83299744280066  S^2 = 0.0000000
+CASCI state-averaged energy = -3059.9087391473
+CASCI energy for each state
+  State 0 weight 1  E = -3059.9087391473 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.665714e-13
+Schmidt decomp SVD error = 9.085614e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8866 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3065.94594844822  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 ( 14 JK    4 micro), CASSCF E = -3065.99474876319  dE = -4.88003150e-02  S^2 = 0.0000000
+               |grad[o]|=0.447  |ddm|=0.0263  |maxRot[o]|=0.0427
+macro iter   2 (  9 JK    3 micro), CASSCF E = -3065.99475279252  dE = -4.02932710e-06  S^2 = 0.0000000
+               |grad[o]|=0.00219  |ddm|=0.000152  |maxRot[o]|=0.00473
+macro iter   3 (  1 JK    1 micro), CASSCF E = -3065.99475279252  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.05e-05  |ddm|=1.48e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   3 macro ( 24 JK   8 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98293831 0.01706169]
+CASSCF energy = -3065.99475279252
+CASCI state   0  E = -3065.99475279252  E(CI) = -1.82571002963277  S^2 = 0.0000000
+CASCI state-averaged energy = -3065.99475279252
+CASCI energy for each state
+  State 0 weight 1  E = -3065.99475279252 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.666957e-13
+Schmidt decomp SVD error = 9.828293e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8921 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.49159390985  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 ( 10 JK    4 micro), CASSCF E = -3066.49774395264  dE = -6.15004279e-03  S^2 = 0.0000000
+               |grad[o]|=  0.2  |ddm|=0.0131  |maxRot[o]|=0.0167
+macro iter   2 (  3 JK    1 micro), CASSCF E = -3066.49774396760  dE = -1.49598236e-08  S^2 = 0.0000000
+               |grad[o]|=0.000209  |ddm|=6.57e-05  |maxRot[o]|=0.000133
+1-step CASSCF converged in   2 macro ( 13 JK   5 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.9827029 0.0172971]
+CASSCF energy = -3066.49774396760
+CASCI state   0  E = -3066.49774396760  E(CI) = -1.89049800795738  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.4977439676
+CASCI energy for each state
+  State 0 weight 1  E = -3066.4977439676 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.689833e-13
+Schmidt decomp SVD error = 1.543904e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8867 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.54495435839  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 ( 11 JK    4 micro), CASSCF E = -3066.54636224049  dE = -1.40788210e-03  S^2 = 0.0000000
+               |grad[o]|=0.0932  |ddm|=0.00212  |maxRot[o]|=0.0117
+macro iter   2 (  3 JK    1 micro), CASSCF E = -3066.54636224149  dE = -1.00089892e-09  S^2 = 0.0000000
+               |grad[o]|=3.28e-05  |ddm|=9.11e-06  |maxRot[o]|=0.000118
+1-step CASSCF converged in   2 macro ( 14 JK   5 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98275593 0.01724407]
+CASSCF energy = -3066.54636224149
+CASCI state   0  E = -3066.54636224149  E(CI) = -1.87375376664386  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.54636224149
+CASCI energy for each state
+  State 0 weight 1  E = -3066.54636224149 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.056829e-12
+Schmidt decomp SVD error = 2.359224e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8912 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.55735489983  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 ( 10 JK    4 micro), CASSCF E = -3066.55780021357  dE = -4.45313744e-04  S^2 = 0.0000000
+               |grad[o]|=0.0709  |ddm|=0.00255  |maxRot[o]|=0.00849
+macro iter   2 (  3 JK    1 micro), CASSCF E = -3066.55780021389  dE = -3.15139914e-10  S^2 = 0.0000000
+               |grad[o]|=3.27e-05  |ddm|=9.14e-06  |maxRot[o]|=1.48e-05
+1-step CASSCF converged in   2 macro ( 13 JK   5 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98268887 0.01731113]
+CASSCF energy = -3066.55780021389
+CASCI state   0  E = -3066.55780021389  E(CI) = -1.88256286979822  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.55780021389
+CASCI energy for each state
+  State 0 weight 1  E = -3066.55780021389 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.731952e-13
+Schmidt decomp SVD error = 1.387779e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8920 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56137175306  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  6 JK    2 micro), CASSCF E = -3066.56156288610  dE = -1.91133040e-04  S^2 = 0.0000000
+               |grad[o]|=0.0559  |ddm|=0.000366  |maxRot[o]|=0.00393
+macro iter   2 (  3 JK    1 micro), CASSCF E = -3066.56156288773  dE = -1.63481673e-09  S^2 = 0.0000000
+               |grad[o]|=6.3e-05  |ddm|=2.57e-05  |maxRot[o]|=4.63e-05
+1-step CASSCF converged in   2 macro (  9 JK   3 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98269147 0.01730853]
+CASSCF energy = -3066.56156288773
+CASCI state   0  E = -3066.56156288773  E(CI) = -1.87876115854669  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56156288773
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56156288773 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.296333e-13
+Schmidt decomp SVD error = 1.249001e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8866 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56295844671  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  8 JK    3 micro), CASSCF E = -3066.56307553333  dE = -1.17086624e-04  S^2 = 0.0000000
+               |grad[o]|=0.0465  |ddm|=0.000664  |maxRot[o]|=0.00404
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56307553333  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=2.57e-05  |ddm|=3.18e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  9 JK   4 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98267319 0.01732681]
+CASSCF energy = -3066.56307553333
+CASCI state   0  E = -3066.56307553333  E(CI) = -1.88083783184265  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56307553333
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56307553333 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 3.471149e-13
+Schmidt decomp SVD error = 1.278274e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8915 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56373097629  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  6 JK    2 micro), CASSCF E = -3066.56380339190  dE = -7.24156080e-05  S^2 = 0.0000000
+               |grad[o]|=0.0324  |ddm|=0.000135  |maxRot[o]|=0.00256
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56380339190  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=2.19e-05  |ddm|=6.13e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  7 JK   3 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98267349 0.01732651]
+CASSCF energy = -3066.56380339190
+CASCI state   0  E = -3066.56380339190  E(CI) = -1.87985255605054  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.5638033919
+CASCI energy for each state
+  State 0 weight 1  E = -3066.5638033919 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.447005e-13
+Schmidt decomp SVD error = 1.179612e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8915 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56414552924  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  6 JK    2 micro), CASSCF E = -3066.56419476942  dE = -4.92401755e-05  S^2 = 0.0000000
+               |grad[o]|=0.0269  |ddm|=0.000151  |maxRot[o]|=0.002
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56419476942  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.99e-05  |ddm|=1.39e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  7 JK   3 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98267033 0.01732967]
+CASSCF energy = -3066.56419476942
+CASCI state   0  E = -3066.56419476942  E(CI) = -1.88043493419491  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56419476942
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56419476942 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.482438e-13
+Schmidt decomp SVD error = 1.040834e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8921 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56440292511  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  5 JK    2 micro), CASSCF E = -3066.56443718428  dE = -3.42591693e-05  S^2 = 0.0000000
+               |grad[o]|=0.022  |ddm|=4.96e-05  |maxRot[o]|=0.00178
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56443718428  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=2.69e-05  |ddm|=4.97e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  6 JK   3 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98267 0.01733]
+CASSCF energy = -3066.56443718428
+CASCI state   0  E = -3066.56443718428  E(CI) = -1.88017978369135  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56443718428
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56443718428 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.117772e-13
+Schmidt decomp SVD error = 1.535772e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8915 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56457290125  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56459738799  dE = -2.44867451e-05  S^2 = 0.0000000
+               |grad[o]|=0.0199  |ddm|=3.86e-05  |maxRot[o]|=0.00139
+macro iter   2 (  3 JK    1 micro), CASSCF E = -3066.56459738845  dE = -4.52473614e-10  S^2 = 0.0000000
+               |grad[o]|=3.48e-05  |ddm|=1.26e-05  |maxRot[o]|=1.62e-05
+1-step CASSCF converged in   2 macro (  6 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266901 0.01733099]
+CASSCF energy = -3066.56459738845
+CASCI state   0  E = -3066.56459738845  E(CI) = -1.88032116491195  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56459738845
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56459738845 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 3.010535e-13
+Schmidt decomp SVD error = 1.283695e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8912 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56467135685  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56468885584  dE = -1.74989968e-05  S^2 = 0.0000000
+               |grad[o]|=0.0173  |ddm|=2.3e-05  |maxRot[o]|=0.00122
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56468885584  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=2.56e-05  |ddm|=6.36e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266839 0.01733161]
+CASSCF energy = -3066.56468885584
+CASCI state   0  E = -3066.56468885584  E(CI) = -1.88025452041074  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56468885584
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56468885584 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.705273e-13
+Schmidt decomp SVD error = 8.500145e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8946 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56473014322  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56474286104  dE = -1.27178146e-05  S^2 = 0.0000000
+               |grad[o]|=0.0161  |ddm|=2.67e-05  |maxRot[o]|=0.000944
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56474286104  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=2.13e-05  |ddm|=7.12e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.9826681 0.0173319]
+CASSCF energy = -3066.56474286104
+CASCI state   0  E = -3066.56474286104  E(CI) = -1.88030033878567  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56474286104
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56474286104 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.749352e-13
+Schmidt decomp SVD error = 7.752046e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8940 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56477187852  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56478113542  dE = -9.25690301e-06  S^2 = 0.0000000
+               |grad[o]|=0.014  |ddm|=1.1e-05  |maxRot[o]|=0.000803
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56478113542  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.8e-05  |ddm|=1.85e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266746 0.01733254]
+CASSCF energy = -3066.56478113542
+CASCI state   0  E = -3066.56478113542  E(CI) = -1.88028519191403  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56478113542
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56478113542 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.646027e-13
+Schmidt decomp SVD error = 6.938894e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8944 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56480607059  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56481290464  dE = -6.83404869e-06  S^2 = 0.0000000
+               |grad[o]|=0.013  |ddm|=1.77e-05  |maxRot[o]|=0.000646
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56481290464  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.5e-05  |ddm|=1.09e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266744 0.01733256]
+CASSCF energy = -3066.56481290464
+CASCI state   0  E = -3066.56481290464  E(CI) = -1.88028778224725  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56481290464
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56481290464 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 7.072864e-13
+Schmidt decomp SVD error = 1.494031e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8899 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56482223841  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56482729594  dE = -5.05752223e-06  S^2 = 0.0000000
+               |grad[o]|=0.0112  |ddm|=9.96e-06  |maxRot[o]|=0.000592
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56482729594  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.31e-05  |ddm|=3.39e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266697 0.01733303]
+CASSCF energy = -3066.56482729594
+CASCI state   0  E = -3066.56482729594  E(CI) = -1.88029018438056  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56482729594
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56482729594 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.708132e-13
+Schmidt decomp SVD error = 1.110223e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8943 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56483268805  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56483647648  dE = -3.78843060e-06  S^2 = 0.0000000
+               |grad[o]|=0.0103  |ddm|=1.34e-05  |maxRot[o]|=0.000454
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56483647648  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.12e-05  |ddm|=1.22e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266687 0.01733313]
+CASSCF energy = -3066.56483647648
+CASCI state   0  E = -3066.56483647648  E(CI) = -1.88029181975298  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56483647648
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56483647648 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.355698e-13
+Schmidt decomp SVD error = 1.110223e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8949 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56484010654  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56484295940  dE = -2.85286205e-06  S^2 = 0.0000000
+               |grad[o]|=0.00868  |ddm|=9.05e-06  |maxRot[o]|=0.000433
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56484295940  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=9.66e-06  |ddm|=1.76e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266656 0.01733344]
+CASSCF energy = -3066.56484295940
+CASCI state   0  E = -3066.56484295940  E(CI) = -1.88029670676178  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.5648429594
+CASCI energy for each state
+  State 0 weight 1  E = -3066.5648429594 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.861844e-13
+Schmidt decomp SVD error = 9.633136e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8905 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56484513683  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56484730212  dE = -2.16528906e-06  S^2 = 0.0000000
+               |grad[o]|=0.008  |ddm|=9.23e-06  |maxRot[o]|=0.000332
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56484730212  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=8.03e-06  |ddm|=9.89e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266649 0.01733351]
+CASSCF energy = -3066.56484730212
+CASCI state   0  E = -3066.56484730212  E(CI) = -1.88029758013909  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56484730212
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56484730212 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.100243e-13
+Schmidt decomp SVD error = 7.632783e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8905 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56484878147  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485043345  dE = -1.65198298e-06  S^2 = 0.0000000
+               |grad[o]|=0.00663  |ddm|=7.41e-06  |maxRot[o]|=0.000326
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485043345  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=7.34e-06  |ddm|=1.9e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266626 0.01733374]
+CASSCF energy = -3066.56485043345
+CASCI state   0  E = -3066.56485043345  E(CI) = -1.88030345736479  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485043345
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485043345 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.109194e-13
+Schmidt decomp SVD error = 1.110223e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8954 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485122525  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485249042  dE = -1.26516670e-06  S^2 = 0.0000000
+               |grad[o]|=0.00614  |ddm|=6.44e-06  |maxRot[o]|=0.000263
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485249042  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=5.79e-06  |ddm|=2.07e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.9826662 0.0173338]
+CASSCF energy = -3066.56485249042
+CASCI state   0  E = -3066.56485249042  E(CI) = -1.88030306315386  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485249042
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485249042 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.367945e-13
+Schmidt decomp SVD error = 9.801188e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8943 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485294160  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485391420  dE = -9.72604084e-07  S^2 = 0.0000000
+               |grad[o]|=0.00507  |ddm|=5.95e-06  |maxRot[o]|=0.000249
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485391420  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=5.6e-06  |ddm|=7.04e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266604 0.01733396]
+CASSCF energy = -3066.56485391420
+CASCI state   0  E = -3066.56485391420  E(CI) = -1.88030732071820  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.5648539142
+CASCI energy for each state
+  State 0 weight 1  E = -3066.5648539142 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.578997e-13
+Schmidt decomp SVD error = 9.887924e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8914 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485417072  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485491928  dE = -7.48561433e-07  S^2 = 0.0000000
+               |grad[o]|=0.00472  |ddm|=4.71e-06  |maxRot[o]|=0.000215
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485491928  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=4.28e-06  |ddm|=7.33e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.982666 0.017334]
+CASSCF energy = -3066.56485491928
+CASCI state   0  E = -3066.56485491928  E(CI) = -1.88030729680895  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485491928
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485491928 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 3.319615e-13
+Schmidt decomp SVD error = 8.326673e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8952 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485509100  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485566897  dE = -5.77972969e-07  S^2 = 0.0000000
+               |grad[o]|=0.00388  |ddm|=4.59e-06  |maxRot[o]|=0.000192
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485566897  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=4.26e-06  |ddm|=1.36e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266589 0.01733411]
+CASSCF energy = -3066.56485566897
+CASCI state   0  E = -3066.56485566897  E(CI) = -1.88031029306831  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485566897
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485566897 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.816563e-13
+Schmidt decomp SVD error = 1.179612e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8963 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485578040  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485622671  dE = -4.46303147e-07  S^2 = 0.0000000
+               |grad[o]|=0.00363  |ddm|=3.64e-06  |maxRot[o]|=0.000175
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485622671  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=3.23e-06  |ddm|=7.88e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266585 0.01733415]
+CASSCF energy = -3066.56485622671
+CASCI state   0  E = -3066.56485622671  E(CI) = -1.88031088614116  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485622671
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485622671 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.144266e-13
+Schmidt decomp SVD error = 9.546400e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8903 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485630185  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485664743  dE = -3.45581611e-07  S^2 = 0.0000000
+               |grad[o]|=0.00298  |ddm|=3.31e-06  |maxRot[o]|=0.000148
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485664743  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=3.19e-06  |ddm|=1.26e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266577 0.01733423]
+CASSCF energy = -3066.56485664743
+CASCI state   0  E = -3066.56485664743  E(CI) = -1.88031336610766  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485664743
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485664743 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.588121e-13
+Schmidt decomp SVD error = 1.093418e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8958 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485669432  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485696187  dE = -2.67547421e-07  S^2 = 0.0000000
+               |grad[o]|=0.0028  |ddm|=2.89e-06  |maxRot[o]|=0.000143
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485696187  dE = -4.54747351e-13  S^2 = 0.0000000
+               |grad[o]|=2.47e-06  |ddm|=1.9e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266574 0.01733426]
+CASSCF energy = -3066.56485696187
+CASCI state   0  E = -3066.56485696187  E(CI) = -1.88031377934385  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485696187
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485696187 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 4.384271e-13
+Schmidt decomp SVD error = 9.936713e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8908 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485699116  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485719883  dE = -2.07673111e-07  S^2 = 0.0000000
+               |grad[o]|=0.0023  |ddm|=2.37e-06  |maxRot[o]|=0.000115
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485719883  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=2.4e-06  |ddm|=2.06e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266568 0.01733432]
+CASSCF energy = -3066.56485719883
+CASCI state   0  E = -3066.56485719883  E(CI) = -1.88031551053609  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485719883
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485719883 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.494671e-13
+Schmidt decomp SVD error = 8.326673e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8950 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485721719  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485737833  dE = -1.61144271e-07  S^2 = 0.0000000
+               |grad[o]|=0.00217  |ddm|=2.31e-06  |maxRot[o]|=0.000117
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485737833  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.91e-06  |ddm|=3.06e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266566 0.01733434]
+CASSCF energy = -3066.56485737833
+CASCI state   0  E = -3066.56485737833  E(CI) = -1.88031590587889  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485737833
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485737833 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.577724e-13
+Schmidt decomp SVD error = 1.110223e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8905 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485739057  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485751592  dE = -1.25350653e-07  S^2 = 0.0000000
+               |grad[o]|=0.00178  |ddm|=1.67e-06  |maxRot[o]|=8.89e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485751592  dE =  4.54747351e-13  S^2 = 0.0000000
+               |grad[o]|=1.79e-06  |ddm|=6.29e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266562 0.01733438]
+CASSCF energy = -3066.56485751592
+CASCI state   0  E = -3066.56485751592  E(CI) = -1.88031719148921  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485751592
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485751592 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.549697e-13
+Schmidt decomp SVD error = 1.066855e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8955 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485752412  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485762159  dE = -9.74778231e-08  S^2 = 0.0000000
+               |grad[o]|=0.00168  |ddm|=1.83e-06  |maxRot[o]|=9.58e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485762159  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.48e-06  |ddm|=4.55e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.9826656 0.0173344]
+CASSCF energy = -3066.56485762159
+CASCI state   0  E = -3066.56485762159  E(CI) = -1.88031728621945  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485762159
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485762159 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 4.567112e-13
+Schmidt decomp SVD error = 6.938894e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8909 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485762706  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485770305  dE = -7.59850991e-08  S^2 = 0.0000000
+               |grad[o]|=0.00138  |ddm|=1.18e-06  |maxRot[o]|=6.91e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485770305  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.35e-06  |ddm|=8.72e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266557 0.01733443]
+CASSCF energy = -3066.56485770305
+CASCI state   0  E = -3066.56485770305  E(CI) = -1.88031804663615  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485770305
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485770305 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.376987e-13
+Schmidt decomp SVD error = 1.431147e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8903 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485770697  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485776619  dE = -5.92208380e-08  S^2 = 0.0000000
+               |grad[o]|=0.00131  |ddm|=1.45e-06  |maxRot[o]|=7.87e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485776619  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.14e-06  |ddm|=9.64e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266556 0.01733444]
+CASSCF energy = -3066.56485776619
+CASCI state   0  E = -3066.56485776619  E(CI) = -1.88031788140233  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485776619
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485776619 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.341031e-13
+Schmidt decomp SVD error = 6.787106e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8943 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485776878  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485781504  dE = -4.62587195e-08  S^2 = 0.0000000
+               |grad[o]|=0.00107  |ddm|=8.17e-07  |maxRot[o]|=5.53e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485781504  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=1.02e-06  |ddm|=1.25e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266554 0.01733446]
+CASSCF energy = -3066.56485781504
+CASCI state   0  E = -3066.56485781504  E(CI) = -1.88031840339499  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485781504
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485781504 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.764794e-13
+Schmidt decomp SVD error = 1.110223e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8954 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485781671  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485785284  dE = -3.61305865e-08  S^2 = 0.0000000
+               |grad[o]|=0.00102  |ddm|=1.2e-06  |maxRot[o]|=6.49e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485785284  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=9.07e-07  |ddm|=5.11e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266554 0.01733446]
+CASSCF energy = -3066.56485785284
+CASCI state   0  E = -3066.56485785284  E(CI) = -1.88031842139389  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485785284
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485785284 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.720348e-13
+Schmidt decomp SVD error = 8.340225e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8899 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485785396  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485788225  dE = -2.82816472e-08  S^2 = 0.0000000
+               |grad[o]|=0.000832  |ddm|=5.1e-07  |maxRot[o]|=4.55e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485788225  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=7.61e-07  |ddm|=4.66e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266552 0.01733448]
+CASSCF energy = -3066.56485788225
+CASCI state   0  E = -3066.56485788225  E(CI) = -1.88031889837112  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485788225
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485788225 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.549573e-13
+Schmidt decomp SVD error = 1.288168e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8948 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485788299  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485790513  dE = -2.21371010e-08  S^2 = 0.0000000
+               |grad[o]|=0.000796  |ddm|=1e-06  |maxRot[o]|=5.37e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485790513  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=7.24e-07  |ddm|=7.59e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266552 0.01733448]
+CASSCF energy = -3066.56485790513
+CASCI state   0  E = -3066.56485790513  E(CI) = -1.88031890256116  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485790513
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485790513 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.140709e-13
+Schmidt decomp SVD error = 9.714451e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8959 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485790560  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485792296  dE = -1.73608896e-08  S^2 = 0.0000000
+               |grad[o]|=0.000649  |ddm|=3.07e-07  |maxRot[o]|=3.76e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485792296  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=5.75e-07  |ddm|=1.12e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.9826655 0.0173345]
+CASSCF energy = -3066.56485792296
+CASCI state   0  E = -3066.56485792296  E(CI) = -1.88031925370933  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485792296
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485792296 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.835593e-13
+Schmidt decomp SVD error = 1.201296e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8939 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485792329  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485793691  dE = -1.36169547e-08  S^2 = 0.0000000
+               |grad[o]|=0.000622  |ddm|=8.34e-07  |maxRot[o]|=4.46e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485793691  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=5.81e-07  |ddm|=3.57e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.9826655 0.0173345]
+CASSCF energy = -3066.56485793691
+CASCI state   0  E = -3066.56485793691  E(CI) = -1.88031927082648  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485793691
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485793691 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.577131e-13
+Schmidt decomp SVD error = 1.318390e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8916 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485793712  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485794782  dE = -1.07024789e-08  S^2 = 0.0000000
+               |grad[o]|=0.000507  |ddm|=1.72e-07  |maxRot[o]|=3.11e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485794782  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=4.37e-07  |ddm|=1.13e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266549 0.01733451]
+CASSCF energy = -3066.56485794782
+CASCI state   0  E = -3066.56485794782  E(CI) = -1.88031948934258  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485794782
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485794782 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.711074e-13
+Schmidt decomp SVD error = 8.326673e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8911 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485794798  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485795639  dE = -8.41055225e-09  S^2 = 0.0000000
+               |grad[o]|=0.000487  |ddm|=6.87e-07  |maxRot[o]|=3.71e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485795639  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=4.65e-07  |ddm|=8.99e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266549 0.01733451]
+CASSCF energy = -3066.56485795639
+CASCI state   0  E = -3066.56485795639  E(CI) = -1.88031946160254  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485795639
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485795639 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.568912e-13
+Schmidt decomp SVD error = 1.110223e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8946 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485795647  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485796310  dE = -6.62657840e-09  S^2 = 0.0000000
+               |grad[o]|=0.000396  |ddm|=8.43e-08  |maxRot[o]|=2.58e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485796310  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=3.35e-07  |ddm|=2.6e-15  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266548 0.01733452]
+CASSCF energy = -3066.56485796310
+CASCI state   0  E = -3066.56485796310  E(CI) = -1.88031961899424  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.5648579631
+CASCI energy for each state
+  State 0 weight 1  E = -3066.5648579631 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.480238e-13
+Schmidt decomp SVD error = 1.202380e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8955 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485796317  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485796838  dE = -5.21640686e-09  S^2 = 0.0000000
+               |grad[o]|=0.000382  |ddm|=5.67e-07  |maxRot[o]|=3.1e-05
+macro iter   2 (  1 JK    1 micro), CASSCF E = -3066.56485796838  dE =  0.00000000e+00  S^2 = 0.0000000
+               |grad[o]|=3.74e-07  |ddm|=9.83e-16  |maxRot[o]|=    0
+1-step CASSCF converged in   2 macro (  4 JK   2 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266548 0.01733452]
+CASSCF energy = -3066.56485796838
+CASCI state   0  E = -3066.56485796838  E(CI) = -1.88031959138561  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485796838
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485796838 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.725565e-13
+Schmidt decomp SVD error = 8.841669e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8914 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485796839  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485797251  dE = -4.11864676e-09  S^2 = 0.0000000
+               |grad[o]|=0.000311  |ddm|=2.52e-08  |maxRot[o]|=2.14e-05
+1-step CASSCF converged in   1 macro (  3 JK   1 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266548 0.01733452]
+CASSCF energy = -3066.56485797251
+CASCI state   0  E = -3066.56485797251  E(CI) = -1.88031971531473  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485797251
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485797251 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.507959e-13
+Schmidt decomp SVD error = 1.483189e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8958 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485797252  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485797577  dE = -3.24962457e-09  S^2 = 0.0000000
+               |grad[o]|=0.0003  |ddm|=4.66e-07  |maxRot[o]|=2.59e-05
+1-step CASSCF converged in   1 macro (  3 JK   1 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266548 0.01733452]
+CASSCF energy = -3066.56485797577
+CASCI state   0  E = -3066.56485797577  E(CI) = -1.88031969682334  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485797577
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485797577 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.471831e-13
+Schmidt decomp SVD error = 8.885037e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8914 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485797577  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485797834  dE = -2.57068677e-09  S^2 = 0.0000000
+               |grad[o]|=0.000244  |ddm|=1.22e-08  |maxRot[o]|=1.79e-05
+1-step CASSCF converged in   1 macro (  3 JK   1 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266547 0.01733453]
+CASSCF energy = -3066.56485797834
+CASCI state   0  E = -3066.56485797834  E(CI) = -1.88031978625440  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485797834
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485797834 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.651495e-13
+Schmidt decomp SVD error = 1.272853e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8953 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485797835  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485798038  dE = -2.03272066e-09  S^2 = 0.0000000
+               |grad[o]|=0.000236  |ddm|=3.84e-07  |maxRot[o]|=2.18e-05
+1-step CASSCF converged in   1 macro (  3 JK   1 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266548 0.01733452]
+CASSCF energy = -3066.56485798038
+CASCI state   0  E = -3066.56485798038  E(CI) = -1.88031976753791  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485798038
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485798038 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 1.413102e-13
+Schmidt decomp SVD error = 9.931292e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8958 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485798038  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485798199  dE = -1.61071512e-09  S^2 = 0.0000000
+               |grad[o]|=0.000192  |ddm|=3.18e-08  |maxRot[o]|=1.49e-05
+1-step CASSCF converged in   1 macro (  3 JK   1 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266547 0.01733453]
+CASSCF energy = -3066.56485798199
+CASCI state   0  E = -3066.56485798199  E(CI) = -1.88031983074279  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485798199
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485798199 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.898234e-13
+Schmidt decomp SVD error = 2.303930e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8909 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485798195  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485798323  dE = -1.27420208e-09  S^2 = 0.0000000
+               |grad[o]|=0.000186  |ddm|=3.16e-07  |maxRot[o]|=1.83e-05
+1-step CASSCF converged in   1 macro (  3 JK   1 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266547 0.01733453]
+CASSCF energy = -3066.56485798323
+CASCI state   0  E = -3066.56485798323  E(CI) = -1.88031981440690  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485798323
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485798323 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.107948e-13
+Schmidt decomp SVD error = 1.387779e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8953 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485798328  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485798429  dE = -1.01363185e-09  S^2 = 0.0000000
+               |grad[o]|=0.000151  |ddm|=4.24e-08  |maxRot[o]|=1.25e-05
+1-step CASSCF converged in   1 macro (  3 JK   1 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266547 0.01733453]
+CASSCF energy = -3066.56485798429
+CASCI state   0  E = -3066.56485798429  E(CI) = -1.88031985866155  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485798429
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485798429 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.194835e-13
+Schmidt decomp SVD error = 8.831504e-17
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8958 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485798429  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485798509  dE = -8.02174327e-10  S^2 = 0.0000000
+               |grad[o]|=0.000147  |ddm|=2.59e-07  |maxRot[o]|=1.54e-05
+1-step CASSCF converged in   1 macro (  3 JK   1 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266547 0.01733453]
+CASSCF energy = -3066.56485798509
+CASCI state   0  E = -3066.56485798509  E(CI) = -1.88031984259351  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485798509
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485798509 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 2.188861e-13
+Schmidt decomp SVD error = 1.282069e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8903 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485798509  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485798573  dE = -6.40739017e-10  S^2 = 0.0000000
+               |grad[o]|=0.000119  |ddm|=4.63e-08  |maxRot[o]|=1.04e-05
+1-step CASSCF converged in   1 macro (  3 JK   1 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266547 0.01733453]
+CASSCF energy = -3066.56485798573
+CASCI state   0  E = -3066.56485798573  E(CI) = -1.88031987299610  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485798573
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485798573 S^2 = 0.0000000
+nmo = 830
+nfrag before gradorbs = 57
+nfrag after gradorbs 1 = 59
+Schmidt of density matrix with idempotency error = 3.389511e-13
+Schmidt decomp SVD error = 1.110223e-16
+nfrag after schmidt = 116
+nelec in fragment = 116
+nfrag after gradorbs 2 = 118
+nelec in fragment = 118
+41 occupied and 115 unoccupied inactive unentangled env orbs
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFImpurityCASSCF'> ********
+CAS (1e+1e, 2o), ncore = 58, nvir = 58
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /scratch/local/jobs/60636966/tmped5ou9xq
+max_memory 500000 MB (current use 8953 MB)
+internal_rotation = False
+******** <class 'mrh.my_pyscf.mcscf.addons.get_h1e_zipped_fcisolver.<locals>.FCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = False
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 500000 MB
+nroots = 1
+pspace_size = 200
+spin = 0
+State-average over 1 states with weights [1.0]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -3066.56485798574  S^2 = 0.0000000
+Set conv_tol_grad to 0.000316228
+macro iter   1 (  3 JK    1 micro), CASSCF E = -3066.56485798624  dE = -5.08407538e-10  S^2 = 0.0000000
+               |grad[o]|=0.000116  |ddm|=2.12e-07  |maxRot[o]|=1.3e-05
+1-step CASSCF converged in   1 macro (  3 JK   1 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.98266547 0.01733453]
+CASSCF energy = -3066.56485798624
+CASCI state   0  E = -3066.56485798624  E(CI) = -1.88031985862972  S^2 = 0.0000000
+CASCI state-averaged energy = -3066.56485798624
+CASCI energy for each state
+  State 0 weight 1  E = -3066.56485798624 S^2 = 0.0000000

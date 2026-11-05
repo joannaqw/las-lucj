@@ -1,0 +1,7 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+WARN: HOMO 0.1723700325679991 > LUMO -0.5555574452969013 was found in the canonicalized orbitals.
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/ts_postrun1/input.py:146: UserWarning: 'num_terms' will be removed, use 'size()' instead

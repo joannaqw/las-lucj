@@ -1,0 +1,36 @@
+WARN: Even tempered Gaussians are generated as DF auxbasis for  Fe
+WARN: HOMO 0.0727565923763838 >= LUMO -0.7117478882694
+WARN: HOMO 0.072783854668535 >= LUMO -0.595585772597301
+WARN: HOMO 0.155943259230268 >= LUMO -0.632827716855869
+WARN: HOMO -0.308913325861879 >= LUMO -0.444569299412242
+WARN: HOMO 0.0183950531505677 >= LUMO -0.585694385494844
+WARN: HOMO 0.0536450248611743 >= LUMO -0.509857666306905
+WARN: HOMO -0.106747916845908 >= LUMO -0.492603462529356
+WARN: HOMO 0.236219720856645 >= LUMO -0.000987733984519222
+WARN: HOMO 0.310022151614976 >= LUMO -0.0855741565706491
+WARN: HOMO 0.228262482757386 >= LUMO -0.233940590121239
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/alfefe/LS_11_20/las_lucj.py", line 38, in <module>
+    las.kernel(mo_guess)
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasci.py", line 1022, in kernel
+    self.ci, h2eff_sub, veff = _kern(mo_coeff=mo_coeff, ci0=ci0, verbose=verbose, \
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasci_sync.py", line 94, in kernel
+    H_op = las.get_hop (ugg=ugg, mo_coeff=mo_coeff, ci=ci1, h2eff_sub=h2eff_sub, veff=veff,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasci.py", line 968, in get_hop
+    return self._hop (self, ugg, mo_coeff=mo_coeff, ci=ci, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasci_sync.py", line 672, in __init__
+    self._init_dms_(casdm1frs, casdm2fr)
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasci_sync.py", line 689, in _init_dms_
+    self.casdm2 = las.make_casdm2 (casdm1frs=casdm1frs, casdm2fr=casdm2fr)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/project/lgagliardi/qjwang/mrh/my_pyscf/mcscf/lasci.py", line 1628, in make_casdm2
+    casdm2[i:j, i:j, k:l, k:l] = lib.einsum ('r,rij,rkl->ijkl', weights, dm1r, dm2r)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf/lib/numpy_helper.py", line 245, in einsum
+    inds, idx_rm, einsum_str, remaining = contraction[:4]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 4, got 3)

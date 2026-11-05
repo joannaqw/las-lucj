@@ -1,0 +1,9 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/NEWFRAG/ts/inp_ts.py", line 32, in <module>
+    molden.from_mo(mol, 'avas_ts_new2frag.molden',mo_coeff[:,mc_test.ncore:mc_test.ncore+ncas])
+                                                             ^^^^^^^
+NameError: name 'mc_test' is not defined

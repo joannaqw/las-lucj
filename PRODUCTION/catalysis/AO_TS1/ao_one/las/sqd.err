@@ -1,0 +1,8 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+WARN: HOMO 0.04850124618045764 > LUMO -0.33856240855568637 was found in the canonicalized orbitals.
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+WARN: Can't separate env occ from env virt in async_split ia2x_gradorbs; Schmidt failure? svals=[1.06513404e-08]

@@ -1,0 +1,14 @@
+pyscf plugins found in 
+/project/lgagliardi/qjwang/pyscf
+/home/qjwang/.conda/envs/lassqd/lib/python3.11/site-packages/pyscf
+When PYTHONPATH is set, it is recommended to load these plugins through the environment variable PYSCF_EXT_PATH
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/int_2/input.py:7: FutureWarning: Most MC-PDFT and MC-DCFT modules have been moved to pyscf-forge (github.com/pyscf/pyscf-forge) and will be removed from mrh soon.
+  from mrh.my_pyscf import mcpdft
+WARN: HOMO 0.14010076954486822 > LUMO -0.5818028219903814 was found in the canonicalized orbitals.
+WARN: Incompatible dm dimension. Treat dm as RHF density matrix.
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.rohf.ROHF'>
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.hf.RHF'>
+/project/lgagliardi/qjwang/las-lucj/PRODUCTION/catalysis/int_2/input.py:154: UserWarning: 'num_terms' will be removed, use 'size()' instead
+  print(f"Num fermionic terms: {fermionic_op.num_terms}")
+/var/spool/slurm/d/job59164758/slurm_script: line 30: 2117713 Killed                  python input.py > testrun_2k.out
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=59164758.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

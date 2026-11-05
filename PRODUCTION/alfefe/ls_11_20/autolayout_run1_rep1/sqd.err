@@ -1,0 +1,77 @@
+WARN: Even tempered Gaussians are generated as DF auxbasis for  H Al O Fe C
+WARN: HOMO 0.072749223816185 >= LUMO -0.711753893082603
+WARN: HOMO 0.0727750245046114 >= LUMO -0.595586791611702
+WARN: HOMO 0.15600876687124 >= LUMO -0.632522429219272
+WARN: HOMO -0.284327464443851 >= LUMO -0.437177954663367
+WARN: HOMO 0.0195538618551561 >= LUMO -0.59698588891898
+WARN: HOMO 0.0699535686203006 >= LUMO -0.539097915410272
+WARN: HOMO -0.0471304850116233 >= LUMO -0.453982956871413
+WARN: HOMO 0.244321629864534 >= LUMO -0.00482561574547635
+WARN: HOMO -0.0691186730431232 >= LUMO -0.378452935612007
+WARN: HOMO 0.296067779974845 >= LUMO -0.219539908891951
+WARN: HOMO 0.154237338686343 >= LUMO 0.0304727570574439
+<class 'mrh.my_pyscf.mcscf.lasci.density_fit.<locals>.DFLASCI'> does not have attributes  with_df
+WARN: possible (pa|aa) inconsistency; max err = 2.214136e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.224227e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.222340e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.232489e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.237935e-08
+WARN: possible (pa|aa) inconsistency; max err = 2.240665e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.951807e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.603546e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.527988e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.524276e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.521705e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.520328e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.519640e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.519305e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.519099e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.519009e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518966e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518945e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518936e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518928e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518922e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518916e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518911e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518907e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518904e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518901e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518900e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518899e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518899e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518899e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518898e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518899e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518900e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518901e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518902e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518903e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518904e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518906e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518907e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518909e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518910e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518911e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518913e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518914e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518914e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518915e-08
+WARN: possible (pa|aa) inconsistency; max err = 1.518915e-08
+Overwritten attributes  get_hcore get_ovlp  of <class 'pyscf.scf.rohf.ROHF'>
+Traceback (most recent call last):
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/alfefe/ls_11_20/autolayout_run1_rep1/las_lucj.py", line 85, in <module>
+    qlas,ucj_op = LUCJ_load(las.ncas_sub[f],nelec_f[f][0],nelec_f[f][1],h1_frag,h2_frag,las.ci[f][0])
+  File "/project/lgagliardi/qjwang/las-lucj/PRODUCTION/alfefe/ls_11_20/autolayout_run1_rep1/LUCJ_loader.py", line 55, in LUCJ_load
+    operator = ffsim.UCJOpSpinUnbalanced.from_t_amplitudes(t2=t2, t1=mc.t1, n_reps=n_reps)
+  File "/home/qjwang/.local/lib/python3.9/site-packages/ffsim/variational/ucj_spin_unbalanced.py", line 514, in from_t_amplitudes
+    linalg.double_factorized_t2_alpha_beta(t2ab, tol=tol)
+  File "/home/qjwang/.local/lib/python3.9/site-packages/ffsim/linalg/double_factorized_decomposition.py", line 645, in double_factorized_t2_alpha_beta
+    left_vecs, singular_vals, right_vecs = _truncated_svd(
+  File "/home/qjwang/.local/lib/python3.9/site-packages/ffsim/linalg/double_factorized_decomposition.py", line 48, in _truncated_svd
+    left_vecs, singular_vals, right_vecs = scipy.linalg.svd(mat, full_matrices=False)
+  File "/home/qjwang/.local/lib/python3.9/site-packages/scipy/linalg/_decomp_svd.py", line 137, in svd
+    lwork = _compute_lwork(gesXd_lwork, a1.shape[0], a1.shape[1],
+  File "/home/qjwang/.local/lib/python3.9/site-packages/scipy/linalg/lapack.py", line 1007, in _compute_lwork
+    raise ValueError("Internal work array size computation failed: "
+ValueError: Internal work array size computation failed: -10

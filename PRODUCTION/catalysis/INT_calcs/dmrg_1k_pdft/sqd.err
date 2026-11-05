@@ -1,0 +1,24 @@
+WARN: HOMO 0.1401007695448929 > LUMO -0.5818028219857334 was found in the canonicalized orbitals.
+	Command being timed: "/home/qjwang/.conda/envs/lassqd/bin/python input.py"
+	User time (seconds): 9527.73
+	System time (seconds): 176.99
+	Percent of CPU this job got: 157%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:42:44
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5679960
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 23861220
+	Voluntary context switches: 26218
+	Involuntary context switches: 46945
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 73419416
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
